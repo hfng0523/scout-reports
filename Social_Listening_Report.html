@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🔍 KAs Social Listening Report | 7 Aug 2026</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --bg-dark: #0F172A;
+            --bg-card: #1E293B;
+            --accent-red: #EF4444;
+            --accent-blue: #3B82F6;
+            --accent-green: #22C55E;
+            --accent-orange: #F97316;
+            --accent-purple: #A855F7;
+            --text-primary: #F8FAFC;
+            --text-secondary: #94A3B8;
+            --border: #334155;
+        }
+        body {
+            background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
+            color: var(--text-primary);
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+        .card {
+            background: var(--bg-card);
+            border-radius: 16px;
+            border: 1px solid var(--border);
+            transition: all 0.3s ease;
+        }
+        .card:hover { transform: translateY(-2px); box-shadow: 0 10px 40px rgba(0,0,0,0.3); }
+        .badge { padding: 4px 12px; border-radius: 20px; font-size: 0.75rem; font-weight: 600; }
+        .promo-alert { background: linear-gradient(135deg, #EF4444 0%, #F97316 100%); animation: pulse 2s infinite; }
+        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.8; } }
+        .platform-fb { background: #1877F2; }
+        .platform-ig { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
+        .platform-threads { background: #000; }
+        .match-direct { background: var(--accent-green); color: #000; }
+        .match-gap { background: var(--accent-orange); color: white; }
+        .match-none { background: #64748B; color: white; }
+        .ka-card { border-left: 4px solid var(--accent-blue); }
+        .ka-watsons { border-left-color: #E60012; }
+        .ka-parknshop { border-left-color: #00A0DC; }
+        .ka-wellcome { border-left-color: #FF6600; }
+        .ka-mannings { border-left-color: #00B14F; }
+        .ka-7eleven { border-left-color: #00A0DC; }
+        .ka-circlek { border-left-color: #FF6600; }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
+    </style>
+</head>
+<body class="min-h-screen p-4 md:p-6">
+    
+    <!-- HEADER -->
+    <header class="card mb-6 p-6 text-center">
+        <div class="flex items-center justify-center gap-4 mb-3">
+            <span class="text-5xl">🔍</span>
+            <div>
+                <h1 class="text-3xl md:text-4xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+                    KAs Social Listening Report
+                </h1>
+                <p class="text-slate-400 mt-1">香港零售競爭對手情報 · 自動化收集</p>
+            </div>
+        </div>
+        <div class="flex items-center justify-center gap-4 flex-wrap mt-4">
+            <span class="bg-red-500 text-white px-4 py-2 rounded-full font-bold text-sm">📅 7 Aug 2026</span>
+            <span class="bg-blue-500 text-white px-4 py-2 rounded-full text-sm">🤖 Scout v2.0</span>
+            <span class="bg-green-500 text-black px-4 py-2 rounded-full text-sm">✅ Facebook + Instagram</span>
+            <span class="bg-orange-500 text-white px-4 py-2 rounded-full text-sm">⚠️ Threads 需要登入</span>
+        </div>
+    </header>
+    
+    <!-- PROMO ALERT SECTION -->
+    <section class="card mb-6 p-6 promo-alert">
+        <div class="flex items-center gap-3 mb-4">
+            <span class="text-3xl">🎉</span>
+            <h2 class="text-2xl font-bold text-white">PROMO ALERT — 8月優惠大集合！</h2>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            <div class="bg-white/10 backdrop-blur rounded-xl p-4">
+                <div class="flex items-center gap-2 mb-2">
+                    <span class="text-2xl">💙</span>
+                    <span class="font-bold text-white">百佳 PARKnSHOP</span>
+                </div>
+                <p class="text-white/90 text-sm">8月7-8日：百佳日全線88折！VIP會員7/8率先享有</p>
+                <p class="text-white/70 text-xs mt-1">Facebook · 785 likes</p>
+            </div>
+            <div class="bg-white/10 backdrop-blur rounded-xl p-4">
+                <div class="flex items-center gap-2 mb-2">
+                    <span class="text-2xl">💜</span>
+                    <span class="font-bold text-white">屈臣氏 Watsons</span>
+                </div>
+                <p class="text-white/90 text-sm">8月7日(五)：指定門市全場無門檻88折！銀聯再減HK$30</p>
+                <p class="text-white/70 text-xs mt-1">Facebook · 2小時前</p>
+            </div>
+            <div class="bg-white/10 backdrop-blur rounded-xl p-4">
+                <div class="flex items-center gap-2 mb-2">
+                    <span class="text-2xl">💚</span>
+                    <span class="font-bold text-white">萬寧 Mannings</span>
+                </div>
+                <p class="text-white/90 text-sm">8月8日(六)：國際貓貓節🐱 全場無門檻88折！</p>
+                <p class="text-white/70 text-xs mt-1">Facebook · 484 likes</p>
+            </div>
+            <div class="bg-white/10 backdrop-blur rounded-xl p-4">
+                <div class="flex items-center gap-2 mb-2">
+                    <span class="text-2xl">🧡</span>
+                    <span class="font-bold text-white">7-Eleven</span>
+                </div>
+                <p class="text-white/90 text-sm">指定店舖購物滿$100即享8折 (5-7/8)</p>
+                <p class="text-white/70 text-xs mt-1">Facebook · 113 likes</p>
+            </div>
+            <div class="bg-white/10 backdrop-blur rounded-xl p-4">
+                <div class="flex items-center gap-2 mb-2">
+                    <span class="text-2xl">🧊</span>
+                    <span class="font-bold text-white">惠康 Wellcome</span>
+                </div>
+                <p class="text-white/90 text-sm">【今期堅係正】豆腐花、灣仔碼頭水餃、芝司樂優惠</p>
+                <p class="text-white/70 text-xs mt-1">Facebook · 17分鐘前</p>
+            </div>
+        </div>
+        <div class="mt-4 p-3 bg-yellow-500/20 rounded-lg border border-yellow-500/50">
+            <p class="text-yellow-200 text-sm">💡 <strong>O2O觀察：</strong>8月7-8日係關鍵週末！百佳、屈臣氏、萬寧同日做88折，超市大戰！</p>
+        </div>
+    </section>
+    
+    <!-- SUMMARY CARDS -->
+    <section class="card mb-6 p-6">
+        <div class="flex items-center gap-3 mb-4">
+            <span class="text-2xl">📊</span>
+            <h2 class="text-xl font-bold">收集概覽</h2>
+        </div>
+        <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
+            <div class="bg-slate-800/50 rounded-xl p-4 text-center">
+                <div class="text-3xl font-bold text-blue-400">18</div>
+                <div class="text-sm text-slate-400">總 Posts</div>
+            </div>
+            <div class="bg-slate-800/50 rounded-xl p-4 text-center">
+                <div class="text-3xl font-bold text-blue-500">11</div>
+                <div class="text-sm text-slate-400">Facebook</div>
+            </div>
+            <div class="bg-slate-800/50 rounded-xl p-4 text-center">
+                <div class="text-3xl font-bold text-pink-400">11</div>
+                <div class="text-sm text-slate-400">Instagram</div>
+            </div>
+            <div class="bg-slate-800/50 rounded-xl p-4 text-center">
+                <div class="text-3xl font-bold text-slate-400">0</div>
+                <div class="text-sm text-slate-400">Threads</div>
+            </div>
+            <div class="bg-slate-800/50 rounded-xl p-4 text-center">
+                <div class="text-3xl font-bold text-orange-400">5</div>
+                <div class="text-sm text-slate-400">KAs覆蓋</div>
+            </div>
+            <div class="bg-slate-800/50 rounded-xl p-4 text-center">
+                <div class="text-3xl font-bold text-green-400">🎯</div>
+                <div class="text-sm text-slate-400">直接競爭</div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- KAs DETAIL SECTION -->
+    <section class="card mb-6">
+        <div class="module-header p-4 rounded-t-xl border-b border-slate-700">
+            <div class="flex items-center gap-3">
+                <span class="text-2xl">🏪</span>
+                <h2 class="text-xl font-bold">KAs 社交媒體詳情</h2>
+            </div>
+        </div>
+        <div class="p-6 space-y-6">
+            
+            <!-- 屈臣氏 -->
+            <div class="ka-card ka-watsons bg-slate-800/30 rounded-xl p-5">
+                <div class="flex items-center justify-between mb-4">
+                    <div class="flex items-center gap-3">
+                        <span class="text-3xl">💜</span>
+                        <div>
+                            <h3 class="text-lg font-bold">屈臣氏 Watsons</h3>
+                            <p class="text-slate-400 text-sm">@hkwatsons · 1,459萬粉絲</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-2">
+                        <span class="platform-fb text-white px-2 py-1 rounded text-xs">FB</span>
+                        <span class="platform-ig text-white px-2 py-1 rounded text-xs">IG</span>
+                    </div>
+                </div>
+                <div class="space-y-3">
+                    <div class="bg-red-500/10 border border-red-500/30 rounded-lg p-3">
+                        <div class="flex items-center gap-2 mb-1">
+                            <span class="text-red-400 text-sm">🎉 PROMO</span>
+                            <span class="text-slate-400 text-xs">2小時前</span>
+                        </div>
+                        <p class="text-white font-medium">【星期五屈臣氏指定門市全場無門檻88折】銀聯付款再減高達HK$30</p>
+                        <p class="text-slate-400 text-xs mt-1">❤️ 15 likes</p>
+                    </div>
+                    <div class="bg-slate-700/50 rounded-lg p-3">
+                        <div class="flex items-center gap-2 mb-1">
+                            <span class="text-blue-400 text-sm">185周年</span>
+                            <span class="text-slate-400 text-xs">6月22日</span>
+                        </div>
+                        <p class="text-white font-medium">屈臣氏185周年經典復刻店即將開幕！</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 百佳 -->
+            <div class="ka-card ka-parknshop bg-slate-800/30 rounded-xl p-5">
+                <div class="flex items-center justify-between mb-4">
+                    <div class="flex items-center gap-3">
+                        <span class="text-3xl">💙</span>
+                        <div>
+                            <h3 class="text-lg font-bold">百佳 PARKnSHOP</h3>
+                            <p class="text-slate-400 text-sm">@hkparknshop · 35萬粉絲</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-2">
+                        <span class="platform-fb text-white px-2 py-1 rounded text-xs">FB</span>
+                        <span class="platform-ig text-white px-2 py-1 rounded text-xs">IG</span>
+                        <span class="badge match-direct">O2O直接競爭</span>
+                    </div>
+                </div>
+                <div class="space-y-3">
+                    <div class="bg-red-500/10 border border-red-500/30 rounded-lg p-3">
+                        <div class="flex items-center gap-2 mb-1">
+                            <span class="text-red-400 text-sm">🎉 PROMO ALERT</span>
+                            <span class="text-slate-400 text-xs">3天前 · 785 likes</span>
+                        </div>
+                        <p class="text-white font-medium">【百佳日｜全線88折快閃預告⚡】8月7日VIP會員搶先賞，8月8日人人有份買滿$100即享88折！</p>
+                    </div>
+                    <div class="bg-slate-700/50 rounded-lg p-3">
+                        <div class="flex items-center gap-2 mb-1">
+                            <span class="text-orange-400 text-sm">🔥 熱門</span>
+                            <span class="text-slate-400 text-xs">1小時前</span>
+                        </div>
+                        <p class="text-white font-medium">百加樂換購優惠 — 樂賞會/鑽石/VIP會員限定</p>
+                        <p class="text-slate-400 text-xs mt-1">❤️ 14 likes</p>
+                    </div>
+                    <div class="bg-slate-700/50 rounded-lg p-3">
+                        <div class="flex items-center gap-2 mb-1">
+                            <span class="text-green-400 text-sm">PNS網購</span>
+                            <span class="text-slate-400 text-xs">157 likes</span>
+                        </div>
+                        <p class="text-white font-medium">【PNS網購｜買滿$800即享$120優惠】</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 惠康 -->
+            <div class="ka-card ka-wellcome bg-slate-800/30 rounded-xl p-5">
+                <div class="flex items-center justify-between mb-4">
+                    <div class="flex items-center gap-3">
+                        <span class="text-3xl">🧊</span>
+                        <div>
+                            <h3 class="text-lg font-bold">惠康 Wellcome</h3>
+                            <p class="text-slate-400 text-sm">@hkwellcome · 36萬粉絲</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-2">
+                        <span class="platform-fb text-white px-2 py-1 rounded text-xs">FB</span>
+                        <span class="badge match-gap">GAP分析</span>
+                    </div>
+                </div>
+                <div class="space-y-3">
+                    <div class="bg-orange-500/10 border border-orange-500/30 rounded-lg p-3">
+                        <div class="flex items-center gap-2 mb-1">
+                            <span class="text-orange-400 text-sm">🆕 新貨</span>
+                            <span class="text-slate-400 text-xs">17分鐘前</span>
+                        </div>
+                        <p class="text-white font-medium">【今期堅係正！🤩】豆腐花、灣仔碼頭水餃、芝司樂片裝芝士優惠</p>
+                        <p class="text-slate-400 text-xs mt-1">❤️ 8 likes</p>
+                    </div>
+                    <div class="bg-slate-700/50 rounded-lg p-3">
+                        <div class="flex items-center gap-2 mb-1">
+                            <span class="text-cyan-400 text-sm">雪糕</span>
+                            <span class="text-slate-400 text-xs">❤️ 24 likes</span>
+                        </div>
+                        <p class="text-white font-medium">【冰個夠我Cool🧊】雪糕優惠</p>
+                    </div>
+                </div>
+                <div class="mt-3 p-2 bg-yellow-500/10 rounded-lg border border-yellow-500/30">
+                    <p class="text-yellow-200 text-xs">💡 <strong>O2O Gap：</strong>惠康主打凍肉/海鮮優惠，O2O可參考其凍食產品定價策略</p>
+                </div>
+            </div>
+            
+            <!-- 萬寧 -->
+            <div class="ka-card ka-mannings bg-slate-800/30 rounded-xl p-5">
+                <div class="flex items-center justify-between mb-4">
+                    <div class="flex items-center gap-3">
+                        <span class="text-3xl">💚</span>
+                        <div>
+                            <h3 class="text-lg font-bold">萬寧 Mannings</h3>
+                            <p class="text-slate-400 text-sm">@mannings_hk · 57.3萬粉絲</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-2">
+                        <span class="platform-fb text-white px-2 py-1 rounded text-xs">FB</span>
+                    </div>
+                </div>
+                <div class="space-y-3">
+                    <div class="bg-red-500/10 border border-red-500/30 rounded-lg p-3">
+                        <div class="flex items-center gap-2 mb-1">
+                            <span class="text-red-400 text-sm">🎉 PROMO</span>
+                            <span class="text-slate-400 text-xs">1天前 · 484 likes</span>
+                        </div>
+                        <p class="text-white font-medium">【8月8日國際貓貓節🐱】全場無門檻即享88折！</p>
+                    </div>
+                    <div class="bg-slate-700/50 rounded-lg p-3">
+                        <div class="flex items-center gap-2 mb-1">
+                            <span class="text-pink-400 text-sm">星期三優惠</span>
+                            <span class="text-slate-400 text-xs">289 likes</span>
+                        </div>
+                        <p class="text-white font-medium">【星期三氹氹你 優惠大放送！】LINE FRIENDS 產品優惠</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 7-Eleven -->
+            <div class="ka-card ka-7eleven bg-slate-800/30 rounded-xl p-5">
+                <div class="flex items-center justify-between mb-4">
+                    <div class="flex items-center gap-3">
+                        <span class="text-3xl">🧡</span>
+                        <div>
+                            <h3 class="text-lg font-bold">7-Eleven</h3>
+                            <p class="text-slate-400 text-sm">@7elevenhk · 296萬粉絲</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-2">
+                        <span class="platform-fb text-white px-2 py-1 rounded text-xs">FB</span>
+                        <span class="platform-ig text-white px-2 py-1 rounded text-xs">IG</span>
+                    </div>
+                </div>
+                <div class="space-y-3">
+                    <div class="bg-orange-500/10 border border-orange-500/30 rounded-lg p-3">
+                        <div class="flex items-center gap-2 mb-1">
+                            <span class="text-orange-400 text-sm">⚡ 限時</span>
+                            <span class="text-slate-400 text-xs">1天前</span>
+                        </div>
+                        <p class="text-white font-medium">【只限今日❗️7仔App限定優惠】</p>
+                        <p class="text-slate-400 text-xs mt-1">❤️ 38 likes</p>
+                    </div>
+                    <div class="bg-slate-700/50 rounded-lg p-3">
+                        <div class="flex items-center gap-2 mb-1">
+                            <span class="text-yellow-400 text-sm">著數之選</span>
+                            <span class="text-slate-400 text-xs">113 likes</span>
+                        </div>
+                        <p class="text-white font-medium">指定店舖購物滿$100即享8折 (5-7/8)</p>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+    
+    <!-- THREADS STATUS -->
+    <section class="card mb-6 p-6">
+        <div class="flex items-center gap-3 mb-4">
+            <span class="text-2xl">📱</span>
+            <h2 class="text-xl font-bold">Threads 狀態</h2>
+        </div>
+        <div class="bg-orange-500/10 border border-orange-500/30 rounded-xl p-4">
+            <div class="flex items-center gap-3 mb-3">
+                <span class="text-2xl">⚠️</span>
+                <p class="text-orange-300 font-medium">Threads 需要登入才能瀏覽</p>
+            </div>
+            <p class="text-slate-300 text-sm">已嘗試瀏覽百佳、屈臣氏、7-Eleven、Circle K 等 Threads，但全部需要登入才能查看內容。</p>
+            <p class="text-slate-400 text-xs mt-2">建議：下次Social Listening時先登入 Threads 帳戶</p>
+        </div>
+    </section>
+    
+    <!-- COMPETITIVE INTELLIGENCE -->
+    <section class="card mb-6 p-6">
+        <div class="flex items-center gap-3 mb-4">
+            <span class="text-2xl">🧠</span>
+            <h2 class="text-xl font-bold">競爭情報分析</h2>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="bg-slate-800/50 rounded-xl p-4">
+                <h3 class="font-bold text-red-400 mb-3">🔥 8月7-8日 超市大戰</h3>
+                <ul class="text-slate-300 text-sm space-y-2">
+                    <li>• <strong>百佳：</strong>8/7 VIP 88折，8/8 全線88折</li>
+                    <li>• <strong>屈臣氏：</strong>8/7 指定門市88折</li>
+                    <li>• <strong>萬寧：</strong>8/8 全場88折（國際貓貓節）</li>
+                    <li>• <strong>7-Eleven：</strong>指定店滿$100享8折</li>
+                </ul>
+            </div>
+            <div class="bg-slate-800/50 rounded-xl p-4">
+                <h3 class="font-bold text-green-400 mb-3">💡 O2O 觀察</h3>
+                <ul class="text-slate-300 text-sm space-y-2">
+                    <li>• 百佳 PNS網購 優惠力度大（$800減$120）</li>
+                    <li>• 惠康 主打凍肉/海鮮，與 O2O 直接競爭</li>
+                    <li>• 屈臣氏/萬寧 健康產品為主，O2O 暂无此品類</li>
+                    <li>• 7-Eleven App 限定優惠策略值得參考</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    
+    <footer class="text-center py-6 text-slate-500 text-sm">
+        <p>🤖 Scout Collector v2.0 · KAs Social Listening</p>
+        <p class="mt-1">收集時間：2026年8月7日 11:30 HKT</p>
+        <p class="mt-1">下次自動更新：明日 09:00 HKT</p>
+    </footer>
+    
+</body>
+</html>

@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🔍 KAs Social Listening Report | 10 Aug 2026</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --bg-dark: #0F172A;
+            --bg-card: #1E293B;
+            --accent-red: #EF4444;
+            --accent-blue: #3B82F6;
+            --accent-green: #22C55E;
+            --accent-orange: #F97316;
+            --accent-purple: #A855F7;
+            --text-primary: #F8FAFC;
+            --text-secondary: #94A3B8;
+            --border: #334155;
+        }
+        body {
+            background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
+            color: var(--text-primary);
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+        .card {
+            background: var(--bg-card);
+            border-radius: 16px;
+            border: 1px solid var(--border);
+            transition: all 0.3s ease;
+        }
+        .card:hover { transform: translateY(-2px); box-shadow: 0 10px 40px rgba(0,0,0,0.3); }
+        .badge { padding: 4px 12px; border-radius: 20px; font-size: 0.75rem; font-weight: 600; }
+        .promo-alert { background: linear-gradient(135deg, #EF4444 0%, #F97316 100%); animation: pulse 2s infinite; }
+        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.85; } }
+        .platform-fb { background: #1877F2; }
+        .platform-ig { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
+        .platform-threads { background: #000; }
+        .match-direct { background: var(--accent-green); color: #000; }
+        .match-gap { background: var(--accent-orange); color: white; }
+        .match-none { background: #64748B; color: white; }
+        .ka-card { border-left: 4px solid var(--accent-blue); }
+        .ka-watsons { border-left-color: #E60012; }
+        .ka-parknshop { border-left-color: #00A0DC; }
+        .ka-wellcome { border-left-color: #FF6600; }
+        .ka-mannings { border-left-color: #00B14F; }
+        .ka-7eleven { border-left-color: #00A0DC; }
+        .ka-circlek { border-left-color: #E60012; }
+        .ka-dondonki { border-left-color: #E60012; }
+        .ka-759 { border-left-color: #00A0DC; }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
+    </style>
+</head>
+<body class="min-h-screen p-4 md:p-6">
+    
+    <!-- HEADER -->
+    <header class="card mb-6 p-6 text-center">
+        <div class="flex items-center justify-center gap-4 mb-3">
+            <span class="text-5xl">🔍</span>
+            <div>
+                <h1 class="text-3xl md:text-4xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+                    KAs Social Listening Report
+                </h1>
+                <p class="text-slate-400 mt-1">香港零售競爭對手情報 · 自動化收集</p>
+            </div>
+        </div>
+        <div class="flex items-center justify-center gap-4 flex-wrap mt-4">
+            <span class="bg-red-500 text-white px-4 py-2 rounded-full font-bold text-sm">📅 10 Aug 2026</span>
+            <span class="bg-blue-500 text-white px-4 py-2 rounded-full text-sm">🤖 Scout v2.2</span>
+            <span class="bg-green-500 text-black px-4 py-2 rounded-full text-sm">✅ Facebook + Instagram</span>
+            <a href="https://hfng0523.github.io/scout-reports/" target="_blank" class="bg-purple-500 text-white px-4 py-2 rounded-full text-sm hover:bg-purple-600">🔗 Live URL</a>
+        </div>
+        <p class="text-slate-400 text-sm mt-3">同行可以直接打開呢個連結睇報告：<a href="https://hfng0523.github.io/scout-reports/" class="text-blue-400 underline">https://hfng0523.github.io/scout-reports/</a></p>
+    </header>
+    
+    <!-- PROMO ALERT SECTION -->
+    <section class="card mb-6 p-6 promo-alert">
+        <div class="flex items-center gap-3 mb-4">
+            <span class="text-3xl">🎉</span>
+            <h2 class="text-2xl font-bold text-white">PROMO ALERT — 8月優惠大集合！</h2>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            <div class="bg-white/10 backdrop-blur rounded-xl p-4">
+                <div class="flex items-center gap-2 mb-2">
+                    <span class="text-2xl">💜</span>
+                    <span class="font-bold text-white">屈臣氏 Watsons</span>
+                </div>
+                <p class="text-white/90 text-sm">【VIP Day】逢星期一尊享92折優惠！銀聯付款再減</p>
+                <p class="text-white/70 text-xs mt-1">Facebook · 12分鐘前</p>
+            </div>
+            <div class="bg-white/10 backdrop-blur rounded-xl p-4">
+                <div class="flex items-center gap-2 mb-2">
+                    <span class="text-2xl">💙</span>
+                    <span class="font-bold text-white">百佳 PARKnSHOP</span>
+                </div>
+                <p class="text-white/90 text-sm">辣魷魚片「隱藏神級食法」— 先浸凍飲1秒變超脆！</p>
+                <p class="text-white/70 text-xs mt-1">Facebook · 19小時前</p>
+            </div>
+            <div class="bg-white/10 backdrop-blur rounded-xl p-4">
+                <div class="flex items-center gap-2 mb-2">
+                    <span class="text-2xl">💚</span>
+                    <span class="font-bold text-white">萬寧 Mannings</span>
+                </div>
+                <p class="text-white/90 text-sm">yuu 會員限定雙重賞！今個月 yuu day 優惠超豐富</p>
+                <p class="text-white/70 text-xs mt-1">Facebook · 1小時前</p>
+            </div>
+            <div class="bg-white/10 backdrop-blur rounded-xl p-4">
+                <div class="flex items-center gap-2 mb-2">
+                    <span class="text-2xl">🧡</span>
+                    <span class="font-bold text-white">7-Eleven</span>
+                </div>
+                <p class="text-white/90 text-sm">7-SELECT x 道地 烏龍茶系列登場！麻糬包/曲奇/布丁/巴斯克</p>
+                <p class="text-white/70 text-xs mt-1">Facebook · 7月29日</p>
+            </div>
+            <div class="bg-white/10 backdrop-blur rounded-xl p-4">
+                <div class="flex items-center gap-2 mb-2">
+                    <span class="text-2xl">🔴</span>
+                    <span class="font-bold text-white">DON DON DONKI</span>
+                </div>
+                <p class="text-white/90 text-sm">【7週年大創業祭】第二期！吞拿魚/肉眼火鍋片/提拉米蘇優惠</p>
+                <p class="text-white/70 text-xs mt-1">Facebook · 2天前</p>
+            </div>
+            <div class="bg-white/10 backdrop-blur rounded-xl p-4">
+                <div class="flex items-center gap-2 mb-2">
+                    <span class="text-2xl">🧡</span>
+                    <span class="font-bold text-white">Circle K</span>
+                </div>
+                <p class="text-white/90 text-sm">【5天狂減】維記鮮牛奶、卡士007益生菌乳酪飲品 限時優惠</p>
+                <p class="text-white/70 text-xs mt-1">Facebook · 35分鐘前</p>
+            </div>
+        </div>
+        <div class="mt-4 p-3 bg-yellow-500/20 rounded-lg border border-yellow-500/50">
+            <p class="text-yellow-200 text-sm">💡 <strong>O2O觀察：</strong>DON DON DONKI 7週年優惠力度大，注意百佳、屈臣氏、萬寧會員制競爭力。</p>
+        </div>
+    </section>
+    
+    <!-- SUMMARY CARDS -->
+    <section class="card mb-6 p-6">
+        <div class="flex items-center gap-3 mb-4">
+            <span class="text-2xl">📊</span>
+            <h2 class="text-xl font-bold">收集概覽</h2>
+        </div>
+        <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
+            <div class="bg-slate-800/50 rounded-xl p-4 text-center">
+                <div class="text-3xl font-bold text-blue-400">8</div>
+                <div class="text-sm text-slate-400">KAs覆蓋</div>
+            </div>
+            <div class="bg-slate-800/50 rounded-xl p-4 text-center">
+                <div class="text-3xl font-bold text-blue-500">18+</div>
+                <div class="text-sm text-slate-400">Facebook</div>
+            </div>
+            <div class="bg-slate-800/50 rounded-xl p-4 text-center">
+                <div class="text-3xl font-bold text-pink-400">11</div>
+                <div class="text-sm text-slate-400">Instagram</div>
+            </div>
+            <div class="bg-slate-800/50 rounded-xl p-4 text-center">
+                <div class="text-3xl font-bold text-slate-400">❌</div>
+                <div class="text-sm text-slate-400">Threads</div>
+            </div>
+            <div class="bg-slate-800/50 rounded-xl p-4 text-center">
+                <div class="text-3xl font-bold text-green-400">5</div>
+                <div class="text-sm text-slate-400">直接競爭</div>
+            </div>
+            <div class="bg-slate-800/50 rounded-xl p-4 text-center">
+                <div class="text-3xl font-bold text-orange-400">NEW</div>
+                <div class="text-sm text-slate-400">新加入</div>
+            </div>
+        </div>
+        <div class="mt-4 flex flex-wrap gap-2">
+            <span class="badge" style="background:#E60012;color:white">屈臣氏</span>
+            <span class="badge" style="background:#00A0DC;color:white">百佳</span>
+            <span class="badge" style="background:#FF6600;color:white">惠康</span>
+            <span class="badge" style="background:#00B14F;color:white">萬寧</span>
+            <span class="badge" style="background:#00A0DC;color:white">7-Eleven</span>
+            <span class="badge" style="background:#E60012;color:white">Circle K</span>
+            <span class="badge" style="background:#E60012;color:white">DON DON DONKI</span>
+            <span class="badge" style="background:#00A0DC;color:white">759阿信屋</span>
+        </div>
+    </section>
+    
+    <!-- KAs DETAIL SECTION -->
+    <section class="card mb-6">
+        <div class="module-header p-4 rounded-t-xl border-b border-slate-700">
+            <div class="flex items-center gap-3">
+                <span class="text-2xl">🏪</span>
+                <h2 class="text-xl font-bold">KAs 社交媒體詳情</h2>
+            </div>
+        </div>
+        <div class="p-6 space-y-6">
+            
+            <!-- 屈臣氏 -->
+            <div class="ka-card ka-watsons bg-slate-800/30 rounded-xl p-5">
+                <div class="flex items-center justify-between mb-4">
+                    <div class="flex items-center gap-3">
+                        <span class="text-3xl">💜</span>
+                        <div>
+                            <h3 class="text-lg font-bold">屈臣氏 Watsons</h3>
+                            <p class="text-slate-400 text-sm">@hkwatsons · 1,459萬粉絲</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-2">
+                        <span class="platform-fb text-white px-2 py-1 rounded text-xs">FB</span>
+                        <span class="platform-ig text-white px-2 py-1 rounded text-xs">IG</span>
+                    </div>
+                </div>
+                <div class="space-y-3">
+                    <div class="bg-red-500/10 border border-red-500/30 rounded-lg p-3">
+                        <div class="flex items-center gap-2 mb-1">
+                            <span class="text-red-400 text-sm">👑 VIP DAY</span>
+                            <span class="text-slate-400 text-xs">12分鐘前</span>
+                        </div>
+                        <p class="text-white font-medium">【屈臣氏VIP Day】逢星期一尊享92折優惠！銀聯付款再減高達HK$30</p>
+                        <p class="text-slate-400 text-xs mt-1">❤️ 1 like</p>
+                    </div>
+                    <div class="bg-slate-700/50 rounded-lg p-3">
+                        <div class="flex items-center gap-2 mb-1">
+                            <span class="text-blue-400 text-sm">185周年</span>
+                            <span class="text-slate-400 text-xs">6月22日</span>
+                        </div>
+                        <p class="text-white font-medium">屈臣氏185周年經典復刻店即將開幕！時光機回顧經典集體回憶</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 百佳 -->
+            <div class="ka-card ka-parknshop bg-slate-800/30 rounded-xl p-5">
+                <div class="flex items-center justify-between mb-4">
+                    <div class="flex items-center gap-3">
+                        <span class="text-3xl">💙</span>
+                        <div>
+                            <h3 class="text-lg font-bold">百佳 PARKnSHOP</h3>
+                            <p class="text-slate-400 text-sm">@hkparknshop · 35萬粉絲</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-2">
+                        <span class="platform-fb text-white px-2 py-1 rounded text-xs">FB</span>
+                        <span class="platform-ig text-white px-2 py-1 rounded text-xs">IG</span>
+                        <span class="badge match-direct">O2O直接競爭</span>
+                    </div>
+                </div>
+                <div class="space-y-3">
+                    <div class="bg-red-500/10 border border-red-500/30 rounded-lg p-3">
+                        <div class="flex items-center gap-2 mb-1">
+                            <span class="text-red-400 text-sm">🦑 隱藏食法</span>
+                            <span class="text-slate-400 text-xs">19小時前 · 21 likes</span>
+                        </div>
+                        <p class="text-white font-medium">辣魷魚片「隱藏神級食法」— 先浸凍飲口感1秒變超脆？！</p>
+                    </div>
+                    <div class="bg-slate-700/50 rounded-lg p-3">
+                        <div class="flex items-center gap-2 mb-1">
+                            <span class="text-orange-400 text-sm">🔥 百佳日</span>
+                            <span class="text-slate-400 text-xs">785 likes</span>
+                        </div>
+                        <p class="text-white font-medium">全線88折快閃預告⚡8月7-8日 VIP會員搶先賞</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 萬寧 -->
+            <div class="ka-card ka-mannings bg-slate-800/30 rounded-xl p-5">
+                <div class="flex items-center justify-between mb-4">
+                    <div class="flex items-center gap-3">
+                        <span class="text-3xl">💚</span>
+                        <div>
+                            <h3 class="text-lg font-bold">萬寧 Mannings</h3>
+                            <p class="text-slate-400 text-sm">@mannings_hk · 46萬粉絲</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-2">
+                        <span class="platform-fb text-white px-2 py-1 rounded text-xs">FB</span>
+                        <span class="badge match-direct">O2O直接競爭</span>
+                    </div>
+                </div>
+                <div class="space-y-3">
+                    <div class="bg-red-500/10 border border-red-500/30 rounded-lg p-3">
+                        <div class="flex items-center gap-2 mb-1">
+                            <span class="text-red-400 text-sm">🎁 yuu 會員</span>
+                            <span class="text-slate-400 text-xs">1小時前 · 87 likes</span>
+                        </div>
+                        <p class="text-white font-medium">【yuu 會員限定】雙重賞登場！今個月 yuu day 優惠超豐富</p>
+                    </div>
+                    <div class="bg-slate-700/50 rounded-lg p-3">
+                        <div class="flex items-center gap-2 mb-1">
+                            <span class="text-pink-400 text-sm">💜 185年</span>
+                            <span class="text-slate-400 text-xs">6月22日</span>
+                        </div>
+                        <p class="text-white font-medium">萬寧隆重宣告態度：#我認真 — 從不掉以輕心</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 7-Eleven -->
+            <div class="ka-card ka-7eleven bg-slate-800/30 rounded-xl p-5">
+                <div class="flex items-center justify-between mb-4">
+                    <div class="flex items-center gap-3">
+                        <span class="text-3xl">🧡</span>
+                        <div>
+                            <h3 class="text-lg font-bold">7-Eleven</h3>
+                            <p class="text-slate-400 text-sm">@7elevenhk · 70萬粉絲</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-2">
+                        <span class="platform-fb text-white px-2 py-1 rounded text-xs">FB</span>
+                        <span class="platform-ig text-white px-2 py-1 rounded text-xs">IG</span>
+                    </div>
+                </div>
+                <div class="space-y-3">
+                    <div class="bg-orange-500/10 border border-orange-500/30 rounded-lg p-3">
+                        <div class="flex items-center gap-2 mb-1">
+                            <span class="text-orange-400 text-sm">🍵 新聯乘</span>
+                            <span class="text-slate-400 text-xs">7月29日</span>
+                        </div>
+                        <p class="text-white font-medium">【7-SELECT x 道地 烏龍茶系列】$12-$28/件</p>
+                        <p class="text-slate-300 text-xs mt-1">麻糬包/曲奇/布丁/巴斯克芝士蛋糕</p>
+                    </div>
+                    <div class="bg-slate-700/50 rounded-lg p-3">
+                        <div class="flex items-center gap-2 mb-1">
+                            <span class="text-cyan-400 text-sm">🥭 7CAFÉ</span>
+                            <span class="text-slate-400 text-xs">7月22日</span>
+                        </div>
+                        <p class="text-white font-medium">【楊枝甘露冰沙】全新口味！台灣愛文芒+紅西柚 $25</p>
+                    </div>
+                    <div class="bg-slate-700/50 rounded-lg p-3">
+                        <div class="flex items-center gap-2 mb-1">
+                            <span class="text-yellow-400 text-sm">🍦 雪糕</span>
+                            <span class="text-slate-400 text-xs">13分鐘前</span>
+                        </div>
+                        <p class="text-white font-medium">【#著數之選】7仔雪糕雙重優惠震撼登場</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 惠康 -->
+            <div class="ka-card ka-wellcome bg-slate-800/30 rounded-xl p-5">
+                <div class="flex items-center justify-between mb-4">
+                    <div class="flex items-center gap-3">
+                        <span class="text-3xl">🧊</span>
+                        <div>
+                            <h3 class="text-lg font-bold">惠康 Wellcome</h3>
+                            <p class="text-slate-400 text-sm">@hkwellcome · 36萬粉絲</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-2">
+                        <span class="platform-fb text-white px-2 py-1 rounded text-xs">FB</span>
+                        <span class="badge match-gap">GAP分析</span>
+                    </div>
+                </div>
+                <div class="space-y-3">
+                    <div class="bg-orange-500/10 border border-orange-500/30 rounded-lg p-3">
+                        <div class="flex items-center gap-2 mb-1">
+                            <span class="text-orange-400 text-sm">🆕 今期堅係正</span>
+                            <span class="text-slate-400 text-xs">17分鐘前</span>
+                        </div>
+                        <p class="text-white font-medium">【今期堅係正！】豆腐花、灣仔碼頭水餃、芝司樂優惠</p>
+                    </div>
+                    <div class="bg-slate-700/50 rounded-lg p-3">
+                        <div class="flex items-center gap-2 mb-1">
+                            <span class="text-cyan-400 text-sm">🧊 凍食</span>
+                            <span class="text-slate-400 text-xs">❤️ 24 likes</span>
+                        </div>
+                        <p class="text-white font-medium">【冰個夠我Cool】雪糕優惠</p>
+                    </div>
+                </div>
+                <div class="mt-3 p-2 bg-yellow-500/10 rounded-lg border border-yellow-500/30">
+                    <p class="text-yellow-200 text-xs">💡 <strong>O2O Gap：</strong>惠康凍肉/海鮮優惠策略與O2O 直接競爭</p>
+                </div>
+            </div>
+            
+            <!-- DON DON DONKI -->
+            <div class="ka-card ka-dondonki bg-slate-800/30 rounded-xl p-5">
+                <div class="flex items-center justify-between mb-4">
+                    <div class="flex items-center gap-3">
+                        <span class="text-3xl">🔴</span>
+                        <div>
+                            <h3 class="text-lg font-bold">DON DON DONKI</h3>
+                            <p class="text-slate-400 text-sm">@dondonhongkong · 842粉絲</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-2">
+                        <span class="platform-fb text-white px-2 py-1 rounded text-xs">FB</span>
+                    </div>
+                </div>
+                <div class="space-y-3">
+                    <div class="bg-red-500/10 border border-red-500/30 rounded-lg p-3">
+                        <div class="flex items-center gap-2 mb-1">
+                            <span class="text-red-400 text-sm">🎊 7週年大創業祭</span>
+                            <span class="text-slate-400 text-xs">2天前 · 16 likes</span>
+                        </div>
+                        <p class="text-white font-medium">【DONKI 7 週年大創業祭！】第二期強勢登場</p>
+                        <p class="text-slate-300 text-xs mt-1">吞拿魚赤蝦+$125.9、珍寶串燒6件$54.9、日本和牛骨扒$68.9/100g</p>
+                    </div>
+                    <div class="bg-slate-700/50 rounded-lg p-3">
+                        <div class="flex items-center gap-2 mb-1">
+                            <span class="text-pink-400 text-sm">🎁 抽獎活動</span>
+                            <span class="text-slate-400 text-xs">2023年3月</span>
+                        </div>
+                        <p class="text-white font-medium">DONKI x ANA 日本へGO!!! 大抽獎 — 雙人來回日本機票</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Circle K -->
+            <div class="ka-card ka-circlek bg-slate-800/30 rounded-xl p-5">
+                <div class="flex items-center justify-between mb-4">
+                    <div class="flex items-center gap-3">
+                        <span class="text-3xl">🧡</span>
+                        <div>
+                            <h3 class="text-lg font-bold">Circle K</h3>
+                            <p class="text-slate-400 text-sm">@circlek_hk · 40萬粉絲</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-2">
+                        <span class="platform-fb text-white px-2 py-1 rounded text-xs">FB</span>
+                        <span class="platform-ig text-white px-2 py-1 rounded text-xs">IG</span>
+                    </div>
+                </div>
+                <div class="space-y-3">
+                    <div class="bg-red-500/10 border border-red-500/30 rounded-lg p-3">
+                        <div class="flex items-center gap-2 mb-1">
+                            <span class="text-red-400 text-sm">🔥 5天狂減</span>
+                            <span class="text-slate-400 text-xs">35分鐘前</span>
+                        </div>
+                        <p class="text-white font-medium">【5天狂減】維記鮮牛奶／卡士007益生菌乳酪飲品 限時優惠</p>
+                    </div>
+                    <div class="bg-slate-700/50 rounded-lg p-3">
+                        <div class="flex items-center gap-2 mb-1">
+                            <span class="text-blue-400 text-sm">👁️ 奧比斯</span>
+                            <span class="text-slate-400 text-xs">1小時前 · 4 likes</span>
+                        </div>
+                        <p class="text-white font-medium">【學會感謝雙眼支持#奧比斯 世界視覺日】</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 759阿信屋 -->
+            <div class="ka-card ka-759 bg-slate-800/30 rounded-xl p-5">
+                <div class="flex items-center justify-between mb-4">
+                    <div class="flex items-center gap-3">
+                        <span class="text-3xl">🏪</span>
+                        <div>
+                            <h3 class="text-lg font-bold">759阿信屋</h3>
+                            <p class="text-slate-400 text-sm">@759store · 39萬粉絲</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-2">
+                        <span class="platform-fb text-white px-2 py-1 rounded text-xs">FB</span>
+                        <span class="platform-ig text-white px-2 py-1 rounded text-xs">IG</span>
+                    </div>
+                </div>
+                <div class="bg-slate-700/50 rounded-lg p-4">
+                    <p class="text-slate-400 text-sm">759阿信屋 Facebook 頁面需要登入才能查看完整內容</p>
+                    <p class="text-slate-500 text-xs mt-1">建議：直接在 Facebook 搜索 @759store 查看最新帖子</p>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+    
+    <!-- COMPETITIVE INTELLIGENCE -->
+    <section class="card mb-6 p-6">
+        <div class="flex items-center gap-3 mb-4">
+            <span class="text-2xl">🧠</span>
+            <h2 class="text-xl font-bold">競爭情報分析</h2>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="bg-slate-800/50 rounded-xl p-4">
+                <h3 class="font-bold text-orange-400 mb-3">🆕 8月新趨勢</h3>
+                <ul class="text-slate-300 text-sm space-y-2">
+                    <li>• <strong>DON DON DONKI：</strong>7週年大創業祭，優惠涵蓋吞拿魚、和牛、布丁等</li>
+                    <li>• <strong>7-Eleven x 道地：</strong>烏龍茶聯乘系列，$12-$28，烘焙+甜品</li>
+                    <li>• <strong>Circle K：</strong>維記鮮牛奶/卡士007日用品優惠</li>
+                    <li>• <strong>屈臣氏：</strong>VIP Day 逢一92折，常態化優惠</li>
+                    <li>• <strong>百佳：</strong>辣魷魚片隱藏食法，先浸凍飲新食法</li>
+                </ul>
+            </div>
+            <div class="bg-slate-800/50 rounded-xl p-4">
+                <h3 class="font-bold text-green-400 mb-3">💡 O2O 觀察</h3>
+                <ul class="text-slate-300 text-sm space-y-2">
+                    <li>• 百佳、屈臣氏、萬寧均有會員制（VIP/Diamond/yuu）</li>
+                    <li>• DON DON DONKI 7週年促銷力度大，搶佔零食/日用品市場</li>
+                    <li>• 7-Eleven 主打限定聯乘新品，話題性強</li>
+                    <li>• Circle K 鮮奶/乳酪優惠，搶佔早餐/健康市場</li>
+                    <li>• 惠康、凍肉/海鮮為主，與O2O 直接競爭</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    
+    <!-- THREADS STATUS -->
+    <section class="card mb-6 p-6">
+        <div class="flex items-center gap-3 mb-4">
+            <span class="text-2xl">📱</span>
+            <h2 class="text-xl font-bold">Threads 狀態</h2>
+        </div>
+        <div class="bg-orange-500/10 border border-orange-500/30 rounded-xl p-4">
+            <div class="flex items-center gap-3 mb-3">
+                <span class="text-2xl">⚠️</span>
+                <p class="text-orange-300 font-medium">Threads 需要 username + password 直接登入</p>
+            </div>
+            <p class="text-slate-300 text-sm">原因：你提供的 Threads cookies 入面，部分 key tokens（ig_did, ps_l, ps_n）係 httpOnly，無法透過 JavaScript 注入。Session ID alone is not enough for authentication.</p>
+            <p class="text-slate-300 text-sm mt-2">解決方法：需要你喺瀏覽器直接輸入 username 和 password 登入 Threads</p>
+        </div>
+    </section>
+    
+    <!-- GITHUB PAGES INFO -->
+    <section class="card mb-6 p-6">
+        <div class="flex items-center gap-3 mb-4">
+            <span class="text-2xl">🔗</span>
+            <h2 class="text-xl font-bold">同行分享連結</h2>
+        </div>
+        <div class="bg-green-500/10 border border-green-500/30 rounded-xl p-4">
+            <p class="text-green-300 font-medium mb-2">✅ GitHub Pages 已啟用！你可以分享呢個連結俾同事：</p>
+            <a href="https://hfng0523.github.io/scout-reports/" target="_blank" class="text-blue-400 underline break-all">https://hfng0523.github.io/scout-reports/</a>
+            <p class="text-slate-400 text-xs mt-2">任何人都可以打開呢個連結睇到最新既報告</p>
+        </div>
+    </section>
+    
+    <footer class="text-center py-6 text-slate-500 text-sm">
+        <p>🤖 Scout Collector v2.2 · KAs Social Listening</p>
+        <p class="mt-1">收集時間：2026年8月10日 HKT</p>
+        <p class="mt-1">📂 GitHub: hfng0523/scout-reports</p>
+        <p class="mt-1">🔗 Live URL: https://hfng0523.github.io/scout-reports/</p>
+        <p class="mt-1">下次自動更新：明日 09:00 HKT</p>
+    </footer>
+    
+</body>
+</html>

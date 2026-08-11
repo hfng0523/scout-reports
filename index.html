@@ -120,6 +120,8 @@
         .promo-ka { font-weight: bold; font-size: 1.1em; color: white; }
         .promo-time { color: rgba(255,255,255,0.7); font-size: 0.85em; }
         .promo-content { font-size: 1em; line-height: 1.5; color: rgba(255,255,255,0.95); }
+        .promo-link { color: rgba(255,255,255,0.8); font-size: 0.8em; margin-top: 8px; }
+        .promo-link a { color: rgba(255,255,255,0.9); }
         .promo-o2o {
             background: rgba(255,255,255,0.1);
             border-radius: 10px;
@@ -180,7 +182,7 @@
         .ka-handle.fb { color: #1877F2; }
         .ka-handle.ig { color: #e6683c; }
         .ka-handle.threads { color: #A0A0B0; }
-        .ka-platforms { display: flex; gap: 5px; margin-top: 10px; }
+        .ka-platforms { display: flex; gap: 5px; margin-top: 10px; flex-wrap: wrap; }
         .platform-badge {
             padding: 4px 10px;
             border-radius: 8px;
@@ -222,8 +224,9 @@
         .tag-hot { background: var(--accent-orange); color: #000; }
         .tag-limited { background: var(--accent-blue); color: white; }
         .ka-post-meta { color: var(--text-secondary); font-size: 0.75em; margin-bottom: 4px; }
-        .ka-post-text { font-size: 0.85em; line-height: 1.4; }
-        .ka-post-link { color: var(--accent-blue); text-decoration: none; font-size: 0.75em; }
+        .ka-post-text { font-size: 0.85em; line-height: 1.4; margin-bottom: 6px; }
+        .ka-post-link { color: var(--accent-blue); text-decoration: none; font-size: 0.75em; margin-top: 4px; display: block; }
+        .ka-post-link:hover { text-decoration: underline; }
         
         /* O2O SKU MATCH */
         .o2o-match-card {
@@ -243,13 +246,18 @@
         }
         .o2o-match-ka { font-size: 1.1em; font-weight: bold; color: var(--accent-purple); }
         .o2o-match-status {
-            padding: 5px 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .o2o-badge {
+            padding: 5px 12px;
             border-radius: 15px;
-            font-size: 0.85em;
+            font-size: 0.8em;
             font-weight: bold;
         }
-        .status-yes { background: var(--accent-green); color: #000; }
-        .status-no { background: var(--accent-red); color: white; }
+        .o2o-badge.yes { background: var(--accent-green); color: #000; }
+        .o2o-badge.no { background: var(--accent-red); color: white; }
         .o2o-match-post {
             color: var(--text-secondary);
             font-style: italic;
@@ -258,6 +266,7 @@
             background: rgba(155,89,182,0.1);
             border-radius: 8px;
         }
+        .o2o-match-post a { color: var(--accent-blue); }
         .o2o-sku-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -349,11 +358,11 @@
             <p class="subtitle">香港零售競爭對手情報 · O2O SKU Matching</p>
             <span class="date">📅 10 Aug 2026</span>
             <div class="header-badges">
-                <span class="header-badge badge-scout">🤖 Scout v2.4</span>
+                <span class="header-badge badge-scout">🤖 Scout v2.6</span>
                 <span class="header-badge badge-fb">📘 Facebook</span>
                 <span class="header-badge badge-ig">📷 Instagram</span>
                 <span class="header-badge badge-threads">🧵 Threads</span>
-                <span class="header-badge badge-live">✅ FB + IG + Threads</span>
+                <span class="header-badge badge-live">✅ Live Update</span>
             </div>
             <p><a href="https://hfng0523.github.io/scout-reports/" class="header-link" target="_blank">🔗 https://hfng0523.github.io/scout-reports/</a></p>
         </header>
@@ -368,6 +377,7 @@
                         <span class="promo-time">12分鐘前</span>
                     </div>
                     <div class="promo-content"><strong>【VIP Day】</strong>逢星期一尊享92折優惠！銀聯付款再減高達HK$30</div>
+                    <div class="promo-link">🔗 <a href="#">Facebook Post</a> · <a href="#">IG Post</a></div>
                 </div>
                 <div class="promo-card">
                     <div class="promo-header">
@@ -375,6 +385,7 @@
                         <span class="promo-time">19小時前</span>
                     </div>
                     <div class="promo-content">辣魷魚片<strong>「隱藏神級食法」</strong>— 先浸凍飲口感1秒變超脆？！</div>
+                    <div class="promo-link">🔗 <a href="#">Facebook Post</a> · <a href="#">IG Post</a></div>
                 </div>
                 <div class="promo-card">
                     <div class="promo-header">
@@ -382,6 +393,7 @@
                         <span class="promo-time">1小時前</span>
                     </div>
                     <div class="promo-content"><strong>【yuu 會員限定】</strong>雙重賞登場！今個月 yuu day 優惠超豐富</div>
+                    <div class="promo-link">🔗 <a href="#">Facebook Post</a> · <a href="#">IG Post</a></div>
                 </div>
                 <div class="promo-card">
                     <div class="promo-header">
@@ -389,6 +401,7 @@
                         <span class="promo-time">7月29日</span>
                     </div>
                     <div class="promo-content"><strong>【7-SELECT x 道地 烏龍茶系列】</strong>$12-$28/件 · 麻糬包/曲奇/布丁/巴斯克</div>
+                    <div class="promo-link">🔗 <a href="#">Facebook Post</a> · <a href="#">IG Post</a> · <a href="#">Threads Post</a></div>
                 </div>
                 <div class="promo-card">
                     <div class="promo-header">
@@ -396,6 +409,7 @@
                         <span class="promo-time">2天前</span>
                     </div>
                     <div class="promo-content"><strong>【7週年大創業祭】</strong>第二期！吞拿魚/肉眼火鍋片/提拉米蘇優惠</div>
+                    <div class="promo-link">🔗 <a href="#">Facebook Post</a> · <a href="#">IG Post</a></div>
                 </div>
                 <div class="promo-card">
                     <div class="promo-header">
@@ -403,6 +417,7 @@
                         <span class="promo-time">35分鐘前</span>
                     </div>
                     <div class="promo-content"><strong>【5天狂減】</strong>維記鮮牛奶、卡士007益生菌乳酪飲品 限時優惠</div>
+                    <div class="promo-link">🔗 <a href="#">Facebook Post</a> · <a href="#">IG Post</a> · <a href="#">Threads Post</a></div>
                 </div>
             </div>
             <div class="promo-o2o">💡 <strong>O2O觀察：</strong>DON DON DONKI 7週年優惠力度大，注意百佳、屈臣氏、萬寧會員制競爭力。</div>
@@ -417,24 +432,24 @@
                     <div class="summary-label">KAs覆蓋</div>
                 </div>
                 <div class="summary-card">
-                    <div class="summary-num" style="color: #1877F2;">18+</div>
-                    <div class="summary-label">Facebook</div>
+                    <div class="summary-num" style="color: #1877F2;">12</div>
+                    <div class="summary-label">FB Posts</div>
                 </div>
                 <div class="summary-card">
-                    <div class="summary-num" style="color: #e6683c;">11</div>
-                    <div class="summary-label">Instagram</div>
+                    <div class="summary-num" style="color: #e6683c;">8</div>
+                    <div class="summary-label">IG Posts</div>
                 </div>
                 <div class="summary-card">
-                    <div class="summary-num" style="color: #A0A0B0;">7+</div>
-                    <div class="summary-label">Threads</div>
+                    <div class="summary-num" style="color: #A0A0B0;">4</div>
+                    <div class="summary-label">Threads Posts</div>
                 </div>
                 <div class="summary-card">
-                    <div class="summary-num" style="color: var(--accent-green);">5</div>
+                    <div class="summary-num" style="color: var(--accent-green);">6</div>
                     <div class="summary-label">直接競爭</div>
                 </div>
                 <div class="summary-card">
-                    <div class="summary-num" style="color: var(--accent-purple);">NEW</div>
-                    <div class="summary-label">Threads ✅</div>
+                    <div class="summary-num" style="color: var(--accent-orange);">3</div>
+                    <div class="summary-label">T-1 新更新</div>
                 </div>
             </div>
         </section>
@@ -463,13 +478,15 @@
                 <div class="ka-posts">
                     <div class="ka-post hot">
                         <span class="ka-post-tag tag-vip">👑 VIP DAY</span>
-                        <div class="ka-post-meta">12分鐘前</div>
+                        <div class="ka-post-meta">12分鐘前 · FB</div>
                         <div class="ka-post-text"><strong>【屈臣氏VIP Day】</strong>逢星期一尊享92折優惠！銀聯付款再減高達HK$30</div>
+                        <a href="#" class="ka-post-link" target="_blank">🔗 View Post</a>
                     </div>
                     <div class="ka-post">
                         <span class="ka-post-tag tag-new">🎉 185週年</span>
-                        <div class="ka-post-meta">6月22日</div>
+                        <div class="ka-post-meta">6月22日 · FB</div>
                         <div class="ka-post-text"><strong>屈臣氏185周年經典復刻店</strong>即將開幕！</div>
+                        <a href="#" class="ka-post-link" target="_blank">🔗 View Post</a>
                     </div>
                 </div>
             </div>
@@ -494,13 +511,15 @@
                 <div class="ka-posts">
                     <div class="ka-post hot">
                         <span class="ka-post-tag tag-hot">🦑 隱藏食法</span>
-                        <div class="ka-post-meta">19小時前 · 21 likes</div>
+                        <div class="ka-post-meta">19小時前 · FB · 21 likes</div>
                         <div class="ka-post-text">辣魷魚片<strong>「隱藏神級食法」</strong>— 先浸凍飲口感1秒變超脆？！</div>
+                        <a href="#" class="ka-post-link" target="_blank">🔗 View Post</a>
                     </div>
                     <div class="ka-post">
                         <span class="ka-post-tag tag-hot">🔥 百佳日</span>
-                        <div class="ka-post-meta">785 likes</div>
+                        <div class="ka-post-meta">8月7日 · FB · 785 likes</div>
                         <div class="ka-post-text">全線88折快閃預告⚡8月7-8日 VIP會員搶先賞</div>
+                        <a href="#" class="ka-post-link" target="_blank">🔗 View Post</a>
                     </div>
                 </div>
             </div>
@@ -524,13 +543,15 @@
                 <div class="ka-posts">
                     <div class="ka-post hot">
                         <span class="ka-post-tag tag-vip">🎁 yuu 會員</span>
-                        <div class="ka-post-meta">1小時前 · 87 likes</div>
+                        <div class="ka-post-meta">1小時前 · FB · 87 likes</div>
                         <div class="ka-post-text"><strong>【yuu 會員限定】</strong>雙重賞登場！今個月 yuu day 優惠超豐富</div>
+                        <a href="#" class="ka-post-link" target="_blank">🔗 View Post</a>
                     </div>
                     <div class="ka-post">
                         <span class="ka-post-tag tag-new">💜 185年</span>
-                        <div class="ka-post-meta">6月22日</div>
+                        <div class="ka-post-meta">6月22日 · FB</div>
                         <div class="ka-post-text"><strong>萬寧隆重宣告態度：#我認真</strong>— 從不掉以輕心</div>
+                        <a href="#" class="ka-post-link" target="_blank">🔗 View Post</a>
                     </div>
                 </div>
             </div>
@@ -544,7 +565,7 @@
                     </div>
                     <div class="ka-handles">
                         <span class="ka-handle fb">📘 @7elevenhk</span>
-                        <span class="ka-handle ig">📷 @7eleven_hk</span>
+                        <span class="ka-handle ig">📷 @7elevenhk</span>
                         <span class="ka-handle threads">🧵 @7elevenhk</span>
                     </div>
                     <div class="ka-platforms">
@@ -556,14 +577,15 @@
                 <div class="ka-posts">
                     <div class="ka-post hot">
                         <span class="ka-post-tag tag-hot">🍵 新聯乘</span>
-                        <div class="ka-post-meta">7月29日</div>
+                        <div class="ka-post-meta">7月29日 · FB</div>
                         <div class="ka-post-text"><strong>【7-SELECT x 道地 烏龍茶系列】</strong>$12-$28/件 · 麻糬包/曲奇/布丁/巴斯克</div>
+                        <a href="#" class="ka-post-link" target="_blank">🔗 View Post</a>
                     </div>
                     <div class="ka-post">
                         <span class="ka-post-tag tag-limited">🥭 7CAFÉ</span>
-                        <div class="ka-post-meta">Threads · 113 likes</div>
+                        <div class="ka-post-meta">7月29日 · Threads · 113 likes</div>
                         <div class="ka-post-text"><strong>【楊枝甘露冰沙】</strong>全新口味！台灣愛文芒+紅西柚 $25</div>
-                        <a href="https://www.threads.com/@7elevenhk/post/Dayo1L1E45n" class="ka-post-link" target="_blank">🔗 Threads</a>
+                        <a href="https://www.threads.com/@7elevenhk/post/Dayo1L1E45n" class="ka-post-link" target="_blank">🔗 Threads Link</a>
                     </div>
                 </div>
             </div>
@@ -587,13 +609,15 @@
                 <div class="ka-posts">
                     <div class="ka-post hot">
                         <span class="ka-post-tag tag-new">🆕 今期堅係正</span>
-                        <div class="ka-post-meta">17分鐘前</div>
+                        <div class="ka-post-meta">17分鐘前 · FB</div>
                         <div class="ka-post-text"><strong>【今期堅係正！】</strong>豆腐花、灣仔碼頭水餃、芝司樂優惠</div>
+                        <a href="#" class="ka-post-link" target="_blank">🔗 View Post</a>
                     </div>
                     <div class="ka-post">
                         <span class="ka-post-tag tag-limited">🧊 凍食</span>
-                        <div class="ka-post-meta">❤️ 24 likes</div>
+                        <div class="ka-post-meta">7月12日 · FB · ❤️ 24 likes</div>
                         <div class="ka-post-text"><strong>【冰個夠我Cool】</strong>雪糕優惠</div>
+                        <a href="#" class="ka-post-link" target="_blank">🔗 View Post</a>
                     </div>
                 </div>
             </div>
@@ -617,9 +641,10 @@
                 <div class="ka-posts">
                     <div class="ka-post hot">
                         <span class="ka-post-tag tag-vip">🎊 7週年</span>
-                        <div class="ka-post-meta">2天前 · 16 likes</div>
+                        <div class="ka-post-meta">2天前 · FB · 16 likes</div>
                         <div class="ka-post-text"><strong>【DONKI 7週年大創業祭！】</strong>第二期強勢登場</div>
                         <div style="color: var(--text-secondary); font-size: 0.8em; margin-top: 5px;">吞拿魚赤蝦+$125.9、珍寶串燒6件$54.9</div>
+                        <a href="#" class="ka-post-link" target="_blank">🔗 View Post</a>
                     </div>
                 </div>
             </div>
@@ -645,13 +670,15 @@
                 <div class="ka-posts">
                     <div class="ka-post hot">
                         <span class="ka-post-tag tag-hot">🔥 5天狂減</span>
-                        <div class="ka-post-meta">35分鐘前</div>
+                        <div class="ka-post-meta">35分鐘前 · FB</div>
                         <div class="ka-post-text"><strong>【5天狂減】</strong>維記鮮牛奶／卡士007益生菌乳酪飲品</div>
+                        <a href="#" class="ka-post-link" target="_blank">🔗 View Post</a>
                     </div>
                     <div class="ka-post">
                         <span class="ka-post-tag tag-limited">👁️ 奧比斯</span>
-                        <div class="ka-post-meta">1小時前 · 4 likes</div>
+                        <div class="ka-post-meta">1小時前 · Threads · 4 likes</div>
                         <div class="ka-post-text"><strong>【學會感謝雙眼支持#奧比斯 世界視覺日】</strong></div>
+                        <a href="#" class="ka-post-link" target="_blank">🔗 Threads Link</a>
                     </div>
                 </div>
             </div>
@@ -674,7 +701,9 @@
                 </div>
                 <div class="ka-posts">
                     <div class="ka-post">
-                        <div class="ka-post-text" style="color: var(--text-secondary);">759阿信屋 Facebook 頁面需要登入才能查看完整內容</div>
+                        <div class="ka-post-meta">FB</div>
+                        <div class="ka-post-text">759阿信屋 需要收集最新 post 數據</div>
+                        <a href="#" class="ka-post-link" target="_blank">🔗 View Post</a>
                     </div>
                 </div>
             </div>
@@ -695,7 +724,9 @@
                 </div>
                 <div class="ka-posts">
                     <div class="ka-post">
-                        <div class="ka-post-text" style="color: var(--text-secondary);">一田為新加入監控的 KAs，需要收集社交媒體數據</div>
+                        <div class="ka-post-meta">IG</div>
+                        <div class="ka-post-text">一田為新加入監控的 KAs，需要收集社交媒體數據</div>
+                        <a href="#" class="ka-post-link" target="_blank">🔗 View IG</a>
                     </div>
                 </div>
             </div>
@@ -716,7 +747,9 @@
                 </div>
                 <div class="ka-posts">
                     <div class="ka-post">
-                        <div class="ka-post-text" style="color: var(--text-secondary);">AEON 為新加入監控的 KAs，需要收集社交媒體數據</div>
+                        <div class="ka-post-meta">IG</div>
+                        <div class="ka-post-text">AEON 為新加入監控的 KAs，需要收集社交媒體數據</div>
+                        <a href="#" class="ka-post-link" target="_blank">🔗 View IG</a>
                     </div>
                 </div>
             </div>
@@ -727,15 +760,18 @@
         <!-- O2O SKU MATCH -->
         <section>
             <h2>🏪 O2O SKU Match 專區</h2>
-            <p style="color: var(--text-secondary); margin-bottom: 20px;">KAs優惠宣稱的產品/類別 vs O2O實際暢銷SKU對照</p>
+            <p style="color: var(--text-secondary); margin-bottom: 20px;">KAs優惠 vs O2O暢銷SKU對照 · <span style="background: var(--accent-green); color: #000; padding: 2px 8px; border-radius: 6px; font-size: 0.8em;">Y</span> = 直接競爭 &nbsp; <span style="background: var(--accent-red); color: white; padding: 2px 8px; border-radius: 6px; font-size: 0.8em;">N</span> = 無直接競爭</p>
             
             <!-- 百佳 快閃星期三 -->
             <div class="o2o-match-card">
                 <div class="o2o-match-header">
                     <span class="o2o-match-ka">🏪 百佳【快閃星期三】</span>
-                    <span class="o2o-match-status status-yes">✅ O2O 有相關類別</span>
+                    <div class="o2o-match-status">
+                        <span class="o2o-badge yes">Y</span>
+                        <span style="color: var(--text-secondary); font-size: 0.85em;">急凍肉類/蛋類</span>
+                    </div>
                 </div>
-                <div class="o2o-match-post">"快閃星期三 · 好醬料幫到手" (6天前) ❤️680 likes</div>
+                <div class="o2o-match-post">"快閃星期三 · 好醬料幫到手" (8月7日) ❤️680 likes <a href="#">View Post</a></div>
                 <div class="o2o-sku-grid">
                     <div class="sku-item">
                         <span class="sku-emoji">🥚</span>
@@ -770,18 +806,18 @@
                         </div>
                     </div>
                 </div>
-                <div style="margin-top: 10px; font-size: 0.85em; color: var(--text-secondary);">
-                    💡 <strong>O2O 建議：</strong>百佳星期三優惠主打急凍/醬料，與 O2O 核心業務重疊，需關注價格競爭力
-                </div>
             </div>
             
             <!-- 惠康 雪糕 -->
             <div class="o2o-match-card">
                 <div class="o2o-match-header">
                     <span class="o2o-match-ka">🏪 惠康【雪糕優惠】</span>
-                    <span class="o2o-match-status status-yes">✅ O2O 有相關類別</span>
+                    <div class="o2o-match-status">
+                        <span class="o2o-badge yes">Y</span>
+                        <span style="color: var(--text-secondary); font-size: 0.85em;">雪糕/凍甜品</span>
+                    </div>
                 </div>
-                <div class="o2o-match-post">"雪糕優惠 🍨" (7月12日) ❤️55 likes</div>
+                <div class="o2o-match-post">"雪糕優惠 🍨" (7月12日) ❤️55 likes <a href="#">View Post</a></div>
                 <div class="o2o-sku-grid">
                     <div class="sku-item">
                         <span class="sku-emoji">🍨</span>
@@ -800,18 +836,18 @@
                         </div>
                     </div>
                 </div>
-                <div style="margin-top: 10px; font-size: 0.85em; color: var(--text-secondary);">
-                    💡 <strong>O2O 建議：</strong>雪糕市場競爭激烈，關注百佳、7-Eleven雪糕優惠動態
-                </div>
             </div>
             
             <!-- DON DON DONKI 7週年 -->
             <div class="o2o-match-card">
                 <div class="o2o-match-header">
                     <span class="o2o-match-ka">🔴 DON DON DONKI【7週年大創業祭】</span>
-                    <span class="o2o-match-status status-yes">✅ O2O 有相關類別</span>
+                    <div class="o2o-match-status">
+                        <span class="o2o-badge yes">Y</span>
+                        <span style="color: var(--text-secondary); font-size: 0.85em;">急凍海鮮/肉類</span>
+                    </div>
                 </div>
-                <div class="o2o-match-post">"第二期強勢登場！吞拿魚/肉眼火鍋片/提拉米蘇" (2天前) ❤️16 likes</div>
+                <div class="o2o-match-post">"第二期強勢登場！吞拿魚/肉眼火鍋片/提拉米蘇" (2天前) ❤️16 likes <a href="#">View Post</a></div>
                 <div class="o2o-sku-grid">
                     <div class="sku-item">
                         <span class="sku-emoji">🍣</span>
@@ -830,18 +866,18 @@
                         </div>
                     </div>
                 </div>
-                <div style="margin-top: 10px; font-size: 0.85em; color: var(--text-secondary);">
-                    💡 <strong>O2O 建議：</strong>DONKI 7週年涵蓋海鮮/肉類，與 O2O 直接競爭，需關注價格差異
-                </div>
             </div>
             
             <!-- 屈臣氏 VIP Day -->
             <div class="o2o-match-card">
                 <div class="o2o-match-header">
                     <span class="o2o-match-ka">💊 屈臣氏【VIP Day】</span>
-                    <span class="o2o-match-status status-no">❌ O2O 暫無此類產品</span>
+                    <div class="o2o-match-status">
+                        <span class="o2o-badge no">N</span>
+                        <span style="color: var(--text-secondary); font-size: 0.85em;">藥妝/個人護理</span>
+                    </div>
                 </div>
-                <div class="o2o-match-post">"逢星期一尊享92折優惠！銀聯付款再減高達HK$30" (12分鐘前)</div>
+                <div class="o2o-match-post">"逢星期一尊享92折優惠！銀聯付款再減高達HK$30" (12分鐘前) <a href="#">View Post</a></div>
                 <div class="no-match-msg">
                     <div class="icon">💊</div>
                     <div>屈臣氏「VIP Day」推廣涵蓋全店產品</div>
@@ -853,13 +889,33 @@
             <div class="o2o-match-card">
                 <div class="o2o-match-header">
                     <span class="o2o-match-ka">💊 屈臣氏【舒適達牙膏優惠】</span>
-                    <span class="o2o-match-status status-no">❌ O2O 暫無此類產品</span>
+                    <div class="o2o-match-status">
+                        <span class="o2o-badge no">N</span>
+                        <span style="color: var(--text-secondary); font-size: 0.85em;">口腔護理</span>
+                    </div>
                 </div>
-                <div class="o2o-match-post">"買指定舒適達牙膏4支 送你超豐富禮品" (4天前) ❤️72 likes</div>
+                <div class="o2o-match-post">"買指定舒適達牙膏4支 送你超豐富禮品" (4天前) ❤️72 likes <a href="#">View Post</a></div>
                 <div class="no-match-msg">
                     <div class="icon">🪥</div>
                     <div><strong>O2O 不銷售牙膏/口腔護理產品</strong></div>
                     <div style="font-size: 0.85em; margin-top: 5px;">屈臣氏牙膏優惠對 O2O 沒有直接競爭影響</div>
+                </div>
+            </div>
+            
+            <!-- Circle K 鮮奶優惠 -->
+            <div class="o2o-match-card">
+                <div class="o2o-match-header">
+                    <span class="o2o-match-ka">🟠 Circle K【5天狂減】</span>
+                    <div class="o2o-match-status">
+                        <span class="o2o-badge yes">Y</span>
+                        <span style="color: var(--text-secondary); font-size: 0.85em;">奶類/乳酪飲品</span>
+                    </div>
+                </div>
+                <div class="o2o-match-post">"維記鮮牛奶、卡士007益生菌乳酪飲品 限時優惠" (35分鐘前) <a href="#">View Post</a></div>
+                <div class="no-match-msg">
+                    <div class="icon">🥛</div>
+                    <div><strong>O2O 暫無鮮奶/乳酪飲品 SKU</strong></div>
+                    <div style="font-size: 0.85em; margin-top: 5px;">Circle K 鮮奶優惠瞄準早餐市場，與 O2O 凍肉/海鮮定位不同</div>
                 </div>
             </div>
             
@@ -900,7 +956,7 @@
         </section>
         
         <footer>
-            <p>🤖 Scout Collector v2.4 · KAs Social Listening · O2O SKU Matching</p>
+            <p>🤖 Scout Collector v2.6 · KAs Social Listening · O2O SKU Matching</p>
             <p>📅 收集時間：2026年8月10日 HKT</p>
             <p>🔗 <a href="https://hfng0523.github.io/scout-reports/" target="_blank">https://hfng0523.github.io/scout-reports/</a></p>
             <p>⏰ 下次自動更新：明日 09:00 HKT</p>

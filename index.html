@@ -60,6 +60,7 @@
         
         .highlight-item.hot { background: var(--accent-red); color: #000; }
         .highlight-item.new { background: var(--accent-green); color: #000; }
+        .highlight-item.expired { background: rgba(255,255,255,0.1); color: var(--text-secondary); text-decoration: line-through; }
         
         .overview {
             display: grid;
@@ -90,7 +91,7 @@
         
         .ka-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
             gap: 20px;
         }
         
@@ -103,13 +104,15 @@
         }
         
         .ka-card.hot { border-left-color: var(--accent-red); }
-        .ka-card.promo { border-left-color: var(--accent-yellow); }
+        .ka-card.expired { border-left-color: #666; opacity: 0.7; }
         
         .ka-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
             margin-bottom: 15px;
+            flex-wrap: wrap;
+            gap: 8px;
         }
         
         .ka-name { font-size: 1.2em; font-weight: bold; }
@@ -120,7 +123,8 @@
             background: rgba(255,255,255,0.1);
         }
         .ka-badge.hot { background: var(--accent-red); color: #000; }
-        .ka-badge.promo { background: var(--accent-yellow); color: #000; }
+        .ka-badge.pinned { background: var(--accent-yellow); color: #000; }
+        .ka-badge.expired { background: rgba(255,255,255,0.1); color: var(--text-secondary); }
         
         .ka-posts { display: flex; flex-direction: column; gap: 12px; }
         
@@ -146,11 +150,17 @@
         
         .ka-post-tag.tag-hot { background: rgba(255,107,107,0.2); color: var(--accent-red); }
         .ka-post-tag.tag-promo { background: rgba(249,202,36,0.2); color: var(--accent-yellow); }
+        .ka-post-tag.tag-expired { background: rgba(255,255,255,0.05); color: var(--text-secondary); }
         
         .ka-post-meta { 
             font-size: 0.8em; 
             color: var(--text-secondary); 
             margin-bottom: 5px;
+        }
+        
+        .ka-post-meta .pinned-note {
+            color: var(--accent-yellow);
+            font-weight: bold;
         }
         
         .ka-post-text { font-size: 0.9em; line-height: 1.4; }
@@ -184,11 +194,48 @@
         
         .profile-links a { color: var(--accent-blue); margin-right: 10px; }
         
+        .pinned-warning {
+            background: rgba(249, 202, 36, 0.1);
+            border: 1px solid var(--accent-yellow);
+            border-radius: 8px;
+            padding: 10px 15px;
+            margin-top: 10px;
+            font-size: 0.8em;
+            color: var(--accent-yellow);
+        }
+        
+        .pinned-warning.expired {
+            background: rgba(255,255,255,0.05);
+            border-color: #666;
+            color: var(--text-secondary);
+        }
+        
         footer {
             text-align: center;
             padding: 30px;
             color: var(--text-secondary);
             font-size: 0.85em;
+        }
+        
+        .legend {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 15px;
+            font-size: 0.8em;
+        }
+        
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        
+        .legend-color {
+            width: 12px;
+            height: 12px;
+            border-radius: 3px;
         }
         
         @media (max-width: 600px) {
@@ -201,12 +248,18 @@
     <div class="container">
         <header>
             <h1>🔍 KAs Social Listening Report</h1>
-            <p class="subtitle">📅 11 Aug 2026 | Scout Agent</p>
+            <p class="subtitle">📅 11 Aug 2026 (Aug 6-11 追蹤) | Scout Agent</p>
             <div class="highlight-bar">
-                <span class="highlight-item hot">🔥 屈臣氏VIP Day 92折</span>
-                <span class="highlight-item hot">🔥 百佳PNS網購 $600-$150</span>
-                <span class="highlight-item new">🆕 759日本凍水杯麵</span>
-                <span class="highlight-item">📱 7-Eleven雪糕75折</span>
+                <span class="highlight-item hot">🔥 屈臣氏VIP Day 92折 (逢星期一)</span>
+                <span class="highlight-item hot">🔥 惠康 日清冷泡杯麵 (11-20/8)</span>
+                <span class="highlight-item hot">🔥 DONKI 7週年 (3-16/8)</span>
+                <span class="highlight-item new">🆕 759 日本凍水杯麵</span>
+                <span class="highlight-item new">🆕 百佳 PNS網購 $600-$150</span>
+            </div>
+            <div class="legend">
+                <div class="legend-item"><div class="legend-color" style="background:var(--accent-red)"></div> 進行中</div>
+                <div class="legend-item"><div class="legend-color" style="background:var(--accent-yellow)"></div> Pinned Post</div>
+                <div class="legend-item"><div class="legend-color" style="background:#666"></div> 已過期</div>
             </div>
         </header>
         
@@ -216,12 +269,12 @@
                 <p>KAs 監察中</p>
             </div>
             <div class="overview-card direct">
-                <h3>3</h3>
-                <p>直接競爭對手</p>
+                <h3>7</h3>
+                <p>FB 收集到</p>
             </div>
             <div class="overview-card t1">
-                <h3>5</h3>
-                <p>T-1 新更新</p>
+                <h3>8</h3>
+                <p>5日內有效優惠</p>
             </div>
             <div class="overview-card">
                 <h3>3</h3>
@@ -240,15 +293,15 @@
                 <div class="ka-posts">
                     <div class="ka-post hot">
                         <span class="ka-post-tag tag-hot">🔥 $150優惠</span>
-                        <div class="ka-post-meta">Facebook · 1天前</div>
+                        <div class="ka-post-meta">Facebook · <strong>1天前 (Aug 10)</strong></div>
                         <div class="ka-post-text">【PNS網購 買滿$600即享$150優惠】輸入優惠碼「PNSWIN」即享$50優惠及另送$100電子優惠券</div>
                         <a href="https://www.facebook.com/hkparknshop" target="_blank" class="ka-post-link">🔗 FB專頁</a>
                     </div>
-                    <div class="ka-post hot">
-                        <span class="ka-post-tag tag-hot">🔥 88折</span>
-                        <div class="ka-post-meta">Facebook · 3天前</div>
-                        <div class="ka-post-text">【8/8 只限今日｜門市照價再88折】會員優惠，折扣無上限</div>
-                        <a href="https://www.facebook.com/hkparknshop" target="_blank" class="ka-post-link">🔗 FB專頁</a>
+                    <div class="ka-post" style="border-left-color:#666; opacity:0.7;">
+                        <span class="ka-post-tag tag-expired">⚠️ Pinned 已過期</span>
+                        <div class="ka-post-meta">Facebook · <s>3天前 (Aug 8)</s> · <span class="pinned-note">📌 Pinned Post</span></div>
+                        <div class="ka-post-text">【8/8 只限今日｜門市照價再88折】優惠期已過 (8月8日)</div>
+                        <div class="pinned-warning expired">⚠️ 此為釘選帖子，優惠已於8月8日結束</div>
                     </div>
                     <div class="sku-info" style="margin-top:10px; font-size:0.8em;">
                         <span class="sku-tag yes">✅ O2O相關</span>
@@ -269,13 +322,13 @@
                 <div class="ka-posts">
                     <div class="ka-post hot">
                         <span class="ka-post-tag tag-hot">🔥 VIP Day</span>
-                        <div class="ka-post-meta">Facebook · 1天前</div>
+                        <div class="ka-post-meta">Facebook · <strong>1天前 (Aug 10)</strong></div>
                         <div class="ka-post-text">【屈臣氏VIP Day 逢星期一尊享92折】185會員專享，同心同行</div>
                         <a href="https://www.facebook.com/watsons" target="_blank" class="ka-post-link">🔗 FB專頁</a>
                     </div>
                     <div class="ka-post hot">
                         <span class="ka-post-tag tag-hot">🔥 88折</span>
-                        <div class="ka-post-meta">Facebook · 4天前</div>
+                        <div class="ka-post-meta">Facebook · 4天前 (Aug 7)</div>
                         <div class="ka-post-text">【星期六限定全場88折】自家品牌3大人氣組合推薦，再送總值$170優惠券</div>
                         <a href="https://www.facebook.com/watsons" target="_blank" class="ka-post-link">🔗 FB專頁</a>
                     </div>
@@ -289,16 +342,68 @@
                 </div>
             </div>
             
+            <!-- 惠康 -->
+            <div class="ka-card hot">
+                <div class="ka-header">
+                    <span class="ka-name">🏪 惠康 Wellcome</span>
+                    <span class="ka-badge pinned">📌 Pinned</span>
+                </div>
+                <div class="ka-posts">
+                    <div class="ka-post hot">
+                        <span class="ka-post-tag tag-hot">🔥 新品</span>
+                        <div class="ka-post-meta">Facebook · <strong>25分鐘前 (Aug 11)</strong> · <span class="pinned-note">📌 Pinned Post</span></div>
+                        <div class="ka-post-text">【日清冷泡杯麵 新登場!】優惠期11/8-20/8，$19.2/件</div>
+                        <div class="pinned-warning">📌 釘選帖子 · 優惠期：8月11日至20日</div>
+                        <a href="https://www.facebook.com/wellcome" target="_blank" class="ka-post-link">🔗 FB專頁</a>
+                    </div>
+                    <div class="sku-info" style="margin-top:10px; font-size:0.8em;">
+                        <span class="sku-tag yes">✅ O2O相關</span>
+                        <span style="color:var(--text-secondary)">超市食品</span>
+                    </div>
+                </div>
+                <div class="profile-links">
+                    📱 FB: @wellcome | IG: @hkwellcome
+                </div>
+            </div>
+            
+            <!-- 萬寧 -->
+            <div class="ka-card">
+                <div class="ka-header">
+                    <span class="ka-name">💊 萬寧 Mannings</span>
+                    <span class="ka-badge expired">⚠️ 已過期</span>
+                </div>
+                <div class="ka-posts">
+                    <div class="ka-post" style="border-left-color:#666; opacity:0.7;">
+                        <span class="ka-post-tag tag-expired">⚠️ Pinned 已過期</span>
+                        <div class="ka-post-meta">Facebook · <s>5天前 (Aug 6)</s> · <span class="pinned-note">📌 Pinned Post</span></div>
+                        <div class="ka-post-text">【8月8日國際貓貓節 全場88折】優惠期已過 (8月8日)</div>
+                        <div class="pinned-warning expired">⚠️ 此為釘選帖子，優惠已於8月8日結束</div>
+                    </div>
+                    <div class="ka-post" style="border-left-color:#666; opacity:0.7;">
+                        <span class="ka-post-tag tag-expired">⚠️ 已過期</span>
+                        <div class="ka-post-meta">Facebook · 6天前 (Aug 5)</div>
+                        <div class="ka-post-text">【星期三氹氹你 優惠大放送】LINE FRIENDS 產品優惠</div>
+                    </div>
+                    <div class="sku-info" style="margin-top:10px; font-size:0.8em;">
+                        <span class="sku-tag yes">✅ O2O相關</span>
+                        <span style="color:var(--text-secondary)">保健用品、個人護理</span>
+                    </div>
+                </div>
+                <div class="profile-links">
+                    📱 FB: @mannings_hk | IG: @mannings_hk | Threads: @mannings_hk
+                </div>
+            </div>
+            
             <!-- 759阿信屋 -->
             <div class="ka-card hot">
                 <div class="ka-header">
                     <span class="ka-name">🏪 759阿信屋</span>
-                    <span class="ka-badge hot">🔥 新品</span>
+                    <span class="ka-badge hot">🔥 限定</span>
                 </div>
                 <div class="ka-posts">
                     <div class="ka-post hot">
                         <span class="ka-post-tag tag-hot">🆕 限定</span>
-                        <div class="ka-post-meta">Facebook · 1天前</div>
+                        <div class="ka-post-meta">Facebook · <strong>1天前 (Aug 10)</strong></div>
                         <div class="ka-post-text">【一日限定！現場憑飛即買】日本爆紅「凍水杯麵」8.12 觀塘興運倉，賣完即止！</div>
                         <a href="https://www.facebook.com/759store" target="_blank" class="ka-post-link">🔗 FB專頁</a>
                     </div>
@@ -312,24 +417,55 @@
                 </div>
             </div>
             
-            <!-- 惠康 -->
-            <div class="ka-card">
+            <!-- DON DON DONKI -->
+            <div class="ka-card hot">
                 <div class="ka-header">
-                    <span class="ka-name">🏪 惠康 Wellcome</span>
-                    <span class="ka-badge">一般</span>
+                    <span class="ka-name">🏬 DON DON DONKI</span>
+                    <span class="ka-badge pinned">📌 Pinned</span>
                 </div>
                 <div class="ka-posts">
-                    <div class="ka-post">
-                        <div class="ka-post-meta">Facebook · 搜尋中</div>
-                        <div class="ka-post-text" style="color:var(--text-secondary)">需要收集最新 post 數據</div>
+                    <div class="ka-post hot">
+                        <span class="ka-post-tag tag-hot">🔥 7週年</span>
+                        <div class="ka-post-meta">Facebook · <strong>3天前 (Aug 8)</strong> · <span class="pinned-note">📌 Pinned Post</span></div>
+                        <div class="ka-post-text">【DONKI 7週年大創業祭！第二期】優惠期3/8-16/8，多款日本食品特價</div>
+                        <div class="pinned-warning">📌 釘選帖子 · 優惠期：8月3日至16日（進行中）</div>
+                        <a href="https://www.facebook.com/DONDONDONKIHK" target="_blank" class="ka-post-link">🔗 FB專頁</a>
+                    </div>
+                    <div class="ka-post" style="border-left-color:#666; opacity:0.7;">
+                        <span class="ka-post-tag tag-expired">❌ 已過期</span>
+                        <div class="ka-post-meta">Facebook · 7月23日</div>
+                        <div class="ka-post-text">【爆旋陀螺X G3賽】活動已結束</div>
                     </div>
                     <div class="sku-info" style="margin-top:10px; font-size:0.8em;">
-                        <span class="sku-tag yes">✅ O2O相關</span>
-                        <span style="color:var(--text-secondary)">超市食品</span>
+                        <span class="sku-tag no">❌ 非O2O</span>
+                        <span style="color:var(--text-secondary)">日本超市</span>
                     </div>
                 </div>
                 <div class="profile-links">
-                    📱 FB: @wellcome | IG: @hkwellcome
+                    📱 IG: @dondondonkihk
+                </div>
+            </div>
+            
+            <!-- AEON -->
+            <div class="ka-card">
+                <div class="ka-header">
+                    <span class="ka-name">🏬 AEON</span>
+                    <span class="ka-badge expired">⚠️ 已過期</span>
+                </div>
+                <div class="ka-posts">
+                    <div class="ka-post" style="border-left-color:#666; opacity:0.7;">
+                        <span class="ka-post-tag tag-expired">⚠️ Pinned 已過期</span>
+                        <div class="ka-post-meta">Facebook · <s>8月4日 post</s> · <span class="pinned-note">📌 Pinned Post</span></div>
+                        <div class="ka-post-text">【AEON周三新鮮日】8月5日優惠已過</div>
+                        <div class="pinned-warning expired">⚠️ 此為釘選帖子，優惠已於8月5日結束</div>
+                    </div>
+                    <div class="sku-info" style="margin-top:10px; font-size:0.8em;">
+                        <span class="sku-tag yes">✅ O2O相關</span>
+                        <span style="color:var(--text-secondary)">百貨、家居用品</span>
+                    </div>
+                </div>
+                <div class="profile-links">
+                    📱 IG: @aeonstores.hk
                 </div>
             </div>
         </div>
@@ -345,13 +481,13 @@
                 <div class="ka-posts">
                     <div class="ka-post hot">
                         <span class="ka-post-tag tag-hot">🔥 75折</span>
-                        <div class="ka-post-meta">Facebook · 1天前</div>
+                        <div class="ka-post-meta">Facebook · <strong>1天前 (Aug 10)</strong></div>
                         <div class="ka-post-text">【著數之選】7仔雪糕優惠 買滿指定金額即享75折</div>
                         <a href="https://www.instagram.com/p/Db4kqXKDR97/" target="_blank" class="ka-post-link">🔗 IG Post</a>
                     </div>
-                    <div class="ka-post">
-                        <span class="ka-post-tag">🆕 聯乘</span>
-                        <div class="ka-post-meta">Facebook · 2天前</div>
+                    <div class="ka-post hot">
+                        <span class="ka-post-tag tag-hot">🆕 聯乘</span>
+                        <div class="ka-post-meta">Facebook · 2天前 (Aug 9)</div>
                         <div class="ka-post-text">BEYBLADE X 戰鬥陀螺新品｜uniopen PRIMA 訂閱會員專屬預購</div>
                         <a href="https://www.facebook.com/7ElevenHongKong" target="_blank" class="ka-post-link">🔗 FB專頁</a>
                     </div>
@@ -374,7 +510,7 @@
                 <div class="ka-posts">
                     <div class="ka-post">
                         <div class="ka-post-meta">Threads · 1天前</div>
-                        <div class="ka-post-text">BABYMONSTER 聯乘活動</div>
+                        <div class="ka-post-text">BABYMONSTER 聯乘活動優惠</div>
                         <a href="https://www.threads.com/@circlek_hk/post/DbsOUMQErK6/media" target="_blank" class="ka-post-link">🔗 Threads Post</a>
                     </div>
                     <div class="sku-info" style="margin-top:10px; font-size:0.8em;">
@@ -388,60 +524,18 @@
             </div>
         </div>
         
-        <h2 class="section-title">🏬 其他KAs</h2>
+        <h2 class="section-title">🏬 其他KAs (需補充)</h2>
         <div class="ka-grid">
-            <!-- DON DON DONKI -->
-            <div class="ka-card">
-                <div class="ka-header">
-                    <span class="ka-name">🏬 DON DON DONKI</span>
-                    <span class="ka-badge">一般</span>
-                </div>
-                <div class="ka-posts">
-                    <div class="ka-post">
-                        <div class="ka-post-meta">IG · 1天前</div>
-                        <div class="ka-post-text">優惠推廣中</div>
-                    </div>
-                    <div class="sku-info" style="margin-top:10px; font-size:0.8em;">
-                        <span class="sku-tag no">❌ 非O2O</span>
-                        <span style="color:var(--text-secondary)">日本超市</span>
-                    </div>
-                </div>
-                <div class="profile-links">
-                    📱 IG: @dondondonkihk
-                </div>
-            </div>
-            
-            <!-- AEON -->
-            <div class="ka-card">
-                <div class="ka-header">
-                    <span class="ka-name">🏬 AEON</span>
-                    <span class="ka-badge">一般</span>
-                </div>
-                <div class="ka-posts">
-                    <div class="ka-post">
-                        <div class="ka-post-meta">IG · 近日推廣</div>
-                        <div class="ka-post-text">優惠活動</div>
-                    </div>
-                    <div class="sku-info" style="margin-top:10px; font-size:0.8em;">
-                        <span class="sku-tag yes">✅ O2O相關</span>
-                        <span style="color:var(--text-secondary)">百貨、家居用品</span>
-                    </div>
-                </div>
-                <div class="profile-links">
-                    📱 IG: @aeonstores.hk
-                </div>
-            </div>
-            
             <!-- 一田 -->
             <div class="ka-card">
                 <div class="ka-header">
                     <span class="ka-name">🏬 一田</span>
-                    <span class="ka-badge">一般</span>
+                    <span class="ka-badge">待收集</span>
                 </div>
                 <div class="ka-posts">
                     <div class="ka-post">
-                        <div class="ka-post-meta">IG · 近日動態</div>
-                        <div class="ka-post-text">超市優惠</div>
+                        <div class="ka-post-meta">IG · 待補充</div>
+                        <div class="ka-post-text" style="color:var(--text-secondary)">需從 IG/Threads 補充數據</div>
                     </div>
                     <div class="sku-info" style="margin-top:10px; font-size:0.8em;">
                         <span class="sku-tag yes">✅ O2O相關</span>
@@ -453,24 +547,24 @@
                 </div>
             </div>
             
-            <!-- 萬寧 -->
+            <!-- 佳寶 -->
             <div class="ka-card">
                 <div class="ka-header">
-                    <span class="ka-name">💊 萬寧 Mannings</span>
-                    <span class="ka-badge">一般</span>
+                    <span class="ka-name">🏪 佳寶</span>
+                    <span class="ka-badge">待收集</span>
                 </div>
                 <div class="ka-posts">
                     <div class="ka-post">
-                        <div class="ka-post-meta">Threads · 監察中</div>
-                        <div class="ka-post-text">健康產品推廣</div>
+                        <div class="ka-post-meta">FB/IG · 待補充</div>
+                        <div class="ka-post-text" style="color:var(--text-secondary)">需從社交媒體補充數據</div>
                     </div>
                     <div class="sku-info" style="margin-top:10px; font-size:0.8em;">
                         <span class="sku-tag yes">✅ O2O相關</span>
-                        <span style="color:var(--text-secondary)">保健用品、個人護理</span>
+                        <span style="color:var(--text-secondary)">凍肉、海鮮</span>
                     </div>
                 </div>
                 <div class="profile-links">
-                    📱 IG: @mannings_hk | Threads: @mannings_hk
+                    📱 FB: @kaibofoodsupermarket
                 </div>
             </div>
         </div>
@@ -478,26 +572,66 @@
         <h2 class="section-title">📊 收集概覽</h2>
         <div class="overview">
             <div class="overview-card">
-                <h3>3</h3>
-                <p>FB收集到</p>
+                <h3>7</h3>
+                <p>FB 收集到</p>
             </div>
             <div class="overview-card">
                 <h3>2</h3>
-                <p>IG收集到</p>
+                <p>IG 收集到</p>
             </div>
             <div class="overview-card">
                 <h3>1</h3>
-                <p>Threads收集到</p>
+                <p>Threads 收集到</p>
             </div>
             <div class="overview-card">
-                <h3>7</h3>
-                <p>待收集</p>
+                <h3>4</h3>
+                <p>需補充</p>
+            </div>
+        </div>
+        
+        <h2 class="section-title">📌 Pinned Posts 警示</h2>
+        <div class="ka-grid">
+            <div class="ka-card" style="border-left-color:var(--accent-yellow);">
+                <div class="ka-header">
+                    <span class="ka-name">⚠️ 已過期的 Pinned Posts</span>
+                </div>
+                <div class="ka-posts">
+                    <div class="ka-post" style="border-left-color:#666; opacity:0.7;">
+                        <div class="ka-post-meta">百佳 · <s>8月8日</s></div>
+                        <div class="ka-post-text">【門市88折】優惠已於8月8日結束，但post仍被釘選</div>
+                    </div>
+                    <div class="ka-post" style="border-left-color:#666; opacity:0.7;">
+                        <div class="ka-post-meta">萬寧 · <s>8月8日</s></div>
+                        <div class="ka-post-text">【國際貓貓節88折】優惠已於8月8日結束，但post仍被釘選</div>
+                    </div>
+                    <div class="ka-post" style="border-left-color:#666; opacity:0.7;">
+                        <div class="ka-post-meta">AEON · <s>8月5日</s></div>
+                        <div class="ka-post-text">【周三新鮮日】優惠已於8月5日結束，但post仍被釘選</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="ka-card" style="border-left-color:var(--accent-green);">
+                <div class="ka-header">
+                    <span class="ka-name">✅ 仍在有效期內的 Pinned Posts</span>
+                </div>
+                <div class="ka-posts">
+                    <div class="ka-post hot">
+                        <div class="ka-post-meta">惠康 · <strong>11-20/8</strong></div>
+                        <div class="ka-post-text">【日清冷泡杯麵 新登場】優惠期：8月11日至20日</div>
+                    </div>
+                    <div class="ka-post hot">
+                        <div class="ka-post-meta">DONKI · <strong>3-16/8</strong></div>
+                        <div class="ka-post-text">【7週年大創業祭！第二期】優惠期：8月3日至16日</div>
+                    </div>
+                </div>
             </div>
         </div>
         
         <footer>
             <p>📅 報告更新：11 Aug 2026 | 🔍 Scout Agent</p>
             <p style="margin-top:10px;">🔗 <a href="https://hfng0523.github.io/scout-reports/" target="_blank">GitHub Pages</a></p>
+            <p style="margin-top:10px; color:var(--accent-yellow);">⚠️ 注意：Pinned Posts 可能已過期，請以實際優惠期為準</p>
         </footer>
     </div>
 </body>

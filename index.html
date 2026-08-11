@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🔍 KAs Social Listening Report | 11 Aug 2026</title>
+    <title>KAs Social Listening Report | 11 Aug 2026</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/dark.css">
     <style>
         :root {
@@ -12,8 +12,8 @@
             --accent-red: #FF6B6B;
             --accent-blue: #4D96FF;
             --accent-green: #6BCB77;
-            --accent-purple: #9B59B6;
             --accent-yellow: #F9CA24;
+            --accent-orange: #FF9F43;
             --text-primary: #FFFFFF;
             --text-secondary: #B8B8B8;
             --border-radius: 12px;
@@ -29,610 +29,709 @@
             padding: 20px;
         }
         
-        .container { max-width: 1400px; margin: 0 auto; }
+        .container { max-width: 1600px; margin: 0 auto; }
         
-        header {
+        /* ========== BLOCK A: HEADER ========== */
+        .header {
             text-align: center;
-            padding: 30px 20px;
+            padding: 30px;
             background: linear-gradient(135deg, var(--bg-card) 0%, #16213E 100%);
             border-radius: var(--border-radius);
             margin-bottom: 30px;
             border: 1px solid rgba(255,255,255,0.1);
         }
         
-        h1 { font-size: 2em; margin-bottom: 10px; }
-        .subtitle { color: var(--text-secondary); font-size: 0.95em; }
+        .header h1 { 
+            font-size: 2em; 
+            margin-bottom: 15px;
+            background: linear-gradient(90deg, var(--accent-blue), var(--accent-green));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
         
-        .highlight-bar {
+        .header-date {
+            font-size: 1.1em;
+            color: var(--accent-yellow);
+            margin-bottom: 20px;
+        }
+        
+        .platform-status {
             display: flex;
-            gap: 15px;
-            flex-wrap: wrap;
+            gap: 20px;
             justify-content: center;
-            margin-top: 20px;
+            flex-wrap: wrap;
         }
         
-        .highlight-item {
-            background: rgba(255,255,255,0.1);
+        .platform-badge {
+            display: flex;
+            align-items: center;
+            gap: 8px;
             padding: 8px 16px;
+            background: rgba(255,255,255,0.05);
             border-radius: 20px;
-            font-size: 0.85em;
+            font-size: 0.9em;
         }
         
-        .highlight-item.hot { background: var(--accent-red); color: #000; }
-        .highlight-item.new { background: var(--accent-green); color: #000; }
-        .highlight-item.expired { background: rgba(255,255,255,0.1); color: var(--text-secondary); text-decoration: line-through; }
+        .platform-badge.active { border: 1px solid var(--accent-green); }
+        .platform-badge.inactive { border: 1px solid #666; opacity: 0.6; }
         
-        .overview {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 15px;
+        .status-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+        }
+        .status-dot.green { background: var(--accent-green); }
+        .status-dot.red { background: var(--accent-red); }
+        .status-dot.yellow { background: var(--accent-yellow); }
+        
+        /* ========== BLOCK B: KPI METRICS ========== */
+        .kpi-section {
             margin-bottom: 30px;
         }
         
-        .overview-card {
-            background: var(--bg-card);
-            padding: 20px;
-            border-radius: var(--border-radius);
-            text-align: center;
-            border: 1px solid rgba(255,255,255,0.1);
-        }
-        
-        .overview-card h3 { font-size: 2em; color: var(--accent-blue); }
-        .overview-card p { color: var(--text-secondary); font-size: 0.85em; }
-        .overview-card.direct h3 { color: var(--accent-red); }
-        .overview-card.t1 h3 { color: var(--accent-green); }
-        
-        .section-title {
-            font-size: 1.3em;
-            margin: 30px 0 15px 0;
+        .kpi-title {
+            font-size: 1.2em;
+            margin-bottom: 15px;
             padding-left: 15px;
-            border-left: 4px solid var(--accent-purple);
+            border-left: 4px solid var(--accent-blue);
         }
         
-        .ka-grid {
+        .kpi-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 20px;
         }
         
-        .ka-card {
+        .kpi-card {
             background: var(--bg-card);
             border-radius: var(--border-radius);
             padding: 20px;
             border: 1px solid rgba(255,255,255,0.1);
-            border-left: 4px solid #666;
         }
         
-        .ka-card.hot { border-left-color: var(--accent-red); }
-        .ka-card.expired { border-left-color: #666; opacity: 0.7; }
+        .kpi-card.direct { border-left: 4px solid var(--accent-red); }
+        .kpi-card.granularity { border-left: 4px solid var(--accent-blue); }
         
-        .ka-header {
+        .kpi-card h3 {
+            font-size: 0.9em;
+            color: var(--text-secondary);
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .kpi-card .big-number {
+            font-size: 3em;
+            font-weight: bold;
+            line-height: 1;
+        }
+        
+        .kpi-card.direct .big-number { color: var(--accent-red); }
+        .kpi-card.granularity .big-number { color: var(--accent-blue); }
+        
+        .kpi-breakdown {
+            margin-top: 15px;
             display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 15px;
             flex-wrap: wrap;
             gap: 8px;
         }
         
-        .ka-name { font-size: 1.2em; font-weight: bold; }
-        .ka-badge {
-            font-size: 0.7em;
+        .kpi-tag {
+            font-size: 0.75em;
             padding: 4px 10px;
             border-radius: 12px;
-            background: rgba(255,255,255,0.1);
-        }
-        .ka-badge.hot { background: var(--accent-red); color: #000; }
-        .ka-badge.pinned { background: var(--accent-yellow); color: #000; }
-        .ka-badge.expired { background: rgba(255,255,255,0.1); color: var(--text-secondary); }
-        
-        .ka-posts { display: flex; flex-direction: column; gap: 12px; }
-        
-        .ka-post {
-            background: rgba(255,255,255,0.03);
-            padding: 12px;
-            border-radius: 8px;
-            border-left: 3px solid #444;
+            background: rgba(255,255,255,0.05);
         }
         
-        .ka-post.hot { border-left-color: var(--accent-red); }
-        .ka-post.promo { border-left-color: var(--accent-yellow); }
+        .kpi-tag KA { background: rgba(255,107,107,0.2); color: var(--accent-red); }
         
-        .ka-post-tag {
-            display: inline-block;
+        .granularity-bars {
+            margin-top: 15px;
+        }
+        
+        .granularity-bar {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 8px;
+        }
+        
+        .granularity-label {
+            width: 80px;
+            font-size: 0.8em;
+            color: var(--text-secondary);
+        }
+        
+        .granularity-fill {
+            height: 20px;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             font-size: 0.75em;
-            padding: 2px 8px;
-            border-radius: 6px;
-            margin-bottom: 6px;
-            background: rgba(77, 150, 255, 0.2);
+            font-weight: bold;
+            min-width: 40px;
+        }
+        
+        .bar-order { background: var(--accent-red); }
+        .bar-sku { background: var(--accent-blue); }
+        .bar-other { background: #666; }
+        
+        /* ========== BLOCK C: INTELLIGENCE ANALYSIS ========== */
+        .intelligence-section {
+            margin-bottom: 30px;
+        }
+        
+        .intel-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 20px;
+        }
+        
+        .intel-card {
+            background: var(--bg-card);
+            border-radius: var(--border-radius);
+            padding: 25px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .intel-card.trends { border-top: 3px solid var(--accent-yellow); }
+        .intel-card.takeaways { border-top: 3px solid var(--accent-green); }
+        
+        .intel-card h3 {
+            font-size: 1.1em;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .intel-card.trends h3 { color: var(--accent-yellow); }
+        .intel-card.takeaways h3 { color: var(--accent-green); }
+        
+        .intel-list {
+            list-style: none;
+        }
+        
+        .intel-list li {
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            font-size: 0.9em;
+            line-height: 1.5;
+            display: flex;
+            gap: 10px;
+        }
+        
+        .intel-list li:last-child { border-bottom: none; }
+        
+        .intel-list li::before {
+            content: "▸";
+            color: var(--accent-blue);
+            flex-shrink: 0;
+        }
+        
+        /* ========== BLOCK D: 3-COLUMN CHANNEL BREAKDOWN ========== */
+        .channel-section {
+            margin-bottom: 30px;
+        }
+        
+        .channel-title {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+            padding-left: 15px;
+            border-left: 4px solid var(--accent-purple);
+        }
+        
+        .channel-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+        
+        @media (max-width: 1200px) {
+            .channel-grid { grid-template-columns: 1fr; }
+        }
+        
+        .channel-column {
+            background: var(--bg-card);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .channel-header {
+            padding: 15px 20px;
+            font-weight: bold;
+            text-align: center;
+            font-size: 1em;
+        }
+        
+        .channel-column:nth-child(1) .channel-header { background: rgba(255,107,107,0.2); }
+        .channel-column:nth-child(2) .channel-header { background: rgba(255,159,67,0.2); }
+        .channel-column:nth-child(3) .channel-header { background: rgba(77,150,255,0.2); }
+        
+        .channel-stores {
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        .store-card {
+            background: rgba(255,255,255,0.02);
+            border-radius: 8px;
+            padding: 15px;
+            border-left: 3px solid #666;
+        }
+        
+        .store-card.direct { border-left-color: var(--accent-red); }
+        .store-card.indirect { border-left-color: #666; }
+        
+        .store-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 10px;
+            flex-wrap: wrap;
+            gap: 5px;
+        }
+        
+        .store-name {
+            font-weight: bold;
+            font-size: 1em;
+        }
+        
+        .store-handle {
+            font-size: 0.75em;
             color: var(--accent-blue);
         }
         
-        .ka-post-tag.tag-hot { background: rgba(255,107,107,0.2); color: var(--accent-red); }
-        .ka-post-tag.tag-promo { background: rgba(249,202,36,0.2); color: var(--accent-yellow); }
-        .ka-post-tag.tag-expired { background: rgba(255,255,255,0.05); color: var(--text-secondary); }
-        
-        .ka-post-meta { 
-            font-size: 0.8em; 
-            color: var(--text-secondary); 
-            margin-bottom: 5px;
-        }
-        
-        .ka-post-meta .pinned-note {
-            color: var(--accent-yellow);
+        .o2o-badge {
+            font-size: 0.65em;
+            padding: 3px 8px;
+            border-radius: 10px;
             font-weight: bold;
         }
         
-        .ka-post-text { font-size: 0.9em; line-height: 1.4; }
+        .o2o-badge.yes { background: var(--accent-red); color: #fff; }
+        .o2o-badge.no { background: #666; color: #fff; }
         
-        .ka-post-link {
+        .post-meta {
+            font-size: 0.75em;
+            color: var(--text-secondary);
+            margin-bottom: 8px;
+        }
+        
+        .offer-tag {
             display: inline-block;
-            margin-top: 8px;
-            font-size: 0.8em;
+            font-size: 0.7em;
+            padding: 3px 8px;
+            border-radius: 6px;
+            margin-bottom: 8px;
+            background: rgba(255,255,255,0.1);
+        }
+        
+        .offer-tag.hot { background: var(--accent-red); color: #fff; }
+        .offer-tag.promo { background: var(--accent-yellow); color: #000; }
+        .offer-tag.normal { background: rgba(255,255,255,0.1); }
+        
+        .post-desc {
+            font-size: 0.85em;
+            line-height: 1.4;
+            margin-bottom: 10px;
+        }
+        
+        .sku-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+            margin-bottom: 10px;
+        }
+        
+        .sku-tag {
+            font-size: 0.65em;
+            padding: 2px 6px;
+            border-radius: 4px;
+            background: rgba(255,255,255,0.05);
+            color: var(--text-secondary);
+        }
+        
+        .post-link {
+            font-size: 0.75em;
+        }
+        
+        .post-link a {
             color: var(--accent-blue);
             text-decoration: none;
         }
-        .ka-post-link:hover { text-decoration: underline; }
         
-        .sku-tag {
-            display: inline-block;
+        .post-link a:hover { text-decoration: underline; }
+        
+        /* Expired Post Styling */
+        .store-card.expired {
+            opacity: 0.6;
+        }
+        
+        .store-card.expired .store-name {
+            text-decoration: line-through;
+        }
+        
+        /* Pinned Post Note */
+        .pinned-note {
             font-size: 0.7em;
-            padding: 2px 6px;
-            border-radius: 4px;
-            margin-right: 5px;
-        }
-        .sku-tag.yes { background: var(--accent-green); color: #000; }
-        .sku-tag.no { background: rgba(255,255,255,0.1); color: var(--text-secondary); }
-        
-        .profile-links {
-            margin-top: 10px;
-            padding-top: 10px;
-            border-top: 1px solid rgba(255,255,255,0.1);
-            font-size: 0.75em;
-            color: var(--text-secondary);
-        }
-        
-        .profile-links a { color: var(--accent-blue); margin-right: 10px; }
-        
-        .pinned-warning {
-            background: rgba(249, 202, 36, 0.1);
-            border: 1px solid var(--accent-yellow);
-            border-radius: 8px;
-            padding: 10px 15px;
-            margin-top: 10px;
-            font-size: 0.8em;
             color: var(--accent-yellow);
+            margin-top: 5px;
         }
         
-        .pinned-warning.expired {
-            background: rgba(255,255,255,0.05);
-            border-color: #666;
+        .pinned-note.expired {
             color: var(--text-secondary);
         }
         
+        /* ========== FOOTER ========== */
         footer {
             text-align: center;
             padding: 30px;
             color: var(--text-secondary);
             font-size: 0.85em;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            margin-top: 30px;
         }
         
-        .legend {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin-top: 15px;
-            font-size: 0.8em;
-        }
-        
-        .legend-item {
-            display: flex;
-            align-items: center;
-            gap: 6px;
-        }
-        
-        .legend-color {
-            width: 12px;
-            height: 12px;
-            border-radius: 3px;
-        }
-        
-        @media (max-width: 600px) {
-            .ka-grid { grid-template-columns: 1fr; }
-            .highlight-bar { flex-direction: column; align-items: center; }
-        }
+        footer a { color: var(--accent-blue); }
     </style>
 </head>
 <body>
     <div class="container">
-        <header>
+        
+        <!-- ========== BLOCK A: HEADER & STATUS ========== -->
+        <header class="header">
             <h1>🔍 KAs Social Listening Report</h1>
-            <p class="subtitle">📅 11 Aug 2026 (Aug 6-11 追蹤) | Scout Agent</p>
-            <div class="highlight-bar">
-                <span class="highlight-item hot">🔥 屈臣氏VIP Day 92折 (逢星期一)</span>
-                <span class="highlight-item hot">🔥 惠康 日清冷泡杯麵 (11-20/8)</span>
-                <span class="highlight-item hot">🔥 DONKI 7週年 (3-16/8)</span>
-                <span class="highlight-item new">🆕 759 日本凍水杯麵</span>
-                <span class="highlight-item new">🆕 百佳 PNS網購 $600-$150</span>
-            </div>
-            <div class="legend">
-                <div class="legend-item"><div class="legend-color" style="background:var(--accent-red)"></div> 進行中</div>
-                <div class="legend-item"><div class="legend-color" style="background:var(--accent-yellow)"></div> Pinned Post</div>
-                <div class="legend-item"><div class="legend-color" style="background:#666"></div> 已過期</div>
+            <div class="header-date">📅 11 Aug 2026</div>
+            <div class="platform-status">
+                <div class="platform-badge active">
+                    <span class="status-dot green"></span>
+                    Facebook
+                </div>
+                <div class="platform-badge active">
+                    <span class="status-dot green"></span>
+                    Instagram
+                </div>
+                <div class="platform-badge active">
+                    <span class="status-dot yellow"></span>
+                    Threads
+                </div>
             </div>
         </header>
         
-        <div class="overview">
-            <div class="overview-card">
-                <h3>10</h3>
-                <p>KAs 監察中</p>
+        <!-- ========== BLOCK B: KPI METRICS COUNTER ========== -->
+        <section class="kpi-section">
+            <h2 class="kpi-title">📊 KPI Metrics</h2>
+            <div class="kpi-grid">
+                
+                <!-- Direct Competition Card -->
+                <div class="kpi-card direct">
+                    <h3>直接競爭 (O2O 相關)</h3>
+                    <div class="big-number">4</div>
+                    <p style="color:var(--text-secondary); font-size:0.85em;">posts 涉及直接競爭品類</p>
+                    <div class="kpi-breakdown">
+                        <span class="kpi-tag KA">百佳 (1)</span>
+                        <span class="kpi-tag KA">屈臣氏 (1)</span>
+                        <span class="kpi-tag KA">惠康 (1)</span>
+                        <span class="kpi-tag KA">DONKI (1)</span>
+                    </div>
+                </div>
+                
+                <!-- Granularity Counters -->
+                <div class="kpi-card granularity">
+                    <h3>粒度分析 (Granularity)</h3>
+                    <div class="granularity-bars">
+                        <div class="granularity-bar">
+                            <span class="granularity-label">Order Level</span>
+                            <div class="granularity-fill bar-order" style="width: 150px;">2</div>
+                        </div>
+                        <div class="granularity-bar">
+                            <span class="granularity-label">SKU Level</span>
+                            <div class="granularity-fill bar-sku" style="width: 100px;">1</div>
+                        </div>
+                        <div class="granularity-bar">
+                            <span class="granularity-label">Other</span>
+                            <div class="granularity-fill bar-other" style="width: 120px;">5</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Total Posts -->
+                <div class="kpi-card granularity">
+                    <h3>總收集</h3>
+                    <div class="big-number">8</div>
+                    <p style="color:var(--text-secondary); font-size:0.85em;">posts 跨所有 KAs</p>
+                    <div class="kpi-breakdown" style="margin-top:15px;">
+                        <span class="kpi-tag">FB: 7</span>
+                        <span class="kpi-tag">IG: 1</span>
+                        <span class="kpi-tag">Threads: 1</span>
+                    </div>
+                </div>
+                
             </div>
-            <div class="overview-card direct">
-                <h3>7</h3>
-                <p>FB 收集到</p>
-            </div>
-            <div class="overview-card t1">
-                <h3>8</h3>
-                <p>5日內有效優惠</p>
-            </div>
-            <div class="overview-card">
-                <h3>3</h3>
-                <p>平台覆蓋</p>
-            </div>
-        </div>
+        </section>
         
-        <h2 class="section-title">🏪 百貨/超市</h2>
-        <div class="ka-grid">
-            <!-- 百佳 -->
-            <div class="ka-card hot">
-                <div class="ka-header">
-                    <span class="ka-name">🏪 百佳 PARKnSHOP</span>
-                    <span class="ka-badge hot">🔥 優惠中</span>
+        <!-- ========== BLOCK C: COMPETITIVE INTELLIGENCE ANALYSIS ========== -->
+        <section class="intelligence-section">
+            <h2 class="kpi-title">🧠 競爭情報分析 (Competitive Intelligence)</h2>
+            <div class="intel-grid">
+                
+                <!-- Market Trends -->
+                <div class="intel-card trends">
+                    <h3>📈 市場趨勢 (Market Trends)</h3>
+                    <ul class="intel-list">
+                        <li><strong>週年慶典密集攻勢</strong> — DONKI 7週年 (3-16/8)、759 日本食品節，多間KA同期舉行大型推廣</li>
+                        <li><strong>Pinned Post 長期佔據</strong> — 百佳、萬寧、AEON 的 Pinned Post 已過期仍佔據主頁，新優惠被推到下方</li>
+                        <li><strong>會員/積分制深化</strong> — 屈臣氏 VIP Day (92折逢星期一)、百佳 PNS 網購優惠，綁定會員消費</li>
+                        <li><strong>日本食品熱潮</strong> — 惠康日清冷泡杯麵、759 凍水杯麵，DONKI 7週年日本食品折扣</li>
+                    </ul>
                 </div>
-                <div class="ka-posts">
-                    <div class="ka-post hot">
-                        <span class="ka-post-tag tag-hot">🔥 $150優惠</span>
-                        <div class="ka-post-meta">Facebook · <strong>1天前 (Aug 10)</strong></div>
-                        <div class="ka-post-text">【PNS網購 買滿$600即享$150優惠】輸入優惠碼「PNSWIN」即享$50優惠及另送$100電子優惠券</div>
-                        <a href="https://www.facebook.com/hkparknshop" target="_blank" class="ka-post-link">🔗 FB專頁</a>
-                    </div>
-                    <div class="ka-post" style="border-left-color:#666; opacity:0.7;">
-                        <span class="ka-post-tag tag-expired">⚠️ Pinned 已過期</span>
-                        <div class="ka-post-meta">Facebook · <s>3天前 (Aug 8)</s> · <span class="pinned-note">📌 Pinned Post</span></div>
-                        <div class="ka-post-text">【8/8 只限今日｜門市照價再88折】優惠期已過 (8月8日)</div>
-                        <div class="pinned-warning expired">⚠️ 此為釘選帖子，優惠已於8月8日結束</div>
-                    </div>
-                    <div class="sku-info" style="margin-top:10px; font-size:0.8em;">
-                        <span class="sku-tag yes">✅ O2O相關</span>
-                        <span style="color:var(--text-secondary)">凍肉、海鮮、零食優惠</span>
-                    </div>
+                
+                <!-- Strategic Takeaways -->
+                <div class="intel-card takeaways">
+                    <h3>💡 O2O 策略啟示 (Strategic Takeaways)</h3>
+                    <ul class="intel-list">
+                        <li><strong>凍肉海鮮需主動出擊</strong> — 主要KA較少在社交媒體發佈凍肉海鮮優惠，建議加強 O2O 凍肉海鮮推廣</li>
+                        <li><strong>會員制威脅</strong> — 屈臣氏 VIP Day (92折) 針對健康/個人護理，與 O2O 保健食品競爭，需關注</li>
+                        <li><strong>PNS 網購威脅</strong> — 百佳 PNS 網購滿$600減$150，需強化 O2O 門市自取競爭力</li>
+                        <li><strong>時機敏感</strong> — 8月8日大型促銷已過，現為促銷低谷期，是 O2O 突出優惠的好時機</li>
+                    </ul>
                 </div>
-                <div class="profile-links">
-                    📱 FB: @hkparknshop | IG: @hkparknshop | Threads: @hkparknshop
-                </div>
+                
             </div>
-            
-            <!-- 屈臣氏 -->
-            <div class="ka-card hot">
-                <div class="ka-header">
-                    <span class="ka-name">💊 屈臣氏 Watsons</span>
-                    <span class="ka-badge hot">🔥 VIP Day</span>
-                </div>
-                <div class="ka-posts">
-                    <div class="ka-post hot">
-                        <span class="ka-post-tag tag-hot">🔥 VIP Day</span>
-                        <div class="ka-post-meta">Facebook · <strong>1天前 (Aug 10)</strong></div>
-                        <div class="ka-post-text">【屈臣氏VIP Day 逢星期一尊享92折】185會員專享，同心同行</div>
-                        <a href="https://www.facebook.com/watsons" target="_blank" class="ka-post-link">🔗 FB專頁</a>
-                    </div>
-                    <div class="ka-post hot">
-                        <span class="ka-post-tag tag-hot">🔥 88折</span>
-                        <div class="ka-post-meta">Facebook · 4天前 (Aug 7)</div>
-                        <div class="ka-post-text">【星期六限定全場88折】自家品牌3大人氣組合推薦，再送總值$170優惠券</div>
-                        <a href="https://www.facebook.com/watsons" target="_blank" class="ka-post-link">🔗 FB專頁</a>
-                    </div>
-                    <div class="sku-info" style="margin-top:10px; font-size:0.8em;">
-                        <span class="sku-tag yes">✅ O2O相關</span>
-                        <span style="color:var(--text-secondary)">保健用品、個人護理</span>
-                    </div>
-                </div>
-                <div class="profile-links">
-                    📱 FB: @watsons | IG: @hkwatsons
-                </div>
-            </div>
-            
-            <!-- 惠康 -->
-            <div class="ka-card hot">
-                <div class="ka-header">
-                    <span class="ka-name">🏪 惠康 Wellcome</span>
-                    <span class="ka-badge pinned">📌 Pinned</span>
-                </div>
-                <div class="ka-posts">
-                    <div class="ka-post hot">
-                        <span class="ka-post-tag tag-hot">🔥 新品</span>
-                        <div class="ka-post-meta">Facebook · <strong>25分鐘前 (Aug 11)</strong> · <span class="pinned-note">📌 Pinned Post</span></div>
-                        <div class="ka-post-text">【日清冷泡杯麵 新登場!】優惠期11/8-20/8，$19.2/件</div>
-                        <div class="pinned-warning">📌 釘選帖子 · 優惠期：8月11日至20日</div>
-                        <a href="https://www.facebook.com/wellcome" target="_blank" class="ka-post-link">🔗 FB專頁</a>
-                    </div>
-                    <div class="sku-info" style="margin-top:10px; font-size:0.8em;">
-                        <span class="sku-tag yes">✅ O2O相關</span>
-                        <span style="color:var(--text-secondary)">超市食品</span>
-                    </div>
-                </div>
-                <div class="profile-links">
-                    📱 FB: @wellcome | IG: @hkwellcome
-                </div>
-            </div>
-            
-            <!-- 萬寧 -->
-            <div class="ka-card">
-                <div class="ka-header">
-                    <span class="ka-name">💊 萬寧 Mannings</span>
-                    <span class="ka-badge expired">⚠️ 已過期</span>
-                </div>
-                <div class="ka-posts">
-                    <div class="ka-post" style="border-left-color:#666; opacity:0.7;">
-                        <span class="ka-post-tag tag-expired">⚠️ Pinned 已過期</span>
-                        <div class="ka-post-meta">Facebook · <s>5天前 (Aug 6)</s> · <span class="pinned-note">📌 Pinned Post</span></div>
-                        <div class="ka-post-text">【8月8日國際貓貓節 全場88折】優惠期已過 (8月8日)</div>
-                        <div class="pinned-warning expired">⚠️ 此為釘選帖子，優惠已於8月8日結束</div>
-                    </div>
-                    <div class="ka-post" style="border-left-color:#666; opacity:0.7;">
-                        <span class="ka-post-tag tag-expired">⚠️ 已過期</span>
-                        <div class="ka-post-meta">Facebook · 6天前 (Aug 5)</div>
-                        <div class="ka-post-text">【星期三氹氹你 優惠大放送】LINE FRIENDS 產品優惠</div>
-                    </div>
-                    <div class="sku-info" style="margin-top:10px; font-size:0.8em;">
-                        <span class="sku-tag yes">✅ O2O相關</span>
-                        <span style="color:var(--text-secondary)">保健用品、個人護理</span>
-                    </div>
-                </div>
-                <div class="profile-links">
-                    📱 FB: @mannings_hk | IG: @mannings_hk | Threads: @mannings_hk
-                </div>
-            </div>
-            
-            <!-- 759阿信屋 -->
-            <div class="ka-card hot">
-                <div class="ka-header">
-                    <span class="ka-name">🏪 759阿信屋</span>
-                    <span class="ka-badge hot">🔥 限定</span>
-                </div>
-                <div class="ka-posts">
-                    <div class="ka-post hot">
-                        <span class="ka-post-tag tag-hot">🆕 限定</span>
-                        <div class="ka-post-meta">Facebook · <strong>1天前 (Aug 10)</strong></div>
-                        <div class="ka-post-text">【一日限定！現場憑飛即買】日本爆紅「凍水杯麵」8.12 觀塘興運倉，賣完即止！</div>
-                        <a href="https://www.facebook.com/759store" target="_blank" class="ka-post-link">🔗 FB專頁</a>
-                    </div>
-                    <div class="sku-info" style="margin-top:10px; font-size:0.8em;">
-                        <span class="sku-tag no">❌ 非O2O</span>
-                        <span style="color:var(--text-secondary)">零食、乾貨食品</span>
-                    </div>
-                </div>
-                <div class="profile-links">
-                    📱 FB: @759store | IG: @759store
-                </div>
-            </div>
-            
-            <!-- DON DON DONKI -->
-            <div class="ka-card hot">
-                <div class="ka-header">
-                    <span class="ka-name">🏬 DON DON DONKI</span>
-                    <span class="ka-badge pinned">📌 Pinned</span>
-                </div>
-                <div class="ka-posts">
-                    <div class="ka-post hot">
-                        <span class="ka-post-tag tag-hot">🔥 7週年</span>
-                        <div class="ka-post-meta">Facebook · <strong>3天前 (Aug 8)</strong> · <span class="pinned-note">📌 Pinned Post</span></div>
-                        <div class="ka-post-text">【DONKI 7週年大創業祭！第二期】優惠期3/8-16/8，多款日本食品特價</div>
-                        <div class="pinned-warning">📌 釘選帖子 · 優惠期：8月3日至16日（進行中）</div>
-                        <a href="https://www.facebook.com/DONDONDONKIHK" target="_blank" class="ka-post-link">🔗 FB專頁</a>
-                    </div>
-                    <div class="ka-post" style="border-left-color:#666; opacity:0.7;">
-                        <span class="ka-post-tag tag-expired">❌ 已過期</span>
-                        <div class="ka-post-meta">Facebook · 7月23日</div>
-                        <div class="ka-post-text">【爆旋陀螺X G3賽】活動已結束</div>
-                    </div>
-                    <div class="sku-info" style="margin-top:10px; font-size:0.8em;">
-                        <span class="sku-tag no">❌ 非O2O</span>
-                        <span style="color:var(--text-secondary)">日本超市</span>
-                    </div>
-                </div>
-                <div class="profile-links">
-                    📱 IG: @dondondonkihk
-                </div>
-            </div>
-            
-            <!-- AEON -->
-            <div class="ka-card">
-                <div class="ka-header">
-                    <span class="ka-name">🏬 AEON</span>
-                    <span class="ka-badge expired">⚠️ 已過期</span>
-                </div>
-                <div class="ka-posts">
-                    <div class="ka-post" style="border-left-color:#666; opacity:0.7;">
-                        <span class="ka-post-tag tag-expired">⚠️ Pinned 已過期</span>
-                        <div class="ka-post-meta">Facebook · <s>8月4日 post</s> · <span class="pinned-note">📌 Pinned Post</span></div>
-                        <div class="ka-post-text">【AEON周三新鮮日】8月5日優惠已過</div>
-                        <div class="pinned-warning expired">⚠️ 此為釘選帖子，優惠已於8月5日結束</div>
-                    </div>
-                    <div class="sku-info" style="margin-top:10px; font-size:0.8em;">
-                        <span class="sku-tag yes">✅ O2O相關</span>
-                        <span style="color:var(--text-secondary)">百貨、家居用品</span>
-                    </div>
-                </div>
-                <div class="profile-links">
-                    📱 IG: @aeonstores.hk
-                </div>
-            </div>
-        </div>
+        </section>
         
-        <h2 class="section-title">🏪 便利店</h2>
-        <div class="ka-grid">
-            <!-- 7-Eleven -->
-            <div class="ka-card hot">
-                <div class="ka-header">
-                    <span class="ka-name">🏪 7-Eleven</span>
-                    <span class="ka-badge hot">🔥 優惠中</span>
-                </div>
-                <div class="ka-posts">
-                    <div class="ka-post hot">
-                        <span class="ka-post-tag tag-hot">🔥 75折</span>
-                        <div class="ka-post-meta">Facebook · <strong>1天前 (Aug 10)</strong></div>
-                        <div class="ka-post-text">【著數之選】7仔雪糕優惠 買滿指定金額即享75折</div>
-                        <a href="https://www.instagram.com/p/Db4kqXKDR97/" target="_blank" class="ka-post-link">🔗 IG Post</a>
+        <!-- ========== BLOCK D: 3-COLUMN CHANNEL BREAKDOWN ========== -->
+        <section class="channel-section">
+            <h2 class="channel-title">🏪 3-Column Channel Breakdown</h2>
+            <div class="channel-grid">
+                
+                <!-- Column 1: 百貨/超市 -->
+                <div class="channel-column">
+                    <div class="channel-header">🏪 百貨/超市</div>
+                    <div class="channel-stores">
+                        
+                        <!-- DON DON DONKI -->
+                        <div class="store-card direct">
+                            <div class="store-header">
+                                <span class="store-name">DON DON DONKI</span>
+                                <span class="o2o-badge yes">⚔️ 直接競爭</span>
+                            </div>
+                            <div class="store-handle">@dondondonkihk</div>
+                            <div class="post-meta">📅 8 Aug 2026 | 📱 Facebook | 📌 Pinned</div>
+                            <span class="offer-tag hot">🔥 7週年大創業祭</span>
+                            <div class="post-desc">第二期強勢登場，多款日本食品特價 (3-16/8)</div>
+                            <div class="sku-tags">
+                                <span class="sku-tag">和牛/和牛扒</span>
+                                <span class="sku-tag">三文魚/吞拿魚</span>
+                                <span class="sku-tag">零食/杯麵</span>
+                            </div>
+                            <div class="pinned-note">📌 Pinned Post · 優惠期：3-16/8（進行中）</div>
+                            <div class="post-link"><a href="https://www.facebook.com/DONDONDONKIHK" target="_blank">🔗 FB 專頁</a></div>
+                        </div>
+                        
+                        <!-- 百佳 -->
+                        <div class="store-card direct">
+                            <div class="store-header">
+                                <span class="store-name">百佳 PARKnSHOP</span>
+                                <span class="o2o-badge yes">⚔️ 直接競爭</span>
+                            </div>
+                            <div class="store-handle">@hkparknshop</div>
+                            <div class="post-meta">📅 10 Aug 2026 | 📱 Facebook</div>
+                            <span class="offer-tag hot">🔥 PNS網購優惠</span>
+                            <div class="post-desc">買滿$600即享$150優惠，輸入優惠碼「PNSWIN」</div>
+                            <div class="sku-tags">
+                                <span class="sku-tag">Order Level</span>
+                                <span class="sku-tag">凍肉/海鮮</span>
+                                <span class="sku-tag">零食</span>
+                            </div>
+                            <div class="post-link"><a href="https://www.facebook.com/hkparknshop" target="_blank">🔗 FB 專頁</a></div>
+                        </div>
+                        
+                        <!-- 惠康 -->
+                        <div class="store-card direct">
+                            <div class="store-header">
+                                <span class="store-name">惠康 Wellcome</span>
+                                <span class="o2o-badge yes">⚔️ 直接競爭</span>
+                            </div>
+                            <div class="store-handle">@hkwellcome</div>
+                            <div class="post-meta">📅 11 Aug 2026 | 📱 Facebook | 📌 Pinned</div>
+                            <span class="offer-tag hot">🆕 新品</span>
+                            <div class="post-desc">日清冷泡杯麵 新登場，優惠期11-20/8，$19.2/件</div>
+                            <div class="sku-tags">
+                                <span class="sku-tag">即食麵/杯麵</span>
+                                <span class="sku-tag">零食</span>
+                            </div>
+                            <div class="pinned-note">📌 Pinned Post · 優惠期：11-20/8（進行中）</div>
+                            <div class="post-link"><a href="https://www.facebook.com/wellcome" target="_blank">🔗 FB 專頁</a></div>
+                        </div>
+                        
+                        <!-- AEON (Expired) -->
+                        <div class="store-card expired indirect">
+                            <div class="store-header">
+                                <span class="store-name">AEON</span>
+                                <span class="o2o-badge no">❌ 非直接</span>
+                            </div>
+                            <div class="store-handle">@aeonstores.hk</div>
+                            <div class="post-meta">📅 4 Aug 2026 | 📱 Facebook | ⚠️ 已過期</div>
+                            <span class="offer-tag">周三新鮮日</span>
+                            <div class="post-desc">TOPVALU 產品優惠 (8月5日已過)</div>
+                            <div class="pinned-note expired">⚠️ Pinned 已過期</div>
+                            <div class="post-link"><a href="https://www.facebook.com/AEONHK" target="_blank">🔗 FB 專頁</a></div>
+                        </div>
+                        
                     </div>
-                    <div class="ka-post hot">
-                        <span class="ka-post-tag tag-hot">🆕 聯乘</span>
-                        <div class="ka-post-meta">Facebook · 2天前 (Aug 9)</div>
-                        <div class="ka-post-text">BEYBLADE X 戰鬥陀螺新品｜uniopen PRIMA 訂閱會員專屬預購</div>
-                        <a href="https://www.facebook.com/7ElevenHongKong" target="_blank" class="ka-post-link">🔗 FB專頁</a>
-                    </div>
-                    <div class="sku-info" style="margin-top:10px; font-size:0.8em;">
-                        <span class="sku-tag no">❌ 非O2O</span>
-                        <span style="color:var(--text-secondary)">便利店食品</span>
+                </div>
+                
+                <!-- Column 2: 便利店 -->
+                <div class="channel-column">
+                    <div class="channel-header">🏪 便利店</div>
+                    <div class="channel-stores">
+                        
+                        <!-- 7-Eleven -->
+                        <div class="store-card indirect">
+                            <div class="store-header">
+                                <span class="store-name">7-Eleven</span>
+                                <span class="o2o-badge no">❌ 非直接</span>
+                            </div>
+                            <div class="store-handle">@7elevenhk</div>
+                            <div class="post-meta">📅 10 Aug 2026 | 📱 Facebook</div>
+                            <span class="offer-tag hot">🔥 75折</span>
+                            <div class="post-desc">7仔雪糕優惠，買滿指定金額即享75折</div>
+                            <div class="sku-tags">
+                                <span class="sku-tag">雪糕</span>
+                                <span class="sku-tag">零食</span>
+                            </div>
+                            <div class="post-link"><a href="https://www.instagram.com/p/Db4kqXKDR97/" target="_blank">🔗 IG Post</a></div>
+                        </div>
+                        
+                        <!-- 7-Eleven BEYBLADE -->
+                        <div class="store-card indirect">
+                            <div class="store-header">
+                                <span class="store-name">7-Eleven</span>
+                                <span class="o2o-badge no">❌ 非直接</span>
+                            </div>
+                            <div class="store-handle">@7elevenhk</div>
+                            <div class="post-meta">📅 9 Aug 2026 | 📱 Facebook</div>
+                            <span class="offer-tag">🆕 聯乘</span>
+                            <div class="post-desc">BEYBLADE X 戰鬥陀螺新品，uniopen PRIMA 預購</div>
+                            <div class="sku-tags">
+                                <span class="sku-tag">玩具</span>
+                                <span class="sku-tag">聯乘</span>
+                            </div>
+                            <div class="post-link"><a href="https://www.facebook.com/7ElevenHongKong" target="_blank">🔗 FB 專頁</a></div>
+                        </div>
+                        
+                        <!-- Circle K -->
+                        <div class="store-card indirect">
+                            <div class="store-header">
+                                <span class="store-name">Circle K</span>
+                                <span class="o2o-badge no">❌ 非直接</span>
+                            </div>
+                            <div class="store-handle">@circlek_hk</div>
+                            <div class="post-meta">📅 10 Aug 2026 | 📱 Threads</div>
+                            <span class="offer-tag">優惠</span>
+                            <div class="post-desc">BABYMONSTER 聯乘活動優惠</div>
+                            <div class="sku-tags">
+                                <span class="sku-tag">聯乘</span>
+                                <span class="sku-tag">零食</span>
+                            </div>
+                            <div class="post-link"><a href="https://www.threads.com/@circlek_hk/post/DbsOUMQErK6/media" target="_blank">🔗 Threads Post</a></div>
+                        </div>
+                        
                     </div>
                 </div>
-                <div class="profile-links">
-                    📱 FB: @7ElevenHongKong | IG: @7elevenhk | Threads: @7elevenhk
+                
+                <!-- Column 3: 個人護理店 -->
+                <div class="channel-column">
+                    <div class="channel-header">💊 個人護理店</div>
+                    <div class="channel-stores">
+                        
+                        <!-- 屈臣氏 -->
+                        <div class="store-card direct">
+                            <div class="store-header">
+                                <span class="store-name">屈臣氏 Watsons</span>
+                                <span class="o2o-badge yes">⚔️ 直接競爭</span>
+                            </div>
+                            <div class="store-handle">@hkwatsons</div>
+                            <div class="post-meta">📅 10 Aug 2026 | 📱 Facebook</div>
+                            <span class="offer-tag hot">🔥 VIP Day</span>
+                            <div class="post-desc">逢星期一尊享92折，185會員專享</div>
+                            <div class="sku-tags">
+                                <span class="sku-tag">Order Level</span>
+                                <span class="sku-tag">保健用品</span>
+                                <span class="sku-tag">個人護理</span>
+                            </div>
+                            <div class="post-link"><a href="https://www.facebook.com/watsons" target="_blank">🔗 FB 專頁</a></div>
+                        </div>
+                        
+                        <!-- 屈臣氏 88折 -->
+                        <div class="store-card indirect">
+                            <div class="store-header">
+                                <span class="store-name">屈臣氏 Watsons</span>
+                                <span class="o2o-badge no">❌ 非直接</span>
+                            </div>
+                            <div class="store-handle">@hkwatsons</div>
+                            <div class="post-meta">📅 7 Aug 2026 | 📱 Facebook</div>
+                            <span class="offer-tag promo">88折</span>
+                            <div class="post-desc">星期六限定全場88折，自家品牌組合</div>
+                            <div class="sku-tags">
+                                <span class="sku-tag">個人護理</span>
+                                <span class="sku-tag">美容</span>
+                            </div>
+                            <div class="post-link"><a href="https://www.facebook.com/watsons" target="_blank">🔗 FB 專頁</a></div>
+                        </div>
+                        
+                        <!-- 萬寧 (Expired) -->
+                        <div class="store-card expired indirect">
+                            <div class="store-header">
+                                <span class="store-name">萬寧 Mannings</span>
+                                <span class="o2o-badge no">❌ 非直接</span>
+                            </div>
+                            <div class="store-handle">@mannings_hk</div>
+                            <div class="post-meta">📅 6 Aug 2026 | 📱 Facebook | ⚠️ 已過期</div>
+                            <span class="offer-tag">國際貓貓節88折</span>
+                            <div class="post-desc">全場無門檻即享88折 (8月8日已過)</div>
+                            <div class="pinned-note expired">⚠️ Pinned 已過期</div>
+                            <div class="post-link"><a href="https://www.facebook.com/mannings" target="_blank">🔗 FB 專頁</a></div>
+                        </div>
+                        
+                        <!-- 759阿信屋 -->
+                        <div class="store-card indirect">
+                            <div class="store-header">
+                                <span class="store-name">759阿信屋</span>
+                                <span class="o2o-badge no">❌ 非直接</span>
+                            </div>
+                            <div class="store-handle">@759store</div>
+                            <div class="post-meta">📅 10 Aug 2026 | 📱 Facebook</div>
+                            <span class="offer-tag hot">🆕 限定</span>
+                            <div class="post-desc">日本爆紅「凍水杯麵」8.12 觀塘限定，現場憑飛即買</div>
+                            <div class="sku-tags">
+                                <span class="sku-tag">零食</span>
+                                <span class="sku-tag">杯麵</span>
+                                <span class="sku-tag">日本食品</span>
+                            </div>
+                            <div class="post-link"><a href="https://www.facebook.com/759store" target="_blank">🔗 FB 專頁</a></div>
+                        </div>
+                        
+                    </div>
                 </div>
+                
             </div>
-            
-            <!-- Circle K -->
-            <div class="ka-card">
-                <div class="ka-header">
-                    <span class="ka-name">🥤 Circle K</span>
-                    <span class="ka-badge">一般</span>
-                </div>
-                <div class="ka-posts">
-                    <div class="ka-post">
-                        <div class="ka-post-meta">Threads · 1天前</div>
-                        <div class="ka-post-text">BABYMONSTER 聯乘活動優惠</div>
-                        <a href="https://www.threads.com/@circlek_hk/post/DbsOUMQErK6/media" target="_blank" class="ka-post-link">🔗 Threads Post</a>
-                    </div>
-                    <div class="sku-info" style="margin-top:10px; font-size:0.8em;">
-                        <span class="sku-tag no">❌ 非O2O</span>
-                        <span style="color:var(--text-secondary)">便利店</span>
-                    </div>
-                </div>
-                <div class="profile-links">
-                    📱 IG: @circlekhongkong | Threads: @circlek_hk
-                </div>
-            </div>
-        </div>
+        </section>
         
-        <h2 class="section-title">🏬 其他KAs (需補充)</h2>
-        <div class="ka-grid">
-            <!-- 一田 -->
-            <div class="ka-card">
-                <div class="ka-header">
-                    <span class="ka-name">🏬 一田</span>
-                    <span class="ka-badge">待收集</span>
-                </div>
-                <div class="ka-posts">
-                    <div class="ka-post">
-                        <div class="ka-post-meta">IG · 待補充</div>
-                        <div class="ka-post-text" style="color:var(--text-secondary)">需從 IG/Threads 補充數據</div>
-                    </div>
-                    <div class="sku-info" style="margin-top:10px; font-size:0.8em;">
-                        <span class="sku-tag yes">✅ O2O相關</span>
-                        <span style="color:var(--text-secondary)">百貨、超市</span>
-                    </div>
-                </div>
-                <div class="profile-links">
-                    📱 IG: @yatahk
-                </div>
-            </div>
-            
-            <!-- 佳寶 -->
-            <div class="ka-card">
-                <div class="ka-header">
-                    <span class="ka-name">🏪 佳寶</span>
-                    <span class="ka-badge">待收集</span>
-                </div>
-                <div class="ka-posts">
-                    <div class="ka-post">
-                        <div class="ka-post-meta">FB/IG · 待補充</div>
-                        <div class="ka-post-text" style="color:var(--text-secondary)">需從社交媒體補充數據</div>
-                    </div>
-                    <div class="sku-info" style="margin-top:10px; font-size:0.8em;">
-                        <span class="sku-tag yes">✅ O2O相關</span>
-                        <span style="color:var(--text-secondary)">凍肉、海鮮</span>
-                    </div>
-                </div>
-                <div class="profile-links">
-                    📱 FB: @kaibofoodsupermarket
-                </div>
-            </div>
-        </div>
-        
-        <h2 class="section-title">📊 收集概覽</h2>
-        <div class="overview">
-            <div class="overview-card">
-                <h3>7</h3>
-                <p>FB 收集到</p>
-            </div>
-            <div class="overview-card">
-                <h3>2</h3>
-                <p>IG 收集到</p>
-            </div>
-            <div class="overview-card">
-                <h3>1</h3>
-                <p>Threads 收集到</p>
-            </div>
-            <div class="overview-card">
-                <h3>4</h3>
-                <p>需補充</p>
-            </div>
-        </div>
-        
-        <h2 class="section-title">📌 Pinned Posts 警示</h2>
-        <div class="ka-grid">
-            <div class="ka-card" style="border-left-color:var(--accent-yellow);">
-                <div class="ka-header">
-                    <span class="ka-name">⚠️ 已過期的 Pinned Posts</span>
-                </div>
-                <div class="ka-posts">
-                    <div class="ka-post" style="border-left-color:#666; opacity:0.7;">
-                        <div class="ka-post-meta">百佳 · <s>8月8日</s></div>
-                        <div class="ka-post-text">【門市88折】優惠已於8月8日結束，但post仍被釘選</div>
-                    </div>
-                    <div class="ka-post" style="border-left-color:#666; opacity:0.7;">
-                        <div class="ka-post-meta">萬寧 · <s>8月8日</s></div>
-                        <div class="ka-post-text">【國際貓貓節88折】優惠已於8月8日結束，但post仍被釘選</div>
-                    </div>
-                    <div class="ka-post" style="border-left-color:#666; opacity:0.7;">
-                        <div class="ka-post-meta">AEON · <s>8月5日</s></div>
-                        <div class="ka-post-text">【周三新鮮日】優惠已於8月5日結束，但post仍被釘選</div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="ka-card" style="border-left-color:var(--accent-green);">
-                <div class="ka-header">
-                    <span class="ka-name">✅ 仍在有效期內的 Pinned Posts</span>
-                </div>
-                <div class="ka-posts">
-                    <div class="ka-post hot">
-                        <div class="ka-post-meta">惠康 · <strong>11-20/8</strong></div>
-                        <div class="ka-post-text">【日清冷泡杯麵 新登場】優惠期：8月11日至20日</div>
-                    </div>
-                    <div class="ka-post hot">
-                        <div class="ka-post-meta">DONKI · <strong>3-16/8</strong></div>
-                        <div class="ka-post-text">【7週年大創業祭！第二期】優惠期：8月3日至16日</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
+        <!-- ========== FOOTER ========== -->
         <footer>
-            <p>📅 報告更新：11 Aug 2026 | 🔍 Scout Agent</p>
+            <p>📅 報告更新：11 Aug 2026 | 🔍 Hermes-Scout Agent</p>
+            <p style="margin-top:10px;">📁 舊版 v2.9 保存於：<code>Social_Listening_Report_v2.9.html</code></p>
             <p style="margin-top:10px;">🔗 <a href="https://hfng0523.github.io/scout-reports/" target="_blank">GitHub Pages</a></p>
-            <p style="margin-top:10px; color:var(--accent-yellow);">⚠️ 注意：Pinned Posts 可能已過期，請以實際優惠期為準</p>
         </footer>
+        
     </div>
 </body>
 </html>

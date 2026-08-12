@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=1920">
-    <title>KAs Social Listening Report | 11 Aug 2026 (Updated)</title>
+    <title>KAs Social Listening Report | 11 Aug 2026 (Official Pages Only)</title>
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; }
         
@@ -72,6 +72,7 @@
         }
         .status-dot.green { background: #6BCB77; box-shadow: 0 0 10px #6BCB77; }
         .status-dot.yellow { background: #F9CA24; box-shadow: 0 0 10px #F9CA24; }
+        .status-dot.red { background: #FF6B6B; box-shadow: 0 0 10px #FF6B6B; }
         
         /* ========== TOP ROW: KPI + INTEL ========== */
         .top-row {
@@ -226,7 +227,7 @@
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 25px;
-            height: 850px;
+            height: 700px;
         }
         
         .channel-column {
@@ -280,6 +281,8 @@
         .store-card.indirect { border-left-color: #555; }
         
         .store-card.expired { opacity: 0.5; }
+        
+        .store-card.no-recent { border-left-color: #FF6B6B; background: rgba(255,107,107,0.05); }
         
         .store-header {
             display: flex;
@@ -383,6 +386,17 @@
             text-align: center;
             margin-top: 15px;
         }
+        
+        .warning-box {
+            background: rgba(255,107,107,0.1);
+            border: 1px solid #FF6B6B;
+            border-radius: 12px;
+            padding: 15px 20px;
+            margin-bottom: 20px;
+            font-size: 14px;
+        }
+        
+        .warning-box strong { color: #FF6B6B; }
     </style>
 </head>
 <body>
@@ -392,14 +406,14 @@
         <header class="header">
             <div class="header-left">
                 <h1>🔍 KAs Social Listening Report</h1>
-                <div class="header-date">📅 11 Aug 2026 (Updated Today)</div>
+                <div class="header-date">📅 11 Aug 2026 | ✅ 官方 Page Posts Only</div>
             </div>
             <div class="platform-status">
-                <div class="platform-badge active">
+                <div class="platform-badge">
                     <span class="status-dot green"></span>
-                    <span>Facebook</span>
+                    <span>Facebook (官方)</span>
                 </div>
-                <div class="platform-badge active">
+                <div class="platform-badge">
                     <span class="status-dot green"></span>
                     <span>Instagram</span>
                 </div>
@@ -410,18 +424,22 @@
             </div>
         </header>
         
+        <!-- ========== WARNING ========== -->
+        <div class="warning-box">
+            <strong>⚠️ 重要更正</strong>：之前報告的屈臣氏、惠康 posts 係從 Facebook 群組/其他用戶取得，非官方 Page posts。現已更正為官方 Page 數據。
+        </div>
+        
         <!-- ========== TOP ROW: KPI + INTEL ========== -->
         <div class="top-row">
             
             <!-- KPI Card -->
             <div class="kpi-card direct">
                 <h3>⚔️ 直接競爭 (O2O 相關)</h3>
-                <div class="big-number">4</div>
+                <div class="big-number">2</div>
                 <p class="kpi-desc">posts 涉及直接競爭品類</p>
                 <div class="kpi-tags">
-                    <span class="kpi-tag">惠康</span>
-                    <span class="kpi-tag">DONKI</span>
                     <span class="kpi-tag">百佳</span>
+                    <span class="kpi-tag">DONKI</span>
                 </div>
             </div>
             
@@ -429,10 +447,10 @@
             <div class="intel-card trends">
                 <h3>📈 市場趨勢 (Market Trends)</h3>
                 <ul class="intel-list">
-                    <li><strong>日本食品熱潮</strong> — DONKI 7週年(3-16/8)、759 APP升級推日本商品、惠康日清冷泡杯麵</li>
-                    <li><strong>會員制優惠深化</strong> — 百佳佳多寶、屈臣氏 VIP Day (逢一92折)</li>
-                    <li><strong>聯乘/IP 合作</strong> — 7-Eleven BEYBLADE X (638 likes)、DONKI 爆旋陀螺</li>
-                    <li><strong>Pinned Posts 問題</strong> — 百佳(8月5日)、屈臣氏(7月13日)、AEON(8月3日) Pinned已過期</li>
+                    <li><strong>屈臣氏/惠康 Facebook 停更</strong> — 屈臣氏 1個月冇更新，惠康 6個月冇更新，社交媒體策略或已放棄</li>
+                    <li><strong>超市依然活躍</strong> — 百佳、DONKI、759、萬寧每週都有官方 FB posts</li>
+                    <li><strong>日本食品熱潮</strong> — DONKI 週末特價、759 凍水杯麵限定活動</li>
+                    <li><strong>會員制</strong> — 百佳、易賞錢、萬寧等繼續用會員優惠推廣</li>
                 </ul>
             </div>
             
@@ -440,10 +458,10 @@
             <div class="intel-card takeaways">
                 <h3>💡 O2O 策略啟示</h3>
                 <ul class="intel-list">
-                    <li><strong>凍肉海鮮促銷空窗</strong> — 主要KA社交媒體較少凍肉海鮮優惠，O2O可主動推廣</li>
-                    <li><strong>日本食品威脅</strong> — DONKI 7週年、759主推日本商品，需關注</li>
-                    <li><strong>會員制竞争</strong> — 百佳佳多寶、屈臣氏 VIP Day，O2O需强化自取優勢</li>
-                    <li><strong>時機</strong> — 8月8日大型促銷已過，現為促銷低谷期，適合 O2O 主動出擊</li>
+                    <li><strong>FB 社交媒體策略差异</strong> — 屈臣氏/惠康已減少 FB 發佈，轉向其他渠道</li>
+                    <li><strong>DONKI/百佳/759 活躍</strong> — 日本食品、凍肉海鮮優惠可在這些平台追蹤</li>
+                    <li><strong>O2O 社交媒體機會</strong> — 屈臣氏/惠康停更期間，O2O 可填補社交媒體曝光</li>
+                    <li><strong>建議</strong> — 集中追蹤百佳、DONKI、759、萬寧的 FB 官方 posts</li>
                 </ul>
             </div>
             
@@ -458,27 +476,27 @@
                 <div class="granularity-bars">
                     <div class="granularity-bar">
                         <span class="granularity-label">Order Level</span>
-                        <div class="granularity-fill bar-order" style="width: 100px;">2</div>
+                        <div class="granularity-fill bar-order" style="width: 80px;">1</div>
                     </div>
                     <div class="granularity-bar">
                         <span class="granularity-label">SKU Level</span>
-                        <div class="granularity-fill bar-sku" style="width: 60px;">1</div>
+                        <div class="granularity-fill bar-sku" style="width: 50px;">0</div>
                     </div>
                     <div class="granularity-bar">
                         <span class="granularity-label">Other</span>
-                        <div class="granularity-fill bar-other" style="width: 80px;">4</div>
+                        <div class="granularity-fill bar-other" style="width: 60px;">3</div>
                     </div>
                 </div>
                 <div style="margin-top: 25px;">
                     <h3 style="color:#888; font-size:12px; text-transform:uppercase; letter-spacing:1px;">總收集</h3>
-                    <div style="font-size:48px; font-weight:bold; color:#4D96FF;">7</div>
-                    <div style="color:#888; font-size:13px;">posts (7日內)</div>
+                    <div style="font-size:48px; font-weight:bold; color:#4D96FF;">4</div>
+                    <div style="color:#888; font-size:13px;">posts (官方 FB)</div>
                 </div>
             </div>
             
             <!-- ========== CHANNEL GRID ========== -->
             <div class="channel-section" style="margin-bottom:0;">
-                <div class="filter-note">📌 顯示 7日內 posts (5-11 Aug 2026) | ⚠️ 灰色卡片 = 已過期優惠</div>
+                <div class="filter-note">📌 只顯示官方 FB Page posts | ⚠️ 灰色卡片 = 超過7日冇更新</div>
                 <div class="channel-grid">
                     
                     <!-- Column 1: 百貨/超市 -->
@@ -488,18 +506,17 @@
                             
                             <div class="store-card direct">
                                 <div class="store-header">
-                                    <span class="store-name">惠康 Wellcome</span>
+                                    <span class="store-name">百佳 PARKnSHOP</span>
                                     <span class="o2o-badge yes">⚔️ 直接</span>
                                 </div>
-                                <div class="store-handle">@hkwellcome</div>
-                                <div class="post-meta">📅 11 Aug 2026 | 📱 FB | 📌 Pinned</div>
-                                <span class="offer-tag hot">🆕 新品</span>
-                                <div class="post-desc">日清冷泡杯麵 新登場，$19.2/件 (267 likes)</div>
+                                <div class="store-handle">@hkparknshop</div>
+                                <div class="post-meta">📅 11 Aug 2026 | 📱 FB (1小時前)</div>
+                                <span class="offer-tag hot">🔥 佳抵買</span>
+                                <div class="post-desc">【本日限定優惠】每月2/12/22日，易賞錢會員 + 滙豐卡簽帳滿HK$100享92折</div>
                                 <div class="sku-tags">
-                                    <span class="sku-tag">即食麵</span>
-                                    <span class="sku-tag">零食</span>
+                                    <span class="sku-tag">Order Level</span>
+                                    <span class="sku-tag">凍肉/雞蛋</span>
                                 </div>
-                                <div class="pinned-note">📌 優惠期：11-20/8（進行中）</div>
                             </div>
                             
                             <div class="store-card direct">
@@ -508,67 +525,12 @@
                                     <span class="o2o-badge yes">⚔️ 直接</span>
                                 </div>
                                 <div class="store-handle">@dondondonkihk</div>
-                                <div class="post-meta">📅 7 Aug 2026 | 📱 FB</div>
-                                <span class="offer-tag hot">🔥 7週年大創業祭</span>
-                                <div class="post-desc">第二期，多款日本食品特價 (3-16/8)</div>
+                                <div class="post-meta">📅 7 Aug 2026 | 📱 FB (4天前)</div>
+                                <span class="offer-tag hot">🔥 週末特價</span>
+                                <div class="post-desc">【達星期五至日 日替わり目玉商品】大拖羅刺身、日本和牛、牛肩扒等特價</div>
                                 <div class="sku-tags">
                                     <span class="sku-tag">和牛/扒</span>
                                     <span class="sku-tag">三文魚</span>
-                                    <span class="sku-tag">零食</span>
-                                </div>
-                                <div class="pinned-note">📌 優惠期：3-16/8（進行中）</div>
-                            </div>
-                            
-                            <div class="store-card direct">
-                                <div class="store-header">
-                                    <span class="store-name">百佳 PARKnSHOP</span>
-                                    <span class="o2o-badge yes">⚔️ 直接</span>
-                                </div>
-                                <div class="store-handle">@hkparknshop</div>
-                                <div class="post-meta">📅 7 Aug 2026 | 📱 FB</div>
-                                <span class="offer-tag">佳多寶</span>
-                                <div class="post-desc">會員優惠推廣 (68 likes)</div>
-                                <div class="sku-tags">
-                                    <span class="sku-tag">Order Level</span>
-                                    <span class="sku-tag">凍肉/海鮮</span>
-                                </div>
-                            </div>
-                            
-                            <div class="store-card expired indirect">
-                                <div class="store-header">
-                                    <span class="store-name">惠康 Wellcome</span>
-                                    <span class="o2o-badge no">❌ 非直接</span>
-                                </div>
-                                <div class="store-handle">@hkwellcome</div>
-                                <div class="post-meta">📅 7 Aug 2026 | 📱 FB | ⚠️ 已過期</div>
-                                <span class="offer-tag promo">88折</span>
-                                <div class="post-desc">全場88折，買滿$888 (226 likes)</div>
-                                <div class="pinned-note expired">⚠️ 已過期 (7-8/8)</div>
-                            </div>
-                            
-                            <div class="store-card expired indirect">
-                                <div class="store-header">
-                                    <span class="store-name">百佳 PARKnSHOP</span>
-                                    <span class="o2o-badge no">❌ 非直接</span>
-                                </div>
-                                <div class="store-handle">@hkparknshop</div>
-                                <div class="post-meta">📅 5 Aug 2026 | 📱 FB | ⚠️ 已過期</div>
-                                <span class="offer-tag">⚡快閃星期三</span>
-                                <div class="post-desc">SELECT 佳之選花生醬 (455 likes)</div>
-                                <div class="pinned-note expired">⚠️ Pinned 已過期</div>
-                            </div>
-                            
-                            <div class="store-card indirect">
-                                <div class="store-header">
-                                    <span class="store-name">759阿信屋</span>
-                                    <span class="o2o-badge no">❌ 非直接</span>
-                                </div>
-                                <div class="store-handle">@759store</div>
-                                <div class="post-meta">📅 11 Aug 2026 | 📱 FB</div>
-                                <span class="offer-tag hot">🆕 APP升級</span>
-                                <div class="post-desc">【重磅登場】APP 全新升級，期間限時9折神券 (72 likes)</div>
-                                <div class="sku-tags">
-                                    <span class="sku-tag">零食</span>
                                     <span class="sku-tag">日本食品</span>
                                 </div>
                             </div>
@@ -579,9 +541,9 @@
                                     <span class="o2o-badge no">❌ 非直接</span>
                                 </div>
                                 <div class="store-handle">@759store</div>
-                                <div class="post-meta">📅 10 Aug 2026 | 📱 FB</div>
-                                <span class="offer-tag">限定</span>
-                                <div class="post-desc">日本爆紅「凍水杯麵」8.12 觀塘限定</div>
+                                <div class="post-meta">📅 10 Aug 2026 | 📱 FB (1天前)</div>
+                                <span class="offer-tag hot">🆕 限定</span>
+                                <div class="post-desc">【一日限定】日本爆紅「凍水杯麵」8.12 觀塘限定，現場憑飛即買 (292 likes)</div>
                                 <div class="sku-tags">
                                     <span class="sku-tag">零食</span>
                                     <span class="sku-tag">杯麵</span>
@@ -589,16 +551,26 @@
                                 </div>
                             </div>
                             
-                            <div class="store-card expired indirect">
+                            <div class="store-card no-recent">
+                                <div class="store-header">
+                                    <span class="store-name">惠康 Wellcome</span>
+                                    <span class="o2o-badge no">❌ 非直接</span>
+                                </div>
+                                <div class="store-handle">@hkwellcome</div>
+                                <div class="post-meta">📅 2月15日 | 📱 FB ⚠️ 已停更6個月</div>
+                                <span class="offer-tag">❌ 無官方 FB 更新</span>
+                                <div class="post-desc">惠康官方 Facebook Page 已接近6個月沒有更新 post</div>
+                            </div>
+                            
+                            <div class="store-card no-recent">
                                 <div class="store-header">
                                     <span class="store-name">AEON</span>
                                     <span class="o2o-badge no">❌ 非直接</span>
                                 </div>
                                 <div class="store-handle">@aeonstores.hk</div>
-                                <div class="post-meta">📅 3 Aug 2026 | 📱 FB | ⚠️ 已過期</div>
-                                <span class="offer-tag">周三新鮮日</span>
-                                <div class="post-desc">TOPVALU 產品優惠 (8月5日已過)</div>
-                                <div class="pinned-note expired">⚠️ Pinned 已過期</div>
+                                <div class="post-meta">📅 超過1個月 | 📱 FB ⚠️ 需確認</div>
+                                <span class="offer-tag">❌ 待確認</span>
+                                <div class="post-desc">需進一步確認 AEON 官方 FB 最新 post 日期</div>
                             </div>
                             
                         </div>
@@ -617,7 +589,7 @@
                                 <div class="store-handle">@7elevenhk</div>
                                 <div class="post-meta">📅 11 Aug 2026 | 📱 FB</div>
                                 <span class="offer-tag">環保</span>
-                                <div class="post-desc">【繼續啡 We Green】咖啡渣再生計劃第3年，南瓜/苦瓜/粟米農作物</div>
+                                <div class="post-desc">【繼續啡 We Green】咖啡渣再生計劃第3年</div>
                                 <div class="sku-tags">
                                     <span class="sku-tag">環保</span>
                                     <span class="sku-tag">7-SELECT</span>
@@ -642,22 +614,6 @@
                             
                             <div class="store-card indirect">
                                 <div class="store-header">
-                                    <span class="store-name">7-Eleven</span>
-                                    <span class="o2o-badge no">❌ 非直接</span>
-                                </div>
-                                <div class="store-handle">@7elevenhk</div>
-                                <div class="post-meta">📅 10 Aug 2026 | 📱 IG</div>
-                                <span class="offer-tag hot">🔥 75折</span>
-                                <div class="post-desc">7仔雪糕優惠，買滿指定金額即享75折</div>
-                                <div class="sku-tags">
-                                    <span class="sku-tag">雪糕</span>
-                                    <span class="sku-tag">零食</span>
-                                </div>
-                                <div class="post-link"><a href="https://www.instagram.com/p/Db4kqXKDR97/" target="_blank">🔗 IG Post</a></div>
-                            </div>
-                            
-                            <div class="store-card indirect">
-                                <div class="store-header">
                                     <span class="store-name">Circle K</span>
                                     <span class="o2o-badge no">❌ 非直接</span>
                                 </div>
@@ -672,23 +628,6 @@
                                 <div class="post-link"><a href="https://www.threads.com/@circlek_hk/post/DbsOUMQErK6/media" target="_blank">🔗 Threads</a></div>
                             </div>
                             
-                            <div class="store-card indirect">
-                                <div class="store-header">
-                                    <span class="store-name">屈臣氏 Watsons</span>
-                                    <span class="o2o-badge no">❌ 非直接</span>
-                                </div>
-                                <div class="store-handle">@hkwatsons</div>
-                                <div class="post-meta">📅 10 Aug 2026 | 📱 IG</div>
-                                <span class="offer-tag hot">🔥 VIP Day</span>
-                                <div class="post-desc">逢星期一尊享92折，185會員專享</div>
-                                <div class="sku-tags">
-                                    <span class="sku-tag">Order Level</span>
-                                    <span class="sku-tag">保健</span>
-                                    <span class="sku-tag">個人護理</span>
-                                </div>
-                                <div class="post-link"><a href="https://www.instagram.com/p/Db2juQrkeEF/" target="_blank">🔗 IG Post</a></div>
-                            </div>
-                            
                         </div>
                     </div>
                     
@@ -699,55 +638,29 @@
                             
                             <div class="store-card indirect">
                                 <div class="store-header">
-                                    <span class="store-name">屈臣氏 Watsons</span>
-                                    <span class="o2o-badge no">❌ 非直接</span>
-                                </div>
-                                <div class="store-handle">@hkwatsons</div>
-                                <div class="post-meta">📅 7 Aug 2026 | 📱 FB | ⚠️ 已過期</div>
-                                <span class="offer-tag promo">88折</span>
-                                <div class="post-desc">星期六限定全場88折 (8月8日已過)</div>
-                                <div class="pinned-note expired">⚠️ 已過期</div>
-                                <div class="sku-tags">
-                                    <span class="sku-tag">個人護理</span>
-                                    <span class="sku-tag">美容</span>
-                                </div>
-                            </div>
-                            
-                            <div class="store-card expired indirect">
-                                <div class="store-header">
-                                    <span class="store-name">屈臣氏 Watsons</span>
-                                    <span class="o2o-badge no">❌ 非直接</span>
-                                </div>
-                                <div class="store-handle">@hkwatsons</div>
-                                <div class="post-meta">📅 13 Jul 2026 | 📱 FB | ⚠️ 已過期</div>
-                                <span class="offer-tag">185週年88折</span>
-                                <div class="post-desc">歡慶屈臣氏185週年 (7月13日已過)</div>
-                                <div class="pinned-note expired">⚠️ 已過期</div>
-                            </div>
-                            
-                            <div class="store-card expired indirect">
-                                <div class="store-header">
-                                    <span class="store-name">屈臣氏 Watsons</span>
-                                    <span class="o2o-badge no">❌ 非直接</span>
-                                </div>
-                                <div class="store-handle">@hkwatsons</div>
-                                <div class="post-meta">📅 11 Jul 2026 | 📱 IG | ⚠️ 已過期</div>
-                                <span class="offer-tag">185週年</span>
-                                <div class="post-desc">屈臣氏185週年慶祝 (Likes: 2,153)</div>
-                                <div class="pinned-note expired">⚠️ 已過期</div>
-                                <div class="post-link"><a href="https://www.instagram.com/p/Db2e4xqDs5d/" target="_blank">🔗 IG Post</a></div>
-                            </div>
-                            
-                            <div class="store-card expired indirect">
-                                <div class="store-header">
                                     <span class="store-name">萬寧 Mannings</span>
                                     <span class="o2o-badge no">❌ 非直接</span>
                                 </div>
                                 <div class="store-handle">@mannings_hk</div>
-                                <div class="post-meta">📅 6 Aug 2026 | 📱 FB | ⚠️ 已過期</div>
-                                <span class="offer-tag">88折</span>
-                                <div class="post-desc">國際貓貓節全場88折 (8月8日已過)</div>
-                                <div class="pinned-note expired">⚠️ 已過期</div>
+                                <div class="post-meta">📅 11 Aug 2026 | 📱 FB (15小時前)</div>
+                                <span class="offer-tag">🆕 消暑</span>
+                                <div class="post-desc">【終極消暑神器】冰感/涼感產品推介，熱天外出必備</div>
+                                <div class="sku-tags">
+                                    <span class="sku-tag">止汗</span>
+                                    <span class="sku-tag">消暑</span>
+                                    <span class="sku-tag">個人護理</span>
+                                </div>
+                            </div>
+                            
+                            <div class="store-card no-recent">
+                                <div class="store-header">
+                                    <span class="store-name">屈臣氏 Watsons</span>
+                                    <span class="o2o-badge no">❌ 非直接</span>
+                                </div>
+                                <div class="store-handle">@hkwatsons</div>
+                                <div class="post-meta">📅 7月1日 | 📱 FB ⚠️ 已停更1個月</div>
+                                <span class="offer-tag">❌ 無官方 FB 更新</span>
+                                <div class="post-desc">屈臣氏官方 Facebook Page 已接近1個月沒有更新 post</div>
                             </div>
                             
                         </div>
@@ -760,8 +673,8 @@
         
         <!-- ========== FOOTER ========== -->
         <footer>
-            <p>📅 報告更新：11 Aug 2026 (今日) | 🔍 Hermes-Scout Agent</p>
-            <p style="margin-top:10px;">📁 舊版 v2.9 保存於：<code>Social_Listening_Report_v2.9.html</code></p>
+            <p>📅 報告更新：11 Aug 2026 (Official Pages Only) | 🔍 Hermes-Scout Agent</p>
+            <p style="margin-top:10px;">📌 只收集官方 FB Page posts，不含群組/用戶 posts</p>
             <p style="margin-top:10px;">🔗 <a href="https://hfng0523.github.io/scout-reports/" target="_blank">GitHub Pages</a></p>
         </footer>
         

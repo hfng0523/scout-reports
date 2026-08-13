@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=1920">
-    <title>KAs Social Listening Report | 11 Aug 2026 (3 Platforms)</title>
+    <title>KAs Social Listening Report | 11 Aug 2026 (FB+IG+Threads)</title>
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; }
         body { font-family: 'Segoe UI', Arial, sans-serif; background: #0a0a14; color: #fff; min-height: 100vh; padding: 30px 50px; width: 1920px; }
@@ -17,22 +17,23 @@
         .status-dot { width: 12px; height: 12px; border-radius: 50%; }
         .status-dot.green { background: #6BCB77; box-shadow: 0 0 10px #6BCB77; }
         .status-dot.yellow { background: #F9CA24; box-shadow: 0 0 10px #F9CA24; }
-        .status-dot.red { background: #FF6B6B; box-shadow: 0 0 10px #FF6B6B; }
         
         /* KPI Row */
-        .kpi-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-bottom: 25px; }
+        .kpi-row { display: grid; grid-template-columns: repeat(5, 1fr); gap: 20px; margin-bottom: 25px; }
         .kpi-card { background: #1a1a2e; border-radius: 16px; padding: 20px; border: 1px solid rgba(255,255,255,0.1); text-align: center; }
         .kpi-card.direct { border-top: 4px solid #FF6B6B; }
         .kpi-card.indirect { border-top: 4px solid #555; }
+        .kpi-card.fb { border-top: 4px solid #1877F2; }
         .kpi-card.ig { border-top: 4px solid #E1306C; }
         .kpi-card.threads { border-top: 4px solid #1DA1F2; }
-        .kpi-card h3 { font-size: 13px; color: #888; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px; }
-        .kpi-card .big-number { font-size: 48px; font-weight: bold; }
+        .kpi-card h3 { font-size: 12px; color: #888; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px; }
+        .kpi-card .big-number { font-size: 42px; font-weight: bold; }
         .kpi-card.direct .big-number { color: #FF6B6B; }
         .kpi-card.indirect .big-number { color: #888; }
+        .kpi-card.fb .big-number { color: #1877F2; }
         .kpi-card.ig .big-number { color: #E1306C; }
         .kpi-card.threads .big-number { color: #1DA1F2; }
-        .kpi-card p { color: #666; font-size: 12px; margin-top: 5px; }
+        .kpi-card p { color: #666; font-size: 11px; margin-top: 5px; }
         
         /* Intel Row */
         .intel-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 25px; }
@@ -51,11 +52,10 @@
         /* Granularity Row */
         .granularity-row { display: flex; gap: 20px; margin-bottom: 25px; align-items: stretch; }
         .granularity-card { background: #1a1a2e; border-radius: 16px; padding: 20px; border: 1px solid rgba(255,255,255,0.1); flex: 0 0 280px; }
-        .granularity-card h3 { font-size: 13px; color: #888; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 15px; }
-        .granularity-bars { }
-        .gran-bar { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
-        .gran-label { width: 80px; font-size: 12px; color: #888; }
-        .gran-fill { height: 24px; border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: bold; min-width: 40px; }
+        .granularity-card h3 { font-size: 12px; color: #888; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px; }
+        .gran-bar { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
+        .gran-label { width: 70px; font-size: 11px; color: #888; }
+        .gran-fill { height: 22px; border-radius: 5px; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: bold; min-width: 35px; }
         .bar-order { background: #FF6B6B; }
         .bar-sku { background: #4D96FF; }
         .bar-other { background: #555; }
@@ -64,8 +64,8 @@
         .channel-section { margin-bottom: 25px; }
         .filter-note { font-size: 13px; color: #666; text-align: center; margin-bottom: 15px; }
         .channel-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-        .channel-column { background: #1a1a2e; border-radius: 16px; overflow: hidden; border: 1px solid rgba(255,255,255,0.1); display: flex; flex-direction: column; max-height: 650px; }
-        .channel-header { padding: 15px; font-weight: bold; font-size: 16px; text-align: center; flex-shrink: 0; }
+        .channel-column { background: #1a1a2e; border-radius: 16px; overflow: hidden; border: 1px solid rgba(255,255,255,0.1); display: flex; flex-direction: column; max-height: 700px; }
+        .channel-header { padding: 14px; font-weight: bold; font-size: 15px; text-align: center; flex-shrink: 0; }
         .channel-column:nth-child(1) .channel-header { background: rgba(255,107,107,0.15); color: #FF6B6B; }
         .channel-column:nth-child(2) .channel-header { background: rgba(255,159,67,0.15); color: #FF9F43; }
         .channel-column:nth-child(3) .channel-header { background: rgba(77,150,255,0.15); color: #4D96FF; }
@@ -74,29 +74,29 @@
         .channel-stores::-webkit-scrollbar-thumb { background: #444; border-radius: 3px; }
         
         /* Store Card */
-        .store-card { background: rgba(255,255,255,0.02); border-radius: 10px; padding: 14px; border-left: 3px solid #555; flex-shrink: 0; }
+        .store-card { background: rgba(255,255,255,0.02); border-radius: 10px; padding: 12px; border-left: 3px solid #555; flex-shrink: 0; }
         .store-card.direct { border-left-color: #FF6B6B; }
         .store-card.indirect { border-left-color: #555; }
-        .store-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px; }
-        .store-name { font-weight: bold; font-size: 14px; }
-        .o2o-badge { font-size: 10px; padding: 3px 8px; border-radius: 10px; font-weight: bold; }
+        .store-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 5px; }
+        .store-name { font-weight: bold; font-size: 13px; }
+        .o2o-badge { font-size: 9px; padding: 3px 7px; border-radius: 10px; font-weight: bold; }
         .o2o-badge.yes { background: #FF6B6B; color: #fff; }
         .o2o-badge.no { background: #555; color: #fff; }
-        .platform-tags { display: flex; gap: 5px; margin-bottom: 6px; }
-        .plat-tag { font-size: 9px; padding: 2px 6px; border-radius: 4px; font-weight: bold; }
+        .platform-tags { display: flex; gap: 4px; margin-bottom: 5px; }
+        .plat-tag { font-size: 9px; padding: 2px 5px; border-radius: 4px; font-weight: bold; }
         .plat-tag.fb { background: #1877F2; color: #fff; }
         .plat-tag.ig { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); color: #fff; }
         .plat-tag.threads { background: #1DA1F2; color: #fff; }
         .store-handle { font-size: 10px; color: #4D96FF; margin-bottom: 4px; }
-        .post-meta { font-size: 10px; color: #888; margin-bottom: 6px; }
-        .offer-tag { display: inline-block; font-size: 10px; padding: 2px 6px; border-radius: 4px; margin-bottom: 4px; font-weight: bold; }
+        .post-meta { font-size: 10px; color: #888; margin-bottom: 5px; }
+        .offer-tag { display: inline-block; font-size: 9px; padding: 2px 5px; border-radius: 4px; margin-bottom: 4px; font-weight: bold; }
         .offer-tag.hot { background: #FF6B6B; color: #fff; }
         .offer-tag.promo { background: #F9CA24; color: #000; }
         .offer-tag.normal { background: rgba(255,255,255,0.1); }
         .offer-tag.new { background: #6BCB77; color: #fff; }
         .post-desc { font-size: 11px; line-height: 1.4; margin-bottom: 4px; }
         .sku-tags { display: flex; flex-wrap: wrap; gap: 3px; }
-        .sku-tag { font-size: 9px; padding: 2px 5px; border-radius: 3px; background: rgba(255,255,255,0.05); color: #666; }
+        .sku-tag { font-size: 9px; padding: 2px 4px; border-radius: 3px; background: rgba(255,255,255,0.05); color: #666; }
         
         .success-box { background: rgba(107,203,119,0.1); border: 1px solid #6BCB77; border-radius: 12px; padding: 12px 20px; margin-bottom: 20px; font-size: 13px; }
         .success-box strong { color: #6BCB77; }
@@ -110,7 +110,7 @@
         <header class="header">
             <div class="header-left">
                 <h1>🔍 KAs Social Listening Report</h1>
-                <div class="header-date">📅 11 Aug 2026 | ✅ 官方 Pages (FB+IG+Threads)</div>
+                <div class="header-date">📅 11 Aug 2026 | ✅ 官方 Pages (FB+IG+Threads 3平台)</div>
             </div>
             <div class="platform-status">
                 <div class="platform-badge active">
@@ -129,7 +129,7 @@
         </header>
         
         <div class="success-box">
-            <strong>✅ 數據來源：</strong>從用戶 Facebook Following List 直接確認 10 個 KAs 官方 Pages，確保所有 posts 均為官方發佈。
+            <strong>✅ 數據來源：</strong>從用戶 Facebook+IG Following List 直接確認 10 個 KAs 官方 Pages，確保所有 posts 均為官方發佈。
         </div>
         
         <!-- KPI Row -->
@@ -137,17 +137,22 @@
             <div class="kpi-card direct">
                 <h3>⚔️ 直接競爭</h3>
                 <div class="big-number">2</div>
-                <p>posts (Order Level)</p>
+                <p>Order Level</p>
             </div>
             <div class="kpi-card indirect">
                 <h3>📦 SKU Level</h3>
                 <div class="big-number">0</div>
-                <p>精確 SKU 匹配</p>
+                <p>精確匹配</p>
+            </div>
+            <div class="kpi-card fb">
+                <h3>📘 FB Posts</h3>
+                <div class="big-number">12</div>
+                <p>7日內 FB</p>
             </div>
             <div class="kpi-card ig">
                 <h3>📸 IG Posts</h3>
-                <div class="big-number">4</div>
-                <p>7日內 IG posts</p>
+                <div class="big-number">8</div>
+                <p>7日內 IG</p>
             </div>
             <div class="kpi-card threads">
                 <h3>💬 Threads</h3>
@@ -161,20 +166,20 @@
             <div class="intel-card trends">
                 <h3>📈 市場趨勢 (3 Platforms)</h3>
                 <ul class="intel-list">
-                    <li><strong>嬰兒/母嬰產品</strong> — Watsons嬰免疫、萬寧A2奶源 (FB)</li>
-                    <li><strong>日本食品</strong> — DONKI青草膏、759 APP 9折 (FB)</li>
-                    <li><strong>超市優惠</strong> — 百佳星期三、惠康嘉頓 (FB)</li>
-                    <li><strong>聯乘合作</strong> — 7-Eleven x MÖVENPICK雪糕 (FB)</li>
-                    <li><strong>IG 推廣</strong> — 7-Eleven雪糕、屈臣氏185週年 (IG)</li>
+                    <li><strong>嬰兒/母嬰產品</strong> — Watsons嬰免疫、萬寧A2奶源、百佳嬰兒濕紙巾 (FB/IG)</li>
+                    <li><strong>日本食品</strong> — DONKI青草膏、759 APP、百佳SELECT (FB/IG)</li>
+                    <li><strong>超市優惠</strong> — 百佳星期三、惠康嘉頓、惠康雪糕 (FB/IG)</li>
+                    <li><strong>聯乘合作</strong> — 7-Eleven x MÖVENPICK、惠康x常陸野貓頭鷹 (FB/IG)</li>
+                    <li><strong>日本直送</strong> — 白粟米、viyott乳酪、Ediya Coffee (IG)</li>
                 </ul>
             </div>
             <div class="intel-card takeaways">
                 <h3>💡 O2O 策略啟示</h3>
                 <ul class="intel-list">
                     <li><strong>嬰兒產品</strong> — Watsons/萬寧/百佳都在推，O2O需强化凍肉/雞蛋</li>
-                    <li><strong>日本食品</strong> — DONKI、759、7-Eleven都主推</li>
-                    <li><strong>APP 推廣</strong> — 759 APP升級9折，會員制强化</li>
-                    <li><strong>時機</strong> — 8月8日大型促銷已過，現為促銷低谷期</li>
+                    <li><strong>日本食品</strong> — DONKI、759、7-Eleven都主推，惠康都有日本直送</li>
+                    <li><strong>APP 推廣</strong> — 759/惠康 APP升級，會員制强化</li>
+                    <li><strong>時機</strong> — 8月8日大型促銷已過，現為暑期促銷期</li>
                 </ul>
             </div>
         </div>
@@ -183,24 +188,22 @@
         <div class="granularity-row">
             <div class="granularity-card">
                 <h3>📊 粒度分析</h3>
-                <div class="gran-bars">
-                    <div class="gran-bar">
-                        <span class="gran-label">Order</span>
-                        <div class="gran-fill bar-order" style="width:60px;">2</div>
-                    </div>
-                    <div class="gran-bar">
-                        <span class="gran-label">SKU</span>
-                        <div class="gran-fill bar-sku" style="width:30px;">0</div>
-                    </div>
-                    <div class="gran-bar">
-                        <span class="gran-label">Other</span>
-                        <div class="gran-fill bar-other" style="width:80px;">14</div>
-                    </div>
+                <div class="gran-bar">
+                    <span class="gran-label">Order</span>
+                    <div class="gran-fill bar-order">2</div>
                 </div>
-                <div style="margin-top:20px;">
-                    <h3 style="color:#888;font-size:11px;text-transform:uppercase;letter-spacing:1px;">總收集</h3>
-                    <div style="font-size:36px;font-weight:bold;color:#4D96FF;">16</div>
-                    <div style="color:#666;font-size:11px;">posts (7日內)</div>
+                <div class="gran-bar">
+                    <span class="gran-label">SKU</span>
+                    <div class="gran-fill bar-sku">0</div>
+                </div>
+                <div class="gran-bar">
+                    <span class="gran-label">Other</span>
+                    <div class="gran-fill bar-other">20</div>
+                </div>
+                <div style="margin-top:15px;">
+                    <h3 style="color:#888;font-size:10px;text-transform:uppercase;letter-spacing:1px;">總收集</h3>
+                    <div style="font-size:32px;font-weight:bold;color:#4D96FF;">22</div>
+                    <div style="color:#666;font-size:10px;">posts (7日內)</div>
                 </div>
             </div>
             
@@ -222,9 +225,9 @@
                                 <span class="plat-tag ig">IG</span>
                             </div>
                             <div class="store-handle">@hkparknshop</div>
-                            <div class="post-meta">📅 11 Aug | 1小時前</div>
+                            <div class="post-meta">📅 11 Aug | FB 1小時前 | IG Aug 12</div>
                             <span class="offer-tag hot">🆕 今日</span>
-                            <div class="post-desc">【至抵星期三】PNS網購優惠：礦泉水、薯片、洗手液 (23 likes)</div>
+                            <div class="post-desc">FB: 【至抵星期三】PNS網購優惠 | IG: 全城傳愛齊捐食2026 (食物捐贈, pinned)</div>
                             <div class="sku-tags">
                                 <span class="sku-tag">Order Level</span>
                                 <span class="sku-tag">零食/飲品</span>
@@ -276,14 +279,15 @@
                             </div>
                             <div class="platform-tags">
                                 <span class="plat-tag fb">FB</span>
+                                <span class="plat-tag ig">IG</span>
                             </div>
                             <div class="store-handle">@hkwellcome</div>
-                            <div class="post-meta">📅 11 Aug | FB 3小時前</div>
+                            <div class="post-meta">📅 11 Aug | FB 3小時前 | IG Aug 10</div>
                             <span class="offer-tag hot">🆕 新品</span>
-                            <div class="post-desc">【今期堅係新！】嘉頓曲奇、潔厠得 (40 likes)</div>
+                            <div class="post-desc">FB: 【今期堅係新！】嘉頓曲奇 | IG: 雪糕放題挑戰、常陸野貓頭鷹啤酒</div>
                             <div class="sku-tags">
                                 <span class="sku-tag">Other</span>
-                                <span class="sku-tag">零食/家居</span>
+                                <span class="sku-tag">零食/啤酒</span>
                             </div>
                         </div>
                         
@@ -357,7 +361,6 @@
                             </div>
                             <div class="platform-tags">
                                 <span class="plat-tag fb">FB</span>
-                                <span class="plat-tag ig">IG</span>
                             </div>
                             <div class="store-handle">@7elevenhk</div>
                             <div class="post-meta">📅 11 Aug | FB 6小時前</div>
@@ -376,14 +379,15 @@
                             </div>
                             <div class="platform-tags">
                                 <span class="plat-tag fb">FB</span>
+                                <span class="plat-tag ig">IG</span>
                             </div>
                             <div class="store-handle">@7elevenhk</div>
-                            <div class="post-meta">📅 10 Aug | FB 19小時前</div>
+                            <div class="post-meta">📅 10 Aug | FB 19小時前 | IG Aug 10</div>
                             <span class="offer-tag">聯乘</span>
-                            <div class="post-desc">【#限定聯乘】7-SELECT x CoCo壱番屋咖喱5款</div>
+                            <div class="post-desc">FB: 【#限定聯乘】7-SELECT x CoCo咖喱5款 | IG: 雪糕75折優惠</div>
                             <div class="sku-tags">
                                 <span class="sku-tag">Other</span>
-                                <span class="sku-tag">咖喱/麵包</span>
+                                <span class="sku-tag">咖喱/雪糕</span>
                             </div>
                         </div>
                         
@@ -424,12 +428,12 @@
                                 <span class="plat-tag ig">IG</span>
                             </div>
                             <div class="store-handle">@hkwatsons</div>
-                            <div class="post-meta">📅 11 Aug | FB 40分鐘前</div>
+                            <div class="post-meta">📅 11 Aug | FB 40分鐘前 | IG Aug 10</div>
                             <span class="offer-tag new">🆕 嬰兒</span>
-                            <div class="post-desc">【萬變環境如何應對？幫寶寶打好免疫基礎！】</div>
+                            <div class="post-desc">FB: 【寶寶免疫基礎】 | IG: 【VIP Day 92折】185週年會員優惠</div>
                             <div class="sku-tags">
                                 <span class="sku-tag">Other</span>
-                                <span class="sku-tag">嬰兒/免疫</span>
+                                <span class="sku-tag">嬰兒/會員</span>
                             </div>
                         </div>
                         
@@ -442,25 +446,7 @@
                                 <span class="plat-tag ig">IG</span>
                             </div>
                             <div class="store-handle">@hkwatsons</div>
-                            <div class="post-meta">📅 10 Aug | IG</div>
-                            <span class="offer-tag">185週年</span>
-                            <div class="post-desc">【VIP Day 92折】屈臣氏185週年會員優惠</div>
-                            <div class="sku-tags">
-                                <span class="sku-tag">Other</span>
-                                <span class="sku-tag">會員</span>
-                            </div>
-                        </div>
-                        
-                        <div class="store-card indirect">
-                            <div class="store-header">
-                                <span class="store-name">屈臣氏 Watsons</span>
-                                <span class="o2o-badge no">❌</span>
-                            </div>
-                            <div class="platform-tags">
-                                <span class="plat-tag ig">IG</span>
-                            </div>
-                            <div class="store-handle">@hkwatsons</div>
-                            <div class="post-meta">📅 8 Aug | IG</div>
+                            <div class="post-meta">📅 IG Aug 8</div>
                             <span class="offer-tag">185週年</span>
                             <div class="post-desc">【185週年】經典復刻店即將開幕</div>
                             <div class="sku-tags">
@@ -478,7 +464,7 @@
                                 <span class="plat-tag ig">IG</span>
                             </div>
                             <div class="store-handle">@hkwatsons</div>
-                            <div class="post-meta">📅 7 Aug | IG</div>
+                            <div class="post-meta">📅 IG Aug 7</div>
                             <span class="offer-tag">185週年</span>
                             <div class="post-desc">【185週年88折】星期六限定優惠 (已過期)</div>
                             <div class="sku-tags">
@@ -511,9 +497,26 @@
             </div>
         </div>
         
+        <!-- IG Handles Summary -->
+        <div style="background:#1a1a2e;border-radius:16px;padding:20px;border:1px solid rgba(255,255,255,0.1);margin-bottom:25px;">
+            <h3 style="font-size:16px;margin-bottom:15px;color:#E1306C;">📸 IG Handles (從用戶 Following List 確認)</h3>
+            <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:10px;font-size:12px;">
+                <div><span style="color:#888;">惠康:</span> @hkwellcome</div>
+                <div><span style="color:#888;">AEON:</span> @aeonstores.hk</div>
+                <div><span style="color:#888;">百佳:</span> @hkparknshop</div>
+                <div><span style="color:#888;">萬寧:</span> @mannings_hk</div>
+                <div><span style="color:#888;">759:</span> @759store</div>
+                <div><span style="color:#888;">屈臣氏:</span> @hkwatsons</div>
+                <div><span style="color:#888;">一田:</span> @yatahk</div>
+                <div><span style="color:#888;">DONKI:</span> @dondondonkihk</div>
+                <div><span style="color:#888;">Circle K:</span> @circlek_hk</div>
+                <div><span style="color:#888;">7-Eleven:</span> @7elevenhk</div>
+            </div>
+        </div>
+        
         <footer>
             <p>📅 報告更新：11 Aug 2026 | 🔍 Hermes-Scout Agent</p>
-            <p style="margin-top:8px;">📌 數據來源：用戶 Facebook Following List 的 10 個 KAs 官方 Pages | FB+IG+Threads 3平台</p>
+            <p style="margin-top:8px;">📌 數據來源：用戶 Facebook+IG Following List 的 10 個 KAs 官方 Pages | FB+IG+Threads 3平台</p>
             <p style="margin-top:8px;">🔗 <a href="https://hfng0523.github.io/scout-reports/" target="_blank">GitHub Pages</a></p>
         </footer>
     </div>

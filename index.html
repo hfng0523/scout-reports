@@ -95,6 +95,8 @@
         .post-link { font-size: 9px; margin-bottom: 5px; word-break: break-all; }
         .post-link a { color: #4D96FF; text-decoration: none; }
         .post-link a:hover { text-decoration: underline; }
+        .post-link.direct { background: rgba(107,203,119,0.1); padding: 3px 6px; border-radius: 4px; border: 1px solid rgba(107,203,119,0.3); }
+        .post-link.placeholder { color: #888; font-style: italic; }
         
         .sku-tags-container { margin-bottom: 5px; }
         .sku-tags-label { font-size: 9px; color: #888; margin-bottom: 3px; }
@@ -161,7 +163,8 @@
         
         <div class="success-box">
             <strong>✅ 數據來源：</strong>從用戶 Facebook+IG+Threads Following List 直接確認 10 個 KAs 官方 Pages<br>
-            <strong>✅ Post URLs：</strong>已成功取得 IG actual post URLs (點擊 post → window.location.href)<br>
+            <strong>✅ Post URLs：</strong>成功取得 actual post URLs（click timestamp → window.location.href）<br>
+            <strong>🔗 Direct Links：</strong><span class="post-link direct" style="display:inline-block; padding: 2px 6px; border-radius: 4px; font-size: 9px; background: rgba(107,203,119,0.1); color: #6BCB77;">🟢 Direct Link</span> = 已驗證可直連 Post | <span class="post-link placeholder" style="display:inline-block; padding: 2px 6px; border-radius: 4px; font-size: 9px; background: rgba(255,255,255,0.05); color: #888;">⚪ Page Link</span> = Page 主頁連結<br>
             <strong>🏷️ SKU Tags:</strong> <span class="sku-tag o2o" style="display:inline-block; padding: 2px 6px; border-radius: 4px; font-size: 9px; background: rgba(107,203,119,0.2); color: #6BCB77;">🟢 O2O有</span> = O2O有銷售 | <span class="sku-tag ka" style="display:inline-block; padding: 2px 6px; border-radius: 4px; font-size: 9px; background: rgba(255,107,107,0.2); color: #FF6B6B;">🔴 KA推廣</span> = KAs推廣但O2O無
         </div>
         
@@ -255,8 +258,8 @@
             <div class="legend-item"><span class="legend-dot order"></span> ⚔️ Order Level = 消費滿$xxx / 全場折扣 / 整單折扣</div>
             <div class="legend-item"><span class="legend-dot sku"></span> 📦 SKU Level = 特定SKU/產品優惠</div>
             <div class="legend-item"><span class="legend-dot other"></span> 📌 Other = O2O無此類別</div>
-            <div class="legend-item"><span class="legend-dot" style="background:#6BCB77;"></span> 🟢 O2O有 = O2O有銷售此類別</div>
-            <div class="legend-item"><span class="legend-dot" style="background:#FF6B6B;"></span> 🔴 KA推廣 = KAs推廣但O2O無</div>
+            <div class="legend-item"><span class="legend-dot" style="background:#6BCB77;"></span> 🟢 Direct Link = 已驗證可直連 Post</div>
+            <div class="legend-item"><span class="legend-dot" style="background:#888;"></span> ⚪ Page Link = Page 主頁連結</div>
         </div>
         
         <!-- Channel Grid -->
@@ -289,8 +292,8 @@
                             </div>
                             <span class="offer-tag hot">🆕 今日</span>
                             <div class="post-desc">【百佳 x foodpanda 優惠速遞】買滿$360，輸入優惠碼「PNS10」，即享9折</div>
-                            <div class="post-link">
-                                <a href="https://www.facebook.com/parknshophk/posts/pfbid0UNXozcAYJzp8UPtmHG2iPEF17YRVt7KLP9dZTDiJuGrYjrCHK9TVJfrrecgKbRZ3l" target="_blank">🔗 https://fb.com/parknshophk/posts/...</a>
+                            <div class="post-link direct">
+                                <a href="https://www.facebook.com/parknshophk/posts/pfbid0qsiF4Jst8g77ZVZuTkv8DvSbL1r8XhFV6aban8bP9mM7oYs8mBKUR46tbUPfQ8Tsl" target="_blank">🔗 Direct Post Link (已驗證)</a>
                             </div>
                         </div>
                         
@@ -314,8 +317,8 @@
                             </div>
                             <span class="offer-tag">PNS網購</span>
                             <div class="post-desc">【夏日爆趣】青提茉莉茶加爆炸糖 (364 likes)</div>
-                            <div class="post-link">
-                                <a href="https://www.instagram.com/p/Db2Ui9EiMz0/" target="_blank">🔗 https://instagram.com/p/Db2Ui9EiMz0/</a>
+                            <div class="post-link direct">
+                                <a href="https://www.instagram.com/p/Db2Ui9EiMz0/" target="_blank">🔗 Direct Post Link (已驗證)</a>
                             </div>
                         </div>
                         
@@ -340,7 +343,7 @@
                             <span class="offer-tag">日本</span>
                             <div class="post-desc">【日本泰國大人氣！蠟筆小新泰國通鼻青草膏】</div>
                             <div class="post-link">
-                                <a href="https://www.facebook.com/reel/2262822941172550" target="_blank">🔗 https://fb.com/reel/2262822941172550</a>
+                                <span class="post-link placeholder">⚪ <a href="https://www.facebook.com/dondondonkihk/" target="_blank">Page Link (待取得Post URL)</a></span>
                             </div>
                         </div>
                         
@@ -365,7 +368,7 @@
                             <span class="offer-tag hot">🔥 Threads爆紅</span>
                             <div class="post-desc">【今期堅係新！】嘉頓曲奇、潔厠產品</div>
                             <div class="post-link">
-                                <a href="https://www.facebook.com/hkwellcome/" target="_blank">🔗 https://facebook.com/hkwellcome/</a>
+                                <span class="post-link placeholder">⚪ <a href="https://www.facebook.com/hkwellcome/" target="_blank">Page Link (待取得Post URL)</a></span>
                             </div>
                         </div>
                         
@@ -389,7 +392,7 @@
                             <span class="offer-tag">限定</span>
                             <div class="post-desc">【$1換購第3擊】屯門街坊限定</div>
                             <div class="post-link">
-                                <a href="https://www.facebook.com/aeonstores.hk/" target="_blank">🔗 https://facebook.com/aeonstores.hk/</a>
+                                <span class="post-link placeholder">⚪ <a href="https://www.facebook.com/aeonstores.hk/" target="_blank">Page Link (待取得Post URL)</a></span>
                             </div>
                         </div>
                         
@@ -413,7 +416,7 @@
                             <span class="offer-tag promo">優惠期4-18/8</span>
                             <div class="post-desc">【🇰🇷韓國節第二彈】DR.REJU-All、TEAZEN</div>
                             <div class="post-link">
-                                <a href="https://www.facebook.com/yatahk/" target="_blank">🔗 https://facebook.com/yatahk/</a>
+                                <span class="post-link placeholder">⚪ <a href="https://www.facebook.com/yatahk/" target="_blank">Page Link (待取得Post URL)</a></span>
                             </div>
                         </div>
                         
@@ -445,7 +448,7 @@
                             <span class="offer-tag new">🆕 雪糕</span>
                             <div class="post-desc">【MÖVENPICK雪糕優惠】</div>
                             <div class="post-link">
-                                <a href="https://www.facebook.com/7elevenhk/" target="_blank">🔗 https://facebook.com/7elevenhk/</a>
+                                <span class="post-link placeholder">⚪ <a href="https://www.facebook.com/7elevenhk/" target="_blank">Page Link (待取得Post URL)</a></span>
                             </div>
                         </div>
                         
@@ -468,7 +471,7 @@
                             <span class="offer-tag">環保</span>
                             <div class="post-desc">【繼續啡 We Green】咖啡渣再生第3年</div>
                             <div class="post-link">
-                                <a href="https://www.facebook.com/7elevenhk/" target="_blank">🔗 https://facebook.com/7elevenhk/</a>
+                                <span class="post-link placeholder">⚪ <a href="https://www.facebook.com/7elevenhk/" target="_blank">Page Link (待取得Post URL)</a></span>
                             </div>
                         </div>
                         
@@ -492,7 +495,7 @@
                             <span class="offer-tag new">🆕 豆乳</span>
                             <div class="post-desc">【#新品上架】原豆乳新口味</div>
                             <div class="post-link">
-                                <a href="https://www.facebook.com/circlekhk/" target="_blank">🔗 https://facebook.com/circlekhk/</a>
+                                <span class="post-link placeholder">⚪ <a href="https://www.facebook.com/circlekhk/" target="_blank">Page Link (待取得Post URL)</a></span>
                             </div>
                         </div>
                         
@@ -516,7 +519,7 @@
                             <span class="offer-tag">韓星聯乘</span>
                             <div class="post-desc">【BABYMONSTER 聯乘活動】</div>
                             <div class="post-link">
-                                <a href="https://www.threads.net/@circlek_hk" target="_blank">🔗 https://threads.net/@circlek_hk</a>
+                                <span class="post-link placeholder">⚪ <a href="https://www.threads.net/@circlek_hk" target="_blank">Page Link (待取得Post URL)</a></span>
                             </div>
                         </div>
                         
@@ -549,7 +552,7 @@
                             <span class="offer-tag new">🆕 I'MINT</span>
                             <div class="post-desc">【I'MINT 咖啡薄荷糖】韓國超Hit (136 likes)</div>
                             <div class="post-link">
-                                <a href="https://www.threads.net/@hkwatsons" target="_blank">🔗 https://threads.net/@hkwatsons</a>
+                                <span class="post-link placeholder">⚪ <a href="https://www.threads.net/@hkwatsons" target="_blank">Page Link (待取得Post URL)</a></span>
                             </div>
                         </div>
                         
@@ -573,7 +576,7 @@
                             <span class="offer-tag new">🆕 嬰兒</span>
                             <div class="post-desc">【寶寶免疫基礎】萬變環境如何應對？幫寶寶打好免疫基礎！</div>
                             <div class="post-link">
-                                <a href="https://www.facebook.com/hkwatsons/" target="_blank">🔗 https://facebook.com/hkwatsons/</a>
+                                <span class="post-link placeholder">⚪ <a href="https://www.facebook.com/watsonshongkong/" target="_blank">Page Link (待取得Post URL)</a></span>
                             </div>
                         </div>
                         
@@ -597,8 +600,8 @@
                             </div>
                             <span class="offer-tag new">🆕 I'MINT</span>
                             <div class="post-desc">【I'MINT咖啡薄荷糖全新登場】韓國超Hit</div>
-                            <div class="post-link">
-                                <a href="https://www.instagram.com/p/Db7r1rxHP6D/" target="_blank">🔗 https://instagram.com/p/Db7r1rxHP6D/</a>
+                            <div class="post-link direct">
+                                <a href="https://www.instagram.com/p/Db7r1rxHP6D/" target="_blank">🔗 Direct Post Link (已驗證)</a>
                             </div>
                         </div>
                         
@@ -622,7 +625,7 @@
                             <span class="offer-tag">VIP Day</span>
                             <div class="post-desc">【VIP Day 92折】185週年會員優惠</div>
                             <div class="post-link">
-                                <a href="https://www.instagram.com/hkwatsons/" target="_blank">🔗 https://instagram.com/hkwatsons/</a>
+                                <span class="post-link placeholder">⚪ <a href="https://www.instagram.com/hkwatsons/" target="_blank">Page Link (待取得Post URL)</a></span>
                             </div>
                         </div>
                         
@@ -646,7 +649,7 @@
                             <span class="offer-tag">週年慶</span>
                             <div class="post-desc">【185週年88折】星期六限定 (已過期)</div>
                             <div class="post-link">
-                                <a href="https://www.instagram.com/hkwatsons/" target="_blank">🔗 https://instagram.com/hkwatsons/</a>
+                                <span class="post-link placeholder">⚪ <a href="https://www.instagram.com/hkwatsons/" target="_blank">Page Link (待取得Post URL)</a></span>
                             </div>
                         </div>
                         
@@ -670,7 +673,7 @@
                             <span class="offer-tag new">🆕 嬰兒</span>
                             <div class="post-desc">【珍稀 A2 奶源呵護寶寶幼嫩腸道】</div>
                             <div class="post-link">
-                                <a href="https://www.facebook.com/manningshk/" target="_blank">🔗 https://facebook.com/manningshk/</a>
+                                <span class="post-link placeholder">⚪ <a href="https://www.facebook.com/manningshk/" target="_blank">Page Link (待取得Post URL)</a></span>
                             </div>
                         </div>
                         
@@ -694,7 +697,7 @@
                             <span class="offer-tag new">🆕 APP</span>
                             <div class="post-desc">【APP 9折神券】</div>
                             <div class="post-link">
-                                <a href="https://www.facebook.com/759store/" target="_blank">🔗 https://facebook.com/759store/</a>
+                                <span class="post-link placeholder">⚪ <a href="https://www.facebook.com/759store/" target="_blank">Page Link (待取得Post URL)</a></span>
                             </div>
                         </div>
                         
@@ -718,7 +721,7 @@
                             <span class="offer-tag hot">🔥 爆紅</span>
                             <div class="post-desc">【凍水杯麵】首批貨量有限 (445 likes)</div>
                             <div class="post-link">
-                                <a href="https://www.threads.net/@759store" target="_blank">🔗 https://threads.net/@759store</a>
+                                <span class="post-link placeholder">⚪ <a href="https://www.threads.net/@759store" target="_blank">Page Link (待取得Post URL)</a></span>
                             </div>
                         </div>
                         
@@ -742,7 +745,7 @@
                             <span class="offer-tag hot">🔥 Threads爆紅</span>
                             <div class="post-desc">【冷泡杯麵】寫咗首藏頭詩 (5.1K likes!)</div>
                             <div class="post-link">
-                                <a href="https://www.threads.net/@hkwellcome" target="_blank">🔗 https://threads.net/@hkwellcome</a>
+                                <span class="post-link placeholder">⚪ <a href="https://www.threads.net/@hkwellcome" target="_blank">Page Link (待取得Post URL)</a></span>
                             </div>
                         </div>
                         
@@ -763,9 +766,9 @@
                 <div class="handle-item"><span class="handle-name">惠康</span><span class="handle-id">@hkwellcome</span></div>
                 <div class="handle-item"><span class="handle-name">7-Eleven</span><span class="handle-id">@7elevenhk</span></div>
                 <div class="handle-item"><span class="handle-name">759阿信屋</span><span class="handle-id">@759store</span></div>
-                <div class="handle-item"><span class="handle-name">屈臣氏</span><span class="handle-id">@hkwatsons</span></div>
+                <div class="handle-item"><span class="handle-name">屈臣氏</span><span class="handle-id">@watsonshongkong</span></div>
                 <div class="handle-item"><span class="handle-name">萬寧</span><span class="handle-id">@mannings_hk</span></div>
-                <div class="handle-item"><span class="handle-name">百佳</span><span class="handle-id">@hkparknshop</span></div>
+                <div class="handle-item"><span class="handle-name">百佳</span><span class="handle-id">@parknshophk</span></div>
             </div>
             <div class="handles-card ig">
                 <h3>📸 Instagram Handles</h3>
@@ -799,7 +802,7 @@
             <p>📅 報告更新：11 Aug 2026 | 🔍 Hermes-Scout Agent</p>
             <p style="margin-top:8px;">📌 數據來源：用戶 Facebook+IG+Threads Following List 的 10 個 KAs 官方 Pages | FB+IG+Threads 3平台</p>
             <p style="margin-top:8px;">⚔️ Order Level = 消費滿$xxx/全場折扣 | 📦 SKU Level = 特定產品優惠 | 📌 Other = O2O無此類別</p>
-            <p style="margin-top:8px;">🟢 O2O有 = O2O有銷售此類別 | 🔴 KA推廣 = KAs推廣但O2O無此類別</p>
+            <p style="margin-top:8px;">🟢 Direct Link = 已驗證可直連 Post | ⚪ Page Link = Page 主頁連結 (待取得Post URL)</p>
             <p style="margin-top:8px;">🔗 <a href="https://hfng0523.github.io/scout-reports/" target="_blank">GitHub Pages</a></p>
         </footer>
     </div>

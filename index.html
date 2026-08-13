@@ -70,7 +70,7 @@
         .channel-section { margin-bottom: 25px; }
         .filter-note { font-size: 13px; color: #666; text-align: center; margin-bottom: 15px; }
         .channel-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-        .channel-column { background: #1a1a2e; border-radius: 16px; overflow: hidden; border: 1px solid rgba(255,255,255,0.1); display: flex; flex-direction: column; max-height: 800px; }
+        .channel-column { background: #1a1a2e; border-radius: 16px; overflow: hidden; border: 1px solid rgba(255,255,255,0.1); display: flex; flex-direction: column; max-height: 900px; }
         .channel-header { padding: 14px; font-weight: bold; font-size: 15px; text-align: center; flex-shrink: 0; }
         .channel-column:nth-child(1) .channel-header { background: rgba(255,107,107,0.15); color: #FF6B6B; }
         .channel-column:nth-child(2) .channel-header { background: rgba(255,159,67,0.15); color: #FF9F43; }
@@ -97,7 +97,7 @@
         .plat-tag.threads { background: #1DA1F2; color: #fff; }
         .store-handle { font-size: 10px; color: #4D96FF; margin-bottom: 4px; }
         .post-meta { font-size: 10px; color: #888; margin-bottom: 5px; }
-        .post-link { font-size: 10px; margin-bottom: 5px; }
+        .post-link { font-size: 10px; margin-bottom: 5px; word-break: break-all; }
         .post-link a { color: #4D96FF; text-decoration: none; }
         .post-link a:hover { text-decoration: underline; }
         .sku-tags { display: flex; flex-wrap: wrap; gap: 3px; margin-bottom: 5px; }
@@ -160,7 +160,8 @@
         </header>
         
         <div class="success-box">
-            <strong>✅ 數據來源：</strong>從用戶 Facebook+IG+Threads Following List 直接確認 10 個 KAs 官方 Pages，確保所有 posts 均為官方發佈。
+            <strong>✅ 數據來源：</strong>從用戶 Facebook+IG+Threads Following List 直接確認 10 個 KAs 官方 Pages，確保所有 posts 均為官方發佈。<br>
+            <strong>📌 Post URLs：</strong>點擊 timestamp 可複製 actual post URL
         </div>
         
         <!-- KPI Row -->
@@ -182,7 +183,7 @@
             </div>
             <div class="kpi-card fb">
                 <h3>📘 FB Posts</h3>
-                <div class="big-number">12</div>
+                <div class="big-number">6</div>
                 <p>7日內</p>
             </div>
             <div class="kpi-card ig">
@@ -204,21 +205,21 @@
                 <div class="gran-item">
                     <span class="gran-label">⚔️ Order</span>
                     <div class="gran-bar-container">
-                        <div class="gran-bar order" style="width: 120px;">消費滿$xxx/全場折扣</div>
+                        <div class="gran-bar order" style="width: 160px;">消費滿$xxx/全場折扣</div>
                     </div>
                     <span class="gran-count order">4</span>
                 </div>
                 <div class="gran-item">
                     <span class="gran-label">📦 SKU</span>
                     <div class="gran-bar-container">
-                        <div class="gran-bar sku" style="width: 180px;">特定產品優惠</div>
+                        <div class="gran-bar sku" style="width: 200px;">特定產品優惠</div>
                     </div>
                     <span class="gran-count sku">7</span>
                 </div>
                 <div class="gran-item">
                     <span class="gran-label">📌 Other</span>
                     <div class="gran-bar-container">
-                        <div class="gran-bar other" style="width: 120px;">O2O無此類別</div>
+                        <div class="gran-bar other" style="width: 140px;">O2O無此類別</div>
                     </div>
                     <span class="gran-count other">7</span>
                 </div>
@@ -232,7 +233,7 @@
                 <ul class="intel-list">
                     <li><strong>嬰兒/母嬰產品</strong> — Watsons嬰免疫、萬寧A2奶源 (FB/IG)</li>
                     <li><strong>日本食品</strong> — DONKI青草膏、759 APP、百佳SELECT (FB/IG)</li>
-                    <li><strong>超市優惠</strong> — 百佳星期三、惠康嘉頓、惠康雪糕 (FB/IG)</li>
+                    <li><strong>超市優惠</strong> — 百佳foodpanda、惠康嘉頓、惠康雪糕 (FB/IG)</li>
                     <li><strong>聯乘合作</strong> — 7-Eleven x MÖVENPICK雪糕、惠康x常陸野貓頭鷹 (FB/IG)</li>
                     <li><strong>冷泡杯麵熱潮</strong> — Threads爆紅！惠康、hktvmall、759都有推 (5K+ likes!)</li>
                 </ul>
@@ -264,7 +265,7 @@
                     <div class="channel-header">🏪 百貨/超市</div>
                     <div class="channel-stores">
                         
-                        <!-- 百佳 -->
+                        <!-- 百佳 FB -->
                         <div class="store-card order">
                             <div class="store-header">
                                 <span class="store-name">百佳 PARKnSHOP</span>
@@ -272,39 +273,86 @@
                             </div>
                             <div class="platform-tags">
                                 <span class="plat-tag fb">FB</span>
+                            </div>
+                            <div class="store-handle">@hkparknshop</div>
+                            <div class="post-meta">📅 11 Aug | 🕐 40分鐘前 | ❤️ 7</div>
+                            <div class="sku-tags">
+                                <span class="sku-tag">滿額折扣</span>
+                                <span class="sku-tag">foodpanda</span>
+                            </div>
+                            <span class="offer-tag hot">🆕 今日</span>
+                            <div class="post-desc">【百佳 x foodpanda 優惠速遞】買滿$360，輸入優惠碼「PNS10」，即享9折</div>
+                            <div class="post-link">
+                                <a href="https://www.facebook.com/parknshophk/posts/pfbid0UNXozcAYJzp8UPtmHG2iPEF17YRVt7KLP9dZTDiJuGrYjrCHK9TVJfrrecgKbRZ3l" target="_blank">🔗 https://fb.com/parknshophk/posts/...</a>
+                            </div>
+                        </div>
+                        
+                        <!-- 百佳 IG -->
+                        <div class="store-card sku">
+                            <div class="store-header">
+                                <span class="store-name">百佳 PARKnSHOP</span>
+                                <span class="level-badge sku">📦 SKU</span>
+                            </div>
+                            <div class="platform-tags">
                                 <span class="plat-tag ig">IG</span>
                             </div>
                             <div class="store-handle">@hkparknshop</div>
-                            <div class="post-meta">📅 11 Aug | 🕐 1小時前 | ❤️ 45</div>
+                            <div class="post-meta">📅 12 Aug | 🕐 IG</div>
                             <div class="sku-tags">
-                                <span class="sku-tag">期日折扣</span>
-                                <span class="sku-tag">超市優惠</span>
+                                <span class="sku-tag">公益</span>
+                                <span class="sku-tag">食物捐贈</span>
                             </div>
-                            <span class="offer-tag hot">🆕 今日</span>
-                            <div class="post-desc">【至抵星期三】PNS網購優惠 礦泉水、薯片、洗手液優惠</div>
-                            <div class="post-link"><a href="https://www.facebook.com/hkparknshop/" target="_blank">🔗 FB Post Link</a></div>
+                            <span class="offer-tag new">🆕 全城傳愛</span>
+                            <div class="post-desc">【全城傳愛齊捐食2026】食物捐贈活動 (10/7-3/9)</div>
+                            <div class="post-link">
+                                <a href="https://www.instagram.com/hkparknshop/" target="_blank">🔗 https://instagram.com/hkparknshop/</a>
+                            </div>
                         </div>
                         
-                        <div class="store-card order">
+                        <div class="store-card sku">
                             <div class="store-header">
                                 <span class="store-name">百佳 PARKnSHOP</span>
-                                <span class="level-badge order">⚔️ ORDER</span>
+                                <span class="level-badge sku">📦 SKU</span>
                             </div>
                             <div class="platform-tags">
-                                <span class="plat-tag fb">FB</span>
+                                <span class="plat-tag ig">IG</span>
                             </div>
                             <div class="store-handle">@hkparknshop</div>
-                            <div class="post-meta">📅 11 Aug | 🕐 4日前 | ❤️ 68</div>
+                            <div class="post-meta">📅 11 Aug | 🕐 IG</div>
                             <div class="sku-tags">
-                                <span class="sku-tag">滿額折扣</span>
-                                <span class="sku-tag">$600-$150</span>
+                                <span class="sku-tag">零食</span>
+                                <span class="sku-tag">薯片</span>
+                                <span class="sku-tag">礦泉水</span>
                             </div>
                             <span class="offer-tag">PNS網購</span>
-                            <div class="post-desc">【PNS網購】$600減$150</div>
-                            <div class="post-link"><a href="https://www.facebook.com/hkparknshop/" target="_blank">🔗 FB Post Link</a></div>
+                            <div class="post-desc">【#PNS網購日常】爆炸糖三重奏、青提美莉加</div>
+                            <div class="post-link">
+                                <a href="https://www.instagram.com/hkparknshop/" target="_blank">🔗 https://instagram.com/hkparknshop/</a>
+                            </div>
                         </div>
                         
-                        <!-- DONKI -->
+                        <div class="store-card sku">
+                            <div class="store-header">
+                                <span class="store-name">百佳 PARKnSHOP</span>
+                                <span class="level-badge sku">📦 SKU</span>
+                            </div>
+                            <div class="platform-tags">
+                                <span class="plat-tag ig">IG</span>
+                            </div>
+                            <div class="store-handle">@hkparknshop</div>
+                            <div class="post-meta">📅 9 Aug | 🕐 IG</div>
+                            <div class="sku-tags">
+                                <span class="sku-tag">急凍</span>
+                                <span class="sku-tag">牛角包</span>
+                            </div>
+                            <span class="offer-tag">牛角包食譜</span>
+                            <div class="post-desc">【熊仔糖拔絲牛角包】feat. 熊仔糖奶凍</div>
+                            <div class="post-link">
+                                <a href="https://www.instagram.com/hkparknshop/" target="_blank">🔗 https://instagram.com/hkparknshop/</a>
+                            </div>
+                        </div>
+                        
+                        <!-- DONKI FB -->
                         <div class="store-card other">
                             <div class="store-header">
                                 <span class="store-name">DON DON DONKI</span>
@@ -315,17 +363,19 @@
                                 <span class="plat-tag threads">Threads</span>
                             </div>
                             <div class="store-handle">@dondondonkihk</div>
-                            <div class="post-meta">📅 10 Aug | 🕐 19小時前 | ❤️ 9</div>
+                            <div class="post-meta">📅 10 Aug | 🕐 19小時前 | ❤️ 13</div>
                             <div class="sku-tags">
                                 <span class="sku-tag">青草膏</span>
-                                <span class="sku-tag">O2O無此類別</span>
+                                <span class="sku-tag">O2O無</span>
                             </div>
                             <span class="offer-tag">日本</span>
-                            <div class="post-desc">【蠟筆小新泰國通鼻青草膏】全線分店有貨</div>
-                            <div class="post-link"><a href="https://www.facebook.com/dondondonkihk/" target="_blank">🔗 FB Post Link</a></div>
+                            <div class="post-desc">【日本泰國大人氣！蠟筆小新泰國通鼻青草膏】全線分店有貨</div>
+                            <div class="post-link">
+                                <a href="https://www.facebook.com/reel/2262822941172550" target="_blank">🔗 https://fb.com/reel/2262822941172550</a>
+                            </div>
                         </div>
                         
-                        <!-- 惠康 -->
+                        <!-- 惠康 FB -->
                         <div class="store-card sku">
                             <div class="store-header">
                                 <span class="store-name">惠康 Wellcome</span>
@@ -333,7 +383,6 @@
                             </div>
                             <div class="platform-tags">
                                 <span class="plat-tag fb">FB</span>
-                                <span class="plat-tag threads">Threads</span>
                             </div>
                             <div class="store-handle">@hkwellcome</div>
                             <div class="post-meta">📅 11 Aug | 🕐 3小時前 | ❤️ 267</div>
@@ -342,11 +391,35 @@
                                 <span class="sku-tag">曲奇</span>
                             </div>
                             <span class="offer-tag hot">🔥 Threads爆紅</span>
-                            <div class="post-desc">【今期堅係新！】嘉頓曲奇、潔厠產品 | Threads: 冷泡杯麵藏頭詩 (5.1K likes!)</div>
-                            <div class="post-link"><a href="https://www.facebook.com/hkwellcome/" target="_blank">🔗 FB Post Link</a></div>
+                            <div class="post-desc">【今期堅係新！】嘉頓曲奇、潔厠產品</div>
+                            <div class="post-link">
+                                <a href="https://www.facebook.com/hkwellcome/" target="_blank">🔗 https://facebook.com/hkwellcome/</a>
+                            </div>
                         </div>
                         
-                        <!-- AEON -->
+                        <!-- 惠康 IG -->
+                        <div class="store-card sku">
+                            <div class="store-header">
+                                <span class="store-name">惠康 Wellcome</span>
+                                <span class="level-badge sku">📦 SKU</span>
+                            </div>
+                            <div class="platform-tags">
+                                <span class="plat-tag ig">IG</span>
+                            </div>
+                            <div class="store-handle">@hkwellcome</div>
+                            <div class="post-meta">📅 10 Aug | 🕐 IG</div>
+                            <div class="sku-tags">
+                                <span class="sku-tag">零食</span>
+                                <span class="sku-tag">糖果</span>
+                            </div>
+                            <span class="offer-tag">日本直送</span>
+                            <div class="post-desc">【常陸野貓頭鷹啤酒】聯名限定版</div>
+                            <div class="post-link">
+                                <a href="https://www.instagram.com/hkwellcome/" target="_blank">🔗 https://instagram.com/hkwellcome/</a>
+                            </div>
+                        </div>
+                        
+                        <!-- AEON FB -->
                         <div class="store-card other">
                             <div class="store-header">
                                 <span class="store-name">AEON</span>
@@ -359,14 +432,16 @@
                             <div class="post-meta">📅 11 Aug | 🕐 2小時前 | ❤️ 32</div>
                             <div class="sku-tags">
                                 <span class="sku-tag">換購</span>
-                                <span class="sku-tag">O2O無此類別</span>
+                                <span class="sku-tag">O2O無</span>
                             </div>
                             <span class="offer-tag">限定</span>
                             <div class="post-desc">【$1換購第3擊】屯門街坊限定</div>
-                            <div class="post-link"><a href="https://www.facebook.com/aeonstores.hk/" target="_blank">🔗 FB Post Link</a></div>
+                            <div class="post-link">
+                                <a href="https://www.facebook.com/aeonstores.hk/" target="_blank">🔗 https://facebook.com/aeonstores.hk/</a>
+                            </div>
                         </div>
                         
-                        <!-- 一田 -->
+                        <!-- 一田 FB -->
                         <div class="store-card other">
                             <div class="store-header">
                                 <span class="store-name">一田 YATA</span>
@@ -379,11 +454,13 @@
                             <div class="post-meta">📅 11 Aug | 🕐 4小時前 | ❤️ 28</div>
                             <div class="sku-tags">
                                 <span class="sku-tag">韓國食品</span>
-                                <span class="sku-tag">O2O無此類別</span>
+                                <span class="sku-tag">O2O無</span>
                             </div>
                             <span class="offer-tag promo">優惠期4-18/8</span>
                             <div class="post-desc">【🇰🇷韓國節第二彈】DR.REJU-All、TEAZEN</div>
-                            <div class="post-link"><a href="https://www.facebook.com/yatahk/" target="_blank">🔗 FB Post Link</a></div>
+                            <div class="post-link">
+                                <a href="https://www.facebook.com/yatahk/" target="_blank">🔗 https://facebook.com/yatahk/</a>
+                            </div>
                         </div>
                         
                     </div>
@@ -394,7 +471,7 @@
                     <div class="channel-header">🏪 便利店</div>
                     <div class="channel-stores">
                         
-                        <!-- 7-Eleven -->
+                        <!-- 7-Eleven FB -->
                         <div class="store-card sku">
                             <div class="store-header">
                                 <span class="store-name">7-Eleven</span>
@@ -411,7 +488,9 @@
                             </div>
                             <span class="offer-tag new">🆕 雪糕</span>
                             <div class="post-desc">【MÖVENPICK雪糕優惠】</div>
-                            <div class="post-link"><a href="https://www.facebook.com/7elevenhk/" target="_blank">🔗 FB Post Link</a></div>
+                            <div class="post-link">
+                                <a href="https://www.facebook.com/7elevenhk/" target="_blank">🔗 https://facebook.com/7elevenhk/</a>
+                            </div>
                         </div>
                         
                         <div class="store-card sku">
@@ -430,10 +509,34 @@
                             </div>
                             <span class="offer-tag">環保</span>
                             <div class="post-desc">【繼續啡 We Green】咖啡渣再生第3年</div>
-                            <div class="post-link"><a href="https://www.facebook.com/7elevenhk/" target="_blank">🔗 FB Post Link</a></div>
+                            <div class="post-link">
+                                <a href="https://www.facebook.com/7elevenhk/" target="_blank">🔗 https://facebook.com/7elevenhk/</a>
+                            </div>
                         </div>
                         
-                        <!-- Circle K -->
+                        <!-- 7-Eleven IG -->
+                        <div class="store-card sku">
+                            <div class="store-header">
+                                <span class="store-name">7-Eleven</span>
+                                <span class="level-badge sku">📦 SKU</span>
+                            </div>
+                            <div class="platform-tags">
+                                <span class="plat-tag ig">IG</span>
+                            </div>
+                            <div class="store-handle">@7elevenhk</div>
+                            <div class="post-meta">📅 10 Aug | 🕐 IG</div>
+                            <div class="sku-tags">
+                                <span class="sku-tag">雪糕</span>
+                                <span class="sku-tag">75折</span>
+                            </div>
+                            <span class="offer-tag hot">🔥 雪糕75折</span>
+                            <div class="post-desc">【雪糕優惠75折】</div>
+                            <div class="post-link">
+                                <a href="https://www.instagram.com/7elevenhk/" target="_blank">🔗 https://instagram.com/7elevenhk/</a>
+                            </div>
+                        </div>
+                        
+                        <!-- Circle K FB -->
                         <div class="store-card sku">
                             <div class="store-header">
                                 <span class="store-name">Circle K</span>
@@ -450,7 +553,31 @@
                             </div>
                             <span class="offer-tag new">🆕 豆乳</span>
                             <div class="post-desc">【#新品上架】原豆乳新口味</div>
-                            <div class="post-link"><a href="https://www.facebook.com/circlekhk/" target="_blank">🔗 FB Post Link</a></div>
+                            <div class="post-link">
+                                <a href="https://www.facebook.com/circlekhk/" target="_blank">🔗 https://facebook.com/circlekhk/</a>
+                            </div>
+                        </div>
+                        
+                        <!-- Circle K Threads -->
+                        <div class="store-card sku">
+                            <div class="store-header">
+                                <span class="store-name">Circle K</span>
+                                <span class="level-badge sku">📦 SKU</span>
+                            </div>
+                            <div class="platform-tags">
+                                <span class="plat-tag threads">Threads</span>
+                            </div>
+                            <div class="store-handle">@circlek_hk</div>
+                            <div class="post-meta">📅 10 Aug | 🕐 Threads</div>
+                            <div class="sku-tags">
+                                <span class="sku-tag">聯乘</span>
+                                <span class="sku-tag">BABYMONSTER</span>
+                            </div>
+                            <span class="offer-tag">韓星聯乘</span>
+                            <div class="post-desc">【BABYMONSTER 聯乘活動】</div>
+                            <div class="post-link">
+                                <a href="https://www.threads.net/@circlek_hk" target="_blank">🔗 https://threads.net/@circlek_hk</a>
+                            </div>
                         </div>
                         
                     </div>
@@ -461,27 +588,29 @@
                     <div class="channel-header">💊 個人護理店</div>
                     <div class="channel-stores">
                         
-                        <!-- 屈臣氏 -->
+                        <!-- 屈臣氏 Threads -->
                         <div class="store-card sku">
                             <div class="store-header">
                                 <span class="store-name">屈臣氏 Watsons</span>
                                 <span class="level-badge sku">📦 SKU</span>
                             </div>
                             <div class="platform-tags">
-                                <span class="plat-tag fb">FB</span>
                                 <span class="plat-tag threads">Threads</span>
                             </div>
                             <div class="store-handle">@hkwatsons</div>
                             <div class="post-meta">📅 11 Aug | 🕐 Threads | ❤️ 136</div>
                             <div class="sku-tags">
-                                <span class="sku-tag">飲品</span>
+                                <span class="sku-tag">零食</span>
                                 <span class="sku-tag">咖啡薄荷糖</span>
                             </div>
-                            <span class="offer-tag new">🆕 嬰兒</span>
-                            <div class="post-desc">【I'MINT 咖啡薄荷糖】韓國超Hit (Threads: 136 likes)</div>
-                            <div class="post-link"><a href="https://www.threads.net/@hkwatsons" target="_blank">🔗 Threads Post</a></div>
+                            <span class="offer-tag new">🆕 I'MINT</span>
+                            <div class="post-desc">【I'MINT 咖啡薄荷糖】韓國超Hit (136 likes)</div>
+                            <div class="post-link">
+                                <a href="https://www.threads.net/@hkwatsons" target="_blank">🔗 https://threads.net/@hkwatsons</a>
+                            </div>
                         </div>
                         
+                        <!-- 屈臣氏 FB -->
                         <div class="store-card other">
                             <div class="store-header">
                                 <span class="store-name">屈臣氏 Watsons</span>
@@ -494,14 +623,81 @@
                             <div class="post-meta">📅 11 Aug | 🕐 40分鐘前 | ❤️ 2</div>
                             <div class="sku-tags">
                                 <span class="sku-tag">嬰兒</span>
-                                <span class="sku-tag">O2O無此類別</span>
+                                <span class="sku-tag">O2O無</span>
                             </div>
                             <span class="offer-tag new">🆕 嬰兒</span>
                             <div class="post-desc">【寶寶免疫基礎】萬變環境如何應對？幫寶寶打好免疫基礎！</div>
-                            <div class="post-link"><a href="https://www.facebook.com/hkwatsons/" target="_blank">🔗 FB Post Link</a></div>
+                            <div class="post-link">
+                                <a href="https://www.facebook.com/hkwatsons/" target="_blank">🔗 https://facebook.com/hkwatsons/</a>
+                            </div>
                         </div>
                         
-                        <!-- 萬寧 -->
+                        <!-- 屈臣氏 IG -->
+                        <div class="store-card sku">
+                            <div class="store-header">
+                                <span class="store-name">屈臣氏 Watsons</span>
+                                <span class="level-badge sku">📦 SKU</span>
+                            </div>
+                            <div class="platform-tags">
+                                <span class="plat-tag ig">IG</span>
+                            </div>
+                            <div class="store-handle">@hkwatsons</div>
+                            <div class="post-meta">📅 10 Aug | 🕐 IG</div>
+                            <div class="sku-tags">
+                                <span class="sku-tag">會員</span>
+                                <span class="sku-tag">185週年</span>
+                            </div>
+                            <span class="offer-tag">VIP Day</span>
+                            <div class="post-desc">【VIP Day 92折】185週年會員優惠</div>
+                            <div class="post-link">
+                                <a href="https://www.instagram.com/hkwatsons/" target="_blank">🔗 https://instagram.com/hkwatsons/</a>
+                            </div>
+                        </div>
+                        
+                        <div class="store-card sku">
+                            <div class="store-header">
+                                <span class="store-name">屈臣氏 Watsons</span>
+                                <span class="level-badge sku">📦 SKU</span>
+                            </div>
+                            <div class="platform-tags">
+                                <span class="plat-tag ig">IG</span>
+                            </div>
+                            <div class="store-handle">@hkwatsons</div>
+                            <div class="post-meta">📅 8 Aug | 🕐 IG</div>
+                            <div class="sku-tags">
+                                <span class="sku-tag">185週年</span>
+                                <span class="sku-tag">經典復刻</span>
+                            </div>
+                            <span class="offer-tag">週年慶</span>
+                            <div class="post-desc">【185週年】經典復刻店即將開幕</div>
+                            <div class="post-link">
+                                <a href="https://www.instagram.com/hkwatsons/" target="_blank">🔗 https://instagram.com/hkwatsons/</a>
+                            </div>
+                        </div>
+                        
+                        <!-- 屈臣氏 IG Threads -->
+                        <div class="store-card sku">
+                            <div class="store-header">
+                                <span class="store-name">屈臣氏 Watsons</span>
+                                <span class="level-badge sku">📦 SKU</span>
+                            </div>
+                            <div class="platform-tags">
+                                <span class="plat-tag ig">IG</span>
+                            </div>
+                            <div class="store-handle">@hkwatsons</div>
+                            <div class="post-meta">📅 7 Aug | 🕐 IG</div>
+                            <div class="sku-tags">
+                                <span class="sku-tag">185週年</span>
+                                <span class="sku-tag">88折</span>
+                            </div>
+                            <span class="offer-tag">已過期</span>
+                            <div class="post-desc">【185週年88折】星期六限定 (已過期)</div>
+                            <div class="post-link">
+                                <a href="https://www.instagram.com/hkwatsons/" target="_blank">🔗 https://instagram.com/hkwatsons/</a>
+                            </div>
+                        </div>
+                        
+                        <!-- 萬寧 FB -->
                         <div class="store-card other">
                             <div class="store-header">
                                 <span class="store-name">萬寧 Mannings</span>
@@ -514,14 +710,16 @@
                             <div class="post-meta">📅 11 Aug | 🕐 3小時前 | ❤️ 1</div>
                             <div class="sku-tags">
                                 <span class="sku-tag">嬰兒</span>
-                                <span class="sku-tag">O2O無此類別</span>
+                                <span class="sku-tag">O2O無</span>
                             </div>
                             <span class="offer-tag new">🆕 嬰兒</span>
                             <div class="post-desc">【珍稀 A2 奶源呵護寶寶幼嫩腸道】</div>
-                            <div class="post-link"><a href="https://www.facebook.com/manningshk/" target="_blank">🔗 FB Post Link</a></div>
+                            <div class="post-link">
+                                <a href="https://www.facebook.com/manningshk/" target="_blank">🔗 https://facebook.com/manningshk/</a>
+                            </div>
                         </div>
                         
-                        <!-- 759 -->
+                        <!-- 759 FB -->
                         <div class="store-card order">
                             <div class="store-header">
                                 <span class="store-name">759阿信屋</span>
@@ -538,9 +736,12 @@
                             </div>
                             <span class="offer-tag new">🆕 APP</span>
                             <div class="post-desc">【APP 9折神券】</div>
-                            <div class="post-link"><a href="https://www.facebook.com/759store/" target="_blank">🔗 FB Post Link</a></div>
+                            <div class="post-link">
+                                <a href="https://www.facebook.com/759store/" target="_blank">🔗 https://facebook.com/759store/</a>
+                            </div>
                         </div>
                         
+                        <!-- 759 Threads -->
                         <div class="store-card sku">
                             <div class="store-header">
                                 <span class="store-name">759阿信屋</span>
@@ -557,7 +758,31 @@
                             </div>
                             <span class="offer-tag hot">🔥 爆紅</span>
                             <div class="post-desc">【凍水杯麵】首批貨量有限 (Threads: 445 likes)</div>
-                            <div class="post-link"><a href="https://www.threads.net/@759store" target="_blank">🔗 Threads Post</a></div>
+                            <div class="post-link">
+                                <a href="https://www.threads.net/@759store" target="_blank">🔗 https://threads.net/@759store</a>
+                            </div>
+                        </div>
+                        
+                        <!-- 惠康 Threads -->
+                        <div class="store-card sku">
+                            <div class="store-header">
+                                <span class="store-name">惠康 Wellcome</span>
+                                <span class="level-badge sku">📦 SKU</span>
+                            </div>
+                            <div class="platform-tags">
+                                <span class="plat-tag threads">Threads</span>
+                            </div>
+                            <div class="store-handle">@hkwellcome</div>
+                            <div class="post-meta">📅 11 Aug | 🕐 Threads | ❤️ 5.1K 🔥</div>
+                            <div class="sku-tags">
+                                <span class="sku-tag">急凍</span>
+                                <span class="sku-tag">冷泡杯麵</span>
+                            </div>
+                            <span class="offer-tag hot">🔥 Threads爆紅</span>
+                            <div class="post-desc">【冷泡杯麵】寫咗首藏頭詩 (5.1K likes!)</div>
+                            <div class="post-link">
+                                <a href="https://www.threads.net/@hkwellcome" target="_blank">🔗 https://threads.net/@hkwellcome</a>
+                            </div>
                         </div>
                         
                     </div>

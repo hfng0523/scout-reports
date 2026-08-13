@@ -101,6 +101,18 @@
         .success-box { background: rgba(107,203,119,0.1); border: 1px solid #6BCB77; border-radius: 12px; padding: 12px 20px; margin-bottom: 20px; font-size: 13px; }
         .success-box strong { color: #6BCB77; }
         
+        /* Handles Grid */
+        .handles-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-bottom: 25px; }
+        .handles-card { background: #1a1a2e; border-radius: 16px; padding: 20px; border: 1px solid rgba(255,255,255,0.1); }
+        .handles-card h3 { font-size: 14px; margin-bottom: 15px; padding-bottom: 10px; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .handles-card.fb h3 { color: #1877F2; }
+        .handles-card.ig h3 { color: #E1306C; }
+        .handles-card.threads h3 { color: #1DA1F2; }
+        .handle-item { display: flex; justify-content: space-between; padding: 6px 0; font-size: 12px; border-bottom: 1px solid rgba(255,255,255,0.03); }
+        .handle-item:last-child { border-bottom: none; }
+        .handle-name { color: #888; }
+        .handle-id { color: #4D96FF; }
+        
         footer { text-align: center; padding: 20px; color: #666; font-size: 13px; border-top: 1px solid rgba(255,255,255,0.1); margin-top: 25px; }
         footer a { color: #4D96FF; }
     </style>
@@ -122,14 +134,14 @@
                     <span>Instagram</span>
                 </div>
                 <div class="platform-badge active">
-                    <span class="status-dot yellow"></span>
+                    <span class="status-dot green"></span>
                     <span>Threads</span>
                 </div>
             </div>
         </header>
         
         <div class="success-box">
-            <strong>✅ 數據來源：</strong>從用戶 Facebook+IG Following List 直接確認 10 個 KAs 官方 Pages，確保所有 posts 均為官方發佈。
+            <strong>✅ 數據來源：</strong>從用戶 Facebook+IG+Threads Following List 直接確認 10 個 KAs 官方 Pages，確保所有 posts 均為官方發佈。
         </div>
         
         <!-- KPI Row -->
@@ -156,7 +168,7 @@
             </div>
             <div class="kpi-card threads">
                 <h3>💬 Threads</h3>
-                <div class="big-number">2</div>
+                <div class="big-number">4</div>
                 <p>7日內 Threads</p>
             </div>
         </div>
@@ -166,20 +178,20 @@
             <div class="intel-card trends">
                 <h3>📈 市場趨勢 (3 Platforms)</h3>
                 <ul class="intel-list">
-                    <li><strong>嬰兒/母嬰產品</strong> — Watsons嬰免疫、萬寧A2奶源、百佳嬰兒濕紙巾 (FB/IG)</li>
+                    <li><strong>嬰兒/母嬰產品</strong> — Watsons嬰免疫、萬寧A2奶源 (FB/IG)</li>
                     <li><strong>日本食品</strong> — DONKI青草膏、759 APP、百佳SELECT (FB/IG)</li>
                     <li><strong>超市優惠</strong> — 百佳星期三、惠康嘉頓、惠康雪糕 (FB/IG)</li>
                     <li><strong>聯乘合作</strong> — 7-Eleven x MÖVENPICK、惠康x常陸野貓頭鷹 (FB/IG)</li>
-                    <li><strong>日本直送</strong> — 白粟米、viyott乳酪、Ediya Coffee (IG)</li>
+                    <li><strong>冷泡杯麵熱潮</strong> — hktvmall、惠康、759都有推 (Threads爆紅 5.1K likes!)</li>
                 </ul>
             </div>
             <div class="intel-card takeaways">
                 <h3>💡 O2O 策略啟示</h3>
                 <ul class="intel-list">
+                    <li><strong>冷泡杯麵熱潮</strong> — Threads爆紅！惠康、hktvmall post有 5K+ likes，759有杯麵派籌活動</li>
                     <li><strong>嬰兒產品</strong> — Watsons/萬寧/百佳都在推，O2O需强化凍肉/雞蛋</li>
-                    <li><strong>日本食品</strong> — DONKI、759、7-Eleven都主推，惠康都有日本直送</li>
-                    <li><strong>APP 推廣</strong> — 759/惠康 APP升級，會員制强化</li>
-                    <li><strong>時機</strong> — 8月8日大型促銷已過，現為暑期促銷期</li>
+                    <li><strong>日本食品</strong> — DONKI、759、惠康都有日本直送</li>
+                    <li><strong>時機</strong> — 暑期8月促銷期，各平台積推優惠</li>
                 </ul>
             </div>
         </div>
@@ -198,11 +210,11 @@
                 </div>
                 <div class="gran-bar">
                     <span class="gran-label">Other</span>
-                    <div class="gran-fill bar-other">20</div>
+                    <div class="gran-fill bar-other">22</div>
                 </div>
                 <div style="margin-top:15px;">
                     <h3 style="color:#888;font-size:10px;text-transform:uppercase;letter-spacing:1px;">總收集</h3>
-                    <div style="font-size:32px;font-weight:bold;color:#4D96FF;">22</div>
+                    <div style="font-size:32px;font-weight:bold;color:#4D96FF;">24</div>
                     <div style="color:#666;font-size:10px;">posts (7日內)</div>
                 </div>
             </div>
@@ -227,11 +239,7 @@
                             <div class="store-handle">@hkparknshop</div>
                             <div class="post-meta">📅 11 Aug | FB 1小時前 | IG Aug 12</div>
                             <span class="offer-tag hot">🆕 今日</span>
-                            <div class="post-desc">FB: 【至抵星期三】PNS網購優惠 | IG: 全城傳愛齊捐食2026 (食物捐贈, pinned)</div>
-                            <div class="sku-tags">
-                                <span class="sku-tag">Order Level</span>
-                                <span class="sku-tag">零食/飲品</span>
-                            </div>
+                            <div class="post-desc">FB: 【至抵星期三】PNS網購優惠 | IG: 全城傳愛齊捐食2026</div>
                         </div>
                         
                         <div class="store-card direct">
@@ -248,10 +256,6 @@
                             <div class="post-meta">📅 10 Aug | FB 19小時前</div>
                             <span class="offer-tag">日本</span>
                             <div class="post-desc">【蠟筆小新泰國通鼻青草膏】全線分店 (9 likes)</div>
-                            <div class="sku-tags">
-                                <span class="sku-tag">Order Level</span>
-                                <span class="sku-tag">日本製品</span>
-                            </div>
                         </div>
                         
                         <div class="store-card indirect">
@@ -261,15 +265,12 @@
                             </div>
                             <div class="platform-tags">
                                 <span class="plat-tag fb">FB</span>
+                                <span class="plat-tag threads">Threads</span>
                             </div>
                             <div class="store-handle">@759store</div>
-                            <div class="post-meta">📅 11 Aug | FB 6小時前</div>
+                            <div class="post-meta">📅 11 Aug | FB 6小時前 | Threads a day ago</div>
                             <span class="offer-tag new">🆕 APP</span>
-                            <div class="post-desc">【APP 全新升級 9折神券】(108 likes)</div>
-                            <div class="sku-tags">
-                                <span class="sku-tag">Other</span>
-                                <span class="sku-tag">會員</span>
-                            </div>
+                            <div class="post-desc">FB: 【APP 9折神券】| Threads: 冷泡杯麵派籌 (445 likes)</div>
                         </div>
                         
                         <div class="store-card indirect">
@@ -280,15 +281,12 @@
                             <div class="platform-tags">
                                 <span class="plat-tag fb">FB</span>
                                 <span class="plat-tag ig">IG</span>
+                                <span class="plat-tag threads">Threads</span>
                             </div>
                             <div class="store-handle">@hkwellcome</div>
-                            <div class="post-meta">📅 11 Aug | FB 3小時前 | IG Aug 10</div>
-                            <span class="offer-tag hot">🆕 新品</span>
-                            <div class="post-desc">FB: 【今期堅係新！】嘉頓曲奇 | IG: 雪糕放題挑戰、常陸野貓頭鷹啤酒</div>
-                            <div class="sku-tags">
-                                <span class="sku-tag">Other</span>
-                                <span class="sku-tag">零食/啤酒</span>
-                            </div>
+                            <div class="post-meta">📅 11 Aug | Threads 5.1K likes!</div>
+                            <span class="offer-tag hot">🔥 Threads爆紅</span>
+                            <div class="post-desc">Threads: 冷泡杯麵藏頭詩 (5.1K likes!) | FB/IG: 雪糕/啤酒優惠</div>
                         </div>
                         
                         <div class="store-card indirect">
@@ -302,11 +300,7 @@
                             <div class="store-handle">@aeonstores.hk</div>
                             <div class="post-meta">📅 11 Aug | FB 2小時前</div>
                             <span class="offer-tag">限定</span>
-                            <div class="post-desc">【$1換購第3擊】屯門街坊限定 (4 likes)</div>
-                            <div class="sku-tags">
-                                <span class="sku-tag">Other</span>
-                                <span class="sku-tag">自家品牌</span>
-                            </div>
+                            <div class="post-desc">【$1換購第3擊】屯門街坊限定</div>
                         </div>
                         
                         <div class="store-card indirect">
@@ -320,11 +314,7 @@
                             <div class="store-handle">@yatahk</div>
                             <div class="post-meta">📅 11 Aug | FB 4小時前</div>
                             <span class="offer-tag promo">優惠期4-18/8</span>
-                            <div class="post-desc">【🇰🇷韓國節第二彈】DR.REJU-All、TEAZEN、正官庄 (18 likes)</div>
-                            <div class="sku-tags">
-                                <span class="sku-tag">Other</span>
-                                <span class="sku-tag">韓妝/保健</span>
-                            </div>
+                            <div class="post-desc">【🇰🇷韓國節第二彈】DR.REJU-All、TEAZEN</div>
                         </div>
                         
                     </div>
@@ -343,15 +333,12 @@
                             <div class="platform-tags">
                                 <span class="plat-tag fb">FB</span>
                                 <span class="plat-tag ig">IG</span>
+                                <span class="plat-tag threads">Threads</span>
                             </div>
                             <div class="store-handle">@7elevenhk</div>
                             <div class="post-meta">📅 11 Aug | FB 9分鐘前</div>
                             <span class="offer-tag new">🆕 雪糕</span>
-                            <div class="post-desc">【#著數之選】MÖVENPICK x 7-SELECT冰感杯 (27 likes)</div>
-                            <div class="sku-tags">
-                                <span class="sku-tag">Other</span>
-                                <span class="sku-tag">雪糕/聯乘</span>
-                            </div>
+                            <div class="post-desc">【MÖVENPICK x 7-SELECT冰感杯】(27 likes)</div>
                         </div>
                         
                         <div class="store-card indirect">
@@ -366,29 +353,6 @@
                             <div class="post-meta">📅 11 Aug | FB 6小時前</div>
                             <span class="offer-tag">環保</span>
                             <div class="post-desc">【繼續啡 We Green】咖啡渣再生第3年</div>
-                            <div class="sku-tags">
-                                <span class="sku-tag">Other</span>
-                                <span class="sku-tag">環保</span>
-                            </div>
-                        </div>
-                        
-                        <div class="store-card indirect">
-                            <div class="store-header">
-                                <span class="store-name">7-Eleven</span>
-                                <span class="o2o-badge no">❌</span>
-                            </div>
-                            <div class="platform-tags">
-                                <span class="plat-tag fb">FB</span>
-                                <span class="plat-tag ig">IG</span>
-                            </div>
-                            <div class="store-handle">@7elevenhk</div>
-                            <div class="post-meta">📅 10 Aug | FB 19小時前 | IG Aug 10</div>
-                            <span class="offer-tag">聯乘</span>
-                            <div class="post-desc">FB: 【#限定聯乘】7-SELECT x CoCo咖喱5款 | IG: 雪糕75折優惠</div>
-                            <div class="sku-tags">
-                                <span class="sku-tag">Other</span>
-                                <span class="sku-tag">咖喱/雪糕</span>
-                            </div>
                         </div>
                         
                         <div class="store-card indirect">
@@ -404,10 +368,6 @@
                             <div class="post-meta">📅 11 Aug | FB 2小時前</div>
                             <span class="offer-tag new">🆕 豆乳</span>
                             <div class="post-desc">【#新品上架】原豆乳新口味 (12 likes)</div>
-                            <div class="sku-tags">
-                                <span class="sku-tag">Other</span>
-                                <span class="sku-tag">豆乳/新品</span>
-                            </div>
                         </div>
                         
                     </div>
@@ -426,15 +386,12 @@
                             <div class="platform-tags">
                                 <span class="plat-tag fb">FB</span>
                                 <span class="plat-tag ig">IG</span>
+                                <span class="plat-tag threads">Threads</span>
                             </div>
                             <div class="store-handle">@hkwatsons</div>
-                            <div class="post-meta">📅 11 Aug | FB 40分鐘前 | IG Aug 10</div>
+                            <div class="post-meta">📅 11 Aug | Threads 136 likes</div>
                             <span class="offer-tag new">🆕 嬰兒</span>
-                            <div class="post-desc">FB: 【寶寶免疫基礎】 | IG: 【VIP Day 92折】185週年會員優惠</div>
-                            <div class="sku-tags">
-                                <span class="sku-tag">Other</span>
-                                <span class="sku-tag">嬰兒/會員</span>
-                            </div>
+                            <div class="post-desc">FB: 【寶寶免疫基礎】| Threads: I'MINT 咖啡薄荷糖 (136 likes)</div>
                         </div>
                         
                         <div class="store-card indirect">
@@ -446,13 +403,9 @@
                                 <span class="plat-tag ig">IG</span>
                             </div>
                             <div class="store-handle">@hkwatsons</div>
-                            <div class="post-meta">📅 IG Aug 8</div>
+                            <div class="post-meta">📅 IG Aug 10</div>
                             <span class="offer-tag">185週年</span>
-                            <div class="post-desc">【185週年】經典復刻店即將開幕</div>
-                            <div class="sku-tags">
-                                <span class="sku-tag">Other</span>
-                                <span class="sku-tag">185週年</span>
-                            </div>
+                            <div class="post-desc">【VIP Day 92折】185週年會員優惠</div>
                         </div>
                         
                         <div class="store-card indirect">
@@ -466,11 +419,7 @@
                             <div class="store-handle">@hkwatsons</div>
                             <div class="post-meta">📅 IG Aug 7</div>
                             <span class="offer-tag">185週年</span>
-                            <div class="post-desc">【185週年88折】星期六限定優惠 (已過期)</div>
-                            <div class="sku-tags">
-                                <span class="sku-tag">Other</span>
-                                <span class="sku-tag">已過期</span>
-                            </div>
+                            <div class="post-desc">【185週年88折】星期六限定 (已過期)</div>
                         </div>
                         
                         <div class="store-card indirect">
@@ -485,10 +434,6 @@
                             <div class="post-meta">📅 11 Aug | FB 3小時前</div>
                             <span class="offer-tag new">🆕 嬰兒</span>
                             <div class="post-desc">【珍稀 A2 奶源呵護寶寶幼嫩腸道】(1 like)</div>
-                            <div class="sku-tags">
-                                <span class="sku-tag">Other</span>
-                                <span class="sku-tag">嬰兒/A2奶</span>
-                            </div>
                         </div>
                         
                     </div>
@@ -497,26 +442,52 @@
             </div>
         </div>
         
-        <!-- IG Handles Summary -->
-        <div style="background:#1a1a2e;border-radius:16px;padding:20px;border:1px solid rgba(255,255,255,0.1);margin-bottom:25px;">
-            <h3 style="font-size:16px;margin-bottom:15px;color:#E1306C;">📸 IG Handles (從用戶 Following List 確認)</h3>
-            <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:10px;font-size:12px;">
-                <div><span style="color:#888;">惠康:</span> @hkwellcome</div>
-                <div><span style="color:#888;">AEON:</span> @aeonstores.hk</div>
-                <div><span style="color:#888;">百佳:</span> @hkparknshop</div>
-                <div><span style="color:#888;">萬寧:</span> @mannings_hk</div>
-                <div><span style="color:#888;">759:</span> @759store</div>
-                <div><span style="color:#888;">屈臣氏:</span> @hkwatsons</div>
-                <div><span style="color:#888;">一田:</span> @yatahk</div>
-                <div><span style="color:#888;">DONKI:</span> @dondondonkihk</div>
-                <div><span style="color:#888;">Circle K:</span> @circlek_hk</div>
-                <div><span style="color:#888;">7-Eleven:</span> @7elevenhk</div>
+        <!-- Handles Grid -->
+        <div class="handles-grid">
+            <div class="handles-card fb">
+                <h3>📘 Facebook Handles</h3>
+                <div class="handle-item"><span class="handle-name">一田</span><span class="handle-id">@yatahk</span></div>
+                <div class="handle-item"><span class="handle-name">Circle K</span><span class="handle-id">@circlek_hk</span></div>
+                <div class="handle-item"><span class="handle-name">AEON</span><span class="handle-id">@aeonstores.hk</span></div>
+                <div class="handle-item"><span class="handle-name">DON DON DONKI</span><span class="handle-id">@dondondonkihk</span></div>
+                <div class="handle-item"><span class="handle-name">惠康</span><span class="handle-id">@hkwellcome</span></div>
+                <div class="handle-item"><span class="handle-name">7-Eleven</span><span class="handle-id">@7elevenhk</span></div>
+                <div class="handle-item"><span class="handle-name">759阿信屋</span><span class="handle-id">@759store</span></div>
+                <div class="handle-item"><span class="handle-name">屈臣氏</span><span class="handle-id">@hkwatsons</span></div>
+                <div class="handle-item"><span class="handle-name">萬寧</span><span class="handle-id">@mannings_hk</span></div>
+                <div class="handle-item"><span class="handle-name">百佳</span><span class="handle-id">@hkparknshop</span></div>
+            </div>
+            <div class="handles-card ig">
+                <h3>📸 Instagram Handles</h3>
+                <div class="handle-item"><span class="handle-name">惠康</span><span class="handle-id">@hkwellcome</span></div>
+                <div class="handle-item"><span class="handle-name">AEON</span><span class="handle-id">@aeonstores.hk</span></div>
+                <div class="handle-item"><span class="handle-name">百佳</span><span class="handle-id">@hkparknshop</span></div>
+                <div class="handle-item"><span class="handle-name">萬寧</span><span class="handle-id">@mannings_hk</span></div>
+                <div class="handle-item"><span class="handle-name">759阿信屋</span><span class="handle-id">@759store</span></div>
+                <div class="handle-item"><span class="handle-name">屈臣氏</span><span class="handle-id">@hkwatsons</span></div>
+                <div class="handle-item"><span class="handle-name">一田</span><span class="handle-id">@yatahk</span></div>
+                <div class="handle-item"><span class="handle-name">DON DON DONKI</span><span class="handle-id">@dondondonkihk</span></div>
+                <div class="handle-item"><span class="handle-name">Circle K</span><span class="handle-id">@circlek_hk</span></div>
+                <div class="handle-item"><span class="handle-name">7-Eleven</span><span class="handle-id">@7elevenhk</span></div>
+            </div>
+            <div class="handles-card threads">
+                <h3>💬 Threads Handles</h3>
+                <div class="handle-item"><span class="handle-name">屈臣氏</span><span class="handle-id">@hkwatsons</span></div>
+                <div class="handle-item"><span class="handle-name">惠康</span><span class="handle-id">@hkwellcome</span></div>
+                <div class="handle-item"><span class="handle-name">759阿信屋</span><span class="handle-id">@759store</span></div>
+                <div class="handle-item"><span class="handle-name">7-Eleven</span><span class="handle-id">@7elevenhk</span></div>
+                <div class="handle-item"><span class="handle-name">Circle K</span><span class="handle-id">@circlek_hk</span></div>
+                <div class="handle-item"><span class="handle-name">DON DON DONKI</span><span class="handle-id">@dondondonkihk</span></div>
+                <div class="handle-item"><span class="handle-name" style="color:#FF6B6B;">百佳 ❌</span><span class="handle-id">不在Following</span></div>
+                <div class="handle-item"><span class="handle-name" style="color:#FF6B6B;">萬寧 ❌</span><span class="handle-id">不在Following</span></div>
+                <div class="handle-item"><span class="handle-name" style="color:#FF6B6B;">AEON ❌</span><span class="handle-id">不在Following</span></div>
+                <div class="handle-item"><span class="handle-name" style="color:#FF6B6B;">一田 ❌</span><span class="handle-id">不在Following</span></div>
             </div>
         </div>
         
         <footer>
             <p>📅 報告更新：11 Aug 2026 | 🔍 Hermes-Scout Agent</p>
-            <p style="margin-top:8px;">📌 數據來源：用戶 Facebook+IG Following List 的 10 個 KAs 官方 Pages | FB+IG+Threads 3平台</p>
+            <p style="margin-top:8px;">📌 數據來源：用戶 Facebook+IG+Threads Following List 的 10 個 KAs 官方 Pages | FB+IG+Threads 3平台</p>
             <p style="margin-top:8px;">🔗 <a href="https://hfng0523.github.io/scout-reports/" target="_blank">GitHub Pages</a></p>
         </footer>
     </div>

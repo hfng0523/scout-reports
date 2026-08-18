@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=1920">
-    <title>KAs Social Listening Report | 14 Aug 2026 (FB+IG+Threads)</title>
+    <title>KAs Social Listening Report | 17 Aug 2026 (FB+IG+Threads)</title>
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect fill='%230F0F1A' width='100' height='100' rx='20'/%3E%3Ccircle cx='50' cy='50' r='35' fill='none' stroke='%234D96FF' stroke-width='6'/%3E%3Ccircle cx='50' cy='50' r='15' fill='%236BCB77'/%3E%3Cline x1='50' y1='15' x2='50' y2='5' stroke='%234D96FF' stroke-width='4' stroke-linecap='round'/%3E%3Cline x1='50' y1='85' x2='50' y2='95' stroke='%234D96FF' stroke-width='4' stroke-linecap='round'/%3E%3Cline x1='15' y1='50' x2='5' y2='50' stroke='%234D96FF' stroke-width='4' stroke-linecap='round'/%3E%3Cline x1='85' y1='50' x2='95' y2='50' stroke='%234D96FF' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E">
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -17,7 +17,7 @@
         .platform-badge.active { border-color: #6BCB77; }
         .status-dot { width: 12px; height: 12px; border-radius: 50%; }
         .status-dot.green { background: #6BCB77; box-shadow: 0 0 10px #6BCB77; }
-        
+
         .kpi-row { display: grid; grid-template-columns: repeat(6, 1fr); gap: 20px; margin-bottom: 25px; }
         .kpi-card { background: #1a1a2e; border-radius: 16px; padding: 20px; border: 1px solid rgba(255,255,255,0.1); text-align: center; }
         .kpi-card.order { border-top: 4px solid #FF6B6B; }
@@ -35,7 +35,7 @@
         .kpi-card.ig .big-number { color: #E1306C; }
         .kpi-card.threads .big-number { color: #1DA1F2; }
         .kpi-card p { color: #666; font-size: 11px; margin-top: 5px; }
-        
+
         .granularity-section { background: #1a1a2e; border-radius: 16px; padding: 20px; margin-bottom: 25px; border: 1px solid rgba(255,255,255,0.1); }
         .granularity-section h3 { font-size: 14px; color: #888; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 15px; }
         .gran-row { display: flex; gap: 30px; }
@@ -50,8 +50,8 @@
         .gran-count.order { color: #FF6B6B; }
         .gran-count.sku { color: #4D96FF; }
         .gran-count.other { color: #888; }
-        
-        .intel-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 25px; }
+
+        .intel-row { display: grid; grid-template-template-columns: repeat(2, 1fr); gap: 20px; margin-bottom: 25px; }
         .intel-card { background: #1a1a2e; border-radius: 16px; padding: 20px; border: 1px solid rgba(255,255,255,0.1); }
         .intel-card.trends { border-top: 4px solid #F9CA24; }
         .intel-card.takeaways { border-top: 4px solid #6BCB77; }
@@ -60,22 +60,21 @@
         .intel-card.takeaways h3 { color: #6BCB77; }
         .intel-list { list-style: none; }
         .intel-list li { padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.05); font-size: 13px; line-height: 1.5; }
-        .intel-list li:last-child { border-bottom: none; }
-        .intel-list li::before { content: "▸ "; color: #4D96FF; }
+        .intel-list li::before { content: '• '; color: #4D96FF; }
         .intel-list li strong { color: #4D96FF; }
-        
+
         .channel-section { margin-bottom: 25px; }
         .filter-note { font-size: 13px; color: #666; text-align: center; margin-bottom: 15px; }
         .channel-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
         .channel-column { background: #1a1a2e; border-radius: 16px; overflow: hidden; border: 1px solid rgba(255,255,255,0.1); display: flex; flex-direction: column; max-height: 950px; }
         .channel-header { padding: 14px; font-weight: bold; font-size: 15px; text-align: center; flex-shrink: 0; }
         .channel-column:nth-child(1) .channel-header { background: rgba(255,107,107,0.15); color: #FF6B6B; }
-        .channel-column:nth-child(2) .channel-header { background: rgba(255,159,67,0.15); color: #FF9F43; }
-        .channel-column:nth-child(3) .channel-header { background: rgba(77,150,255,0.15); color: #4D96FF; }
+        .channel-column:nth-child(2) .channel-header { background: rgba(77,150,255,0.15); color: #4D96FF; }
+        .channel-column:nth-child(3) .channel-header { background: rgba(107,203,119,0.15); color: #6BCB77; }
         .channel-stores { padding: 12px; flex: 1; overflow-y: auto; display: flex; flex-direction: column; gap: 10px; }
         .channel-stores::-webkit-scrollbar { width: 6px; }
         .channel-stores::-webkit-scrollbar-thumb { background: #444; border-radius: 3px; }
-        
+
         .store-card { background: rgba(255,255,255,0.02); border-radius: 10px; padding: 12px; border-left: 3px solid #555; flex-shrink: 0; }
         .store-card.order { border-left-color: #FF6B6B; }
         .store-card.sku { border-left-color: #4D96FF; }
@@ -86,300 +85,165 @@
         .level-badge.order { background: #FF6B6B; color: #fff; }
         .level-badge.sku { background: #4D96FF; color: #fff; }
         .level-badge.other { background: #555; color: #fff; }
-        .platform-tags { display: flex; gap: 4px; margin-bottom: 5px; flex-wrap: wrap; }
+        .platform-tags { display: flex; gap: 4px; margin-bottom: 5px; }
         .plat-tag { font-size: 9px; padding: 2px 5px; border-radius: 4px; font-weight: bold; }
         .plat-tag.fb { background: #1877F2; color: #fff; }
         .plat-tag.ig { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); color: #fff; }
         .plat-tag.threads { background: #1DA1F2; color: #fff; }
         .store-handle { font-size: 10px; color: #4D96FF; margin-bottom: 4px; }
         .post-meta { font-size: 10px; color: #888; margin-bottom: 5px; }
-        .post-link { font-size: 9px; margin-bottom: 5px; word-break: break-all; }
+        .sku-tags-container { margin-bottom: 5px; }
+        .sku-tags-label { font-size: 9px; color: #888; margin-bottom: 3px; }
+        .sku-tags { display: flex; flex-wrap: wrap; gap: 3px; }
+        .sku-tag { font-size: 9px; padding: 2px 6px; border-radius: 4px; font-weight: bold; }
+        .sku-tag.o2o { background: rgba(107,203,119,0.2); color: #6BCB77; border: 1px solid rgba(107,203,119,0.3); }
+        .sku-tag.ka { background: rgba(255,107,107,0.2); color: #FF6B6B; border: 1px solid rgba(255,107,107,0.3); }
+        .offer-tag { display: inline-block; font-size: 9px; padding: 2px 5px; border-radius: 4px; margin-bottom: 4px; font-weight: bold; }
+        .offer-tag.new { background: #6BCB77; color: #fff; }
+        .offer-tag.promo { background: #F9CA24; color: #000; }
+        .offer-tag.normal { background: rgba(255,255,255,0.1); }
+        .post-desc { font-size: 11px; line-height: 1.4; margin-bottom: 4px; }
+        .post-link { display: inline-block; font-size: 9px; padding: 3px 6px; border-radius: 4px; word-break: break-all; }
         .post-link a { color: #4D96FF; text-decoration: none; }
         .post-link a:hover { text-decoration: underline; }
-        .post-link.direct { background: rgba(107,203,119,0.1); padding: 3px 6px; border-radius: 4px; border: 1px solid rgba(107,203,119,0.3); display: inline-block; margin-bottom: 3px; }
+        .post-link.direct { background: rgba(107,203,119,0.1); padding: 3px 6px; border-radius: 4px; border: 1px solid rgba(107,203,119,0.3); }
+        .post-link.direct a { color: #6BCB77; }
         .post-link.placeholder { color: #888; font-style: italic; }
-        .o2o-tag { font-size: 9px; padding: 2px 6px; border-radius: 4px; font-weight: bold; }
-        .o2o-tag.yes { background: rgba(107,203,119,0.2); color: #6BCB77; border: 1px solid rgba(107,203,119,0.4); }
-        .o2o-tag.no { background: rgba(255,107,107,0.2); color: #FF6B6B; border: 1px solid rgba(255,107,107,0.4); }
-        .post-text { font-size: 11px; color: #ccc; margin-bottom: 5px; line-height: 1.4; }
-        .section-label { font-size: 12px; color: #666; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 1px; }
+
+        .success-box { background: rgba(107,203,119,0.1); border: 1px solid #6BCB77; border-radius: 12px; padding: 12px 20px; margin-bottom: 20px; font-size: 13px; }
+        .success-box strong { color: #6BCB77; }
+        
+        .handles-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-bottom: 25px; }
+        .handles-card { background: #1a1a2e; border-radius: 16px; padding: 20px; border: 1px solid rgba(255,255,255,0.1); }
+        .handles-card h3 { font-size: 14px; margin-bottom: 15px; padding-bottom: 10px; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .handles-card.fb h3 { color: #1877F2; }
+        .handles-card.ig h3 { color: #E1306C; }
+        .handles-card.threads h3 { color: #1DA1F2; }
+        .handle-item { display: flex; justify-content: space-between; align-items: center; padding: 6px 0; border-bottom: 1px solid rgba(255,255,255,0.03); font-size: 12px; }
+        .handle-name { color: #888; }
+        .handle-id { color: #4D96FF; }
+        footer { text-align: center; padding: 20px; color: #666; font-size: 13px; border-top: 1px solid rgba(255,255,255,0.1); margin-top: 25px; }
+        footer a { color: #4D96FF; }
     </style>
 </head>
 <body>
     <div class="dashboard">
-        <div class="header">
+        <header class="header">
             <div class="header-left">
                 <h1>📊 KAs Social Listening Report</h1>
-                <div class="header-date">📅 14 Aug 2026 | 🔄 Updated: 14 Aug 2026, 13:00 HKT</div>
+                <div class="header-date">📅 17 Aug 2026 | 🔄 Updated: 17 Aug 2026, 19:10 HKT</div>
             </div>
             <div class="platform-status">
                 <div class="platform-badge active">
-                    <span class="status-dot green"></span> FB Active
+                    <span class="status-dot green"></span>
+                    Facebook
                 </div>
                 <div class="platform-badge active">
-                    <span class="status-dot green"></span> IG Active
+                    <span class="status-dot green"></span>
+                    Instagram
                 </div>
                 <div class="platform-badge active">
-                    <span class="status-dot green"></span> Threads Active
+                    <span class="status-dot green"></span>
+                    Threads
                 </div>
             </div>
+        </header>
+        
+        <div class="success-box">
+            <strong>✅ 數據來源:</strong> Facebook+IG+Threads Following List 已驗證 10 個 KAs 官方 Pages<br>
+            <strong>📌 Post URLs:</strong> 點擊 timestamp → window.location.href 提取實際 Post 連結<br>
+            <strong>🏷️ SKU Tags:</strong> 🟢 O2O有 = O2O有呢個Category | 🔴 KA推廣 = KA自己推廣
         </div>
 
+        <!-- KPI Row -->
         <div class="kpi-row">
             <div class="kpi-card order">
                 <h3>⚔️ Order Level</h3>
-                <div class="big-number">1</div>
-                <p>消費滿$xxx / 全單折扣</p>
+                <div class="big-number">5</div>
+                <p>消費滿$xxx/全場折扣/整單</p>
             </div>
             <div class="kpi-card sku">
                 <h3>📦 SKU Level</h3>
-                <div class="big-number">6</div>
-                <p>特定產品優惠</p>
+                <div class="big-number">3</div>
+                <p>特定SKU/產品優惠</p>
             </div>
             <div class="kpi-card other">
                 <h3>📌 Other</h3>
-                <div class="big-number">2</div>
-                <p>非產品推廣</p>
+                <div class="big-number">1</div>
+                <p>O2O無此類別/非產品</p>
             </div>
             <div class="kpi-card fb">
-                <h3>📘 Facebook</h3>
+                <h3>📘 FB Posts</h3>
                 <div class="big-number">9</div>
-                <p>今日有更新</p>
+                <p>Covering 10 KAs</p>
             </div>
             <div class="kpi-card ig">
-                <h3>📸 Instagram</h3>
-                <div class="big-number">2</div>
-                <p>最近7日有更新</p>
+                <h3>📸 IG Posts</h3>
+                <div class="big-number">-</div>
+                <p>Pending collection</p>
             </div>
             <div class="kpi-card threads">
-                <h3>🧵 Threads</h3>
-                <div class="big-number">4</div>
-                <p>最近7日有更新</p>
+                <h3>💬 Threads</h3>
+                <div class="big-number">-</div>
+                <p>Pending collection</p>
             </div>
         </div>
 
+        <!-- Granularity -->
         <div class="granularity-section">
-            <h3>📊 粒度分析 | Granularity Analysis (14 Aug 2026)</h3>
+            <h3>📊 粒度分析 | Granularity Analysis (17 Aug 2026)</h3>
             <div class="gran-row">
                 <div class="gran-item">
-                    <span class="gran-label">⚔️ Order</span>
+                    <span class="gran-label">Order</span>
                     <div class="gran-bar-container">
-                        <div class="gran-bar order" style="width: 11%;">11%</div>
-                        <span class="gran-count order">1</span>
+                        <div class="gran-bar order" style="width: 200px;">55%</div>
+                        <span class="gran-count order">5</span>
                     </div>
                 </div>
                 <div class="gran-item">
-                    <span class="gran-label">📦 SKU</span>
+                    <span class="gran-label">SKU</span>
                     <div class="gran-bar-container">
-                        <div class="gran-bar sku" style="width: 67%;">67%</div>
-                        <span class="gran-count sku">6</span>
+                        <div class="gran-bar sku" style="width: 120px;">33%</div>
+                        <span class="gran-count sku">3</span>
                     </div>
                 </div>
                 <div class="gran-item">
-                    <span class="gran-label">📌 Other</span>
+                    <span class="gran-label">Other</span>
                     <div class="gran-bar-container">
-                        <div class="gran-bar other" style="width: 22%;">22%</div>
-                        <span class="gran-count other">2</span>
+                        <div class="gran-bar other" style="width: 80px;">11%</div>
+                        <span class="gran-count other">1</span>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="intel-row">
+        <!-- Intel Row -->
+        <div class="intel-row" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; margin-bottom: 25px;">
             <div class="intel-card trends">
-                <h3>🔍 市場觀察 | Market Observations</h3>
+                <h3>📈 市場觀察 Trends</h3>
                 <ul class="intel-list">
-                    <li><strong>便利店激烈競爭：</strong>Circle K 5分鐘前出新 post，7-Eleven 57分鐘前出 post，兩間便利店今日都非常活躍</li>
-                    <li><strong>SKU 優惠主導：</strong>今日 67% posts 係特定產品優惠 (SKU Level)，以零食/即食為主</li>
-                    <li><strong>罐頭麵熱潮：</strong>百佳推 NISSIN 出前一丁罐頭麵「搶手佳折」，顯示即食麵市場競爭激烈</li>
-                    <li><strong>凍品季節性：</strong>惠康推「冰個夠我Cool」雪糕/凍水果優惠，配合炎熱天氣</li>
-                    <li><strong>保養品推廣：</strong>屈臣氏 VIP Day 92折優惠逢星期一適用，針對會員</li>
+                    <li><strong>759 + AEON</strong> 聯手推 Order Level 優惠（759全單9折、AEON APP新鮮日），顯示超市積極搶客流</li>
+                    <li><strong>惠康</strong> $1換購策略成功引流，今晚post 2分鐘已獲364個反應，證明低門檻優惠有效</li>
+                    <li><strong>7-Eleven + Circle K</strong> 繼續 SKU Level 產品推廣（豆乳、雪條），便利店差異化競爭</li>
                 </ul>
             </div>
             <div class="intel-card takeaways">
-                <h3>💡 O2O 策略建議 | Recommendations</h3>
+                <h3>💡 O2O 建議 Recommendations</h3>
                 <ul class="intel-list">
-                    <li><strong>即食麵機會：</strong>O2O 可以考慮引入更多即食麵款式，百佳正推 NISSIN 罐頭麵，可同步做</li>
-                    <li><strong>雪糕/凍品：</strong>惠康推凍水果/雪糕，天氣熱可以考慮增加急凍產品庫存</li>
-                    <li><strong>零食優先：</strong>759 推韓國零食、Circle K 推 Calbee 蝦條，顯示零食係近期焦點</li>
-                    <li><strong>會員制度：</strong>759 APP 升級推 9折神券、屈臣氏 VIP Day，顯示會員制度係 KAs 重心</li>
-                    <li><strong>觀察：</strong>萬寧、DONKI 近期以男性/健康/旅遊護膚為主題，可考慮差異化</li>
+                    <li><strong>跟進759優惠:</strong> 759全單9折(至8/23)，O2O可考慮同步推出凍水杯麵/零食優惠</li>
+                    <li><strong>惠康$1換購:</strong> 乳酸菌飲品引流效果強建議聯絡惠康傾談O2O獨家優惠</li>
+                    <li><strong>百佳家居清潔:</strong> 洗衣產品、紙巾熱賣，O2O可考慮增加家居清潔品類</li>
                 </ul>
             </div>
         </div>
 
+        <!-- Channel Grid -->
         <div class="channel-section">
-            <div class="filter-note">⚠️ 報告涵蓋最近7日內posts，14 Aug 2026 更新</div>
-            
+            <div class="filter-note">⚠️ 報告涵蓋最近7日內posts，17 Aug 2026 更新</div>
             <div class="channel-grid">
-                <!-- 百貨/超市 Column -->
+                <!-- Facebook Column -->
                 <div class="channel-column">
-                    <div class="channel-header">🏪 百貨/超市 (6 KAs)</div>
-                    <div class="channel-stores">
-                        
-                        <!-- 百佳 FB -->
-                        <div class="store-card sku">
-                            <div class="store-header">
-                                <span class="store-name">百佳 PARKnSHOP</span>
-                                <span class="level-badge sku">📦 SKU</span>
-                            </div>
-                            <div class="platform-tags">
-                                <span class="plat-tag fb">FB</span>
-                                <span class="plat-tag ig">IG</span>
-                            </div>
-                            <div class="store-handle">@hkparknshop</div>
-                            <div class="post-meta">📅 14 Aug | 🕐 2小時前 | 👍 68</div>
-                            <div class="post-text">【搶手佳折｜只限 2 天】宵夜、晚餐必備罐頭麵食 ~ NISSIN 出前一丁</div>
-                            <span class="o2o-tag yes">🟢 O2O有 (急凍/杯麵)</span>
-                            <div class="post-link direct">
-                                <a href="https://www.facebook.com/parknshophk/posts/pfbid0UyGELU1UZzyz1VgEz2eDdPNxghCwAEaBHWkS5KvR5p4LTTjD8DnWedVWN1WqL5wXl" target="_blank">📎 Direct Link</a>
-                            </div>
-                        </div>
-
-                        <!-- 惠康 FB -->
-                        <div class="store-card sku">
-                            <div class="store-header">
-                                <span class="store-name">惠康 Wellcome</span>
-                                <span class="level-badge sku">📦 SKU</span>
-                            </div>
-                            <div class="platform-tags">
-                                <span class="plat-tag fb">FB</span>
-                                <span class="plat-tag ig">IG</span>
-                                <span class="plat-tag threads">Threads</span>
-                            </div>
-                            <div class="store-handle">@hkwellcome</div>
-                            <div class="post-meta">📅 14 Aug | 🕐 1小時前 | 👍 27</div>
-                            <div class="post-text">【冰個夠我Cool 解鎖冰爽夏日！】凍水果/雪糕優惠</div>
-                            <span class="o2o-tag yes">🟢 O2O有 (雪糕/急凍)</span>
-                            <div class="post-link direct">
-                                <a href="https://www.facebook.com/wellcome.supermarket/posts/pfbid03NLGuZEmh3GmZb3tepYik5Xfcr773HP1Jkk1TJKPxTSe61XqaTFpZeqHaQASPtNBl" target="_blank">📎 Direct Link</a>
-                            </div>
-                        </div>
-
-                        <!-- 759 FB -->
-                        <div class="store-card sku">
-                            <div class="store-header">
-                                <span class="store-name">759 阿信屋</span>
-                                <span class="level-badge sku">📦 SKU</span>
-                            </div>
-                            <div class="platform-tags">
-                                <span class="plat-tag fb">FB</span>
-                                <span class="plat-tag ig">IG</span>
-                                <span class="plat-tag threads">Threads</span>
-                            </div>
-                            <div class="store-handle">@759store</div>
-                            <div class="post-meta">📅 14 Aug | 🕐 2小時前 | 👍 79</div>
-                            <div class="post-text">【今期勁筍推介】🇰🇷 韓國零食、椰子水、礦泉水</div>
-                            <span class="o2o-tag yes">🟢 O2O有 (零食/飲品)</span>
-                            <div class="post-link direct">
-                                <a href="https://www.facebook.com/759StoreHK/posts/pfbid02ESGZZcfsDUk7A1rZHn2ofkkjwA9mqqZByEzsDDnQvaprnjDG5YQYLKo8BKj69BTCl" target="_blank">📎 Direct Link</a>
-                            </div>
-                        </div>
-
-                        <!-- DONKI FB -->
-                        <div class="store-card other">
-                            <div class="store-header">
-                                <span class="store-name">DON DON DONKI</span>
-                                <span class="level-badge other">📌 Other</span>
-                            </div>
-                            <div class="platform-tags">
-                                <span class="plat-tag fb">FB</span>
-                                <span class="plat-tag ig">IG</span>
-                                <span class="plat-tag threads">Threads</span>
-                            </div>
-                            <div class="store-handle">@dondondonkihk</div>
-                            <div class="post-meta">📅 12 Aug | 🕐 2日前 | 👍 4</div>
-                            <div class="post-text">【DONKI 黃埔 4 週年限定優惠】消費滿額送好禮</div>
-                            <span class="o2o-tag no">🔴 KA推廣 (實體活動)</span>
-                        </div>
-
-                        <!-- AEON FB -->
-                        <div class="store-card sku">
-                            <div class="store-header">
-                                <span class="store-name">AEON</span>
-                                <span class="level-badge sku">📦 SKU</span>
-                            </div>
-                            <div class="platform-tags">
-                                <span class="plat-tag fb">FB</span>
-                            </div>
-                            <div class="store-handle">@aeonstores.hk</div>
-                            <div class="post-meta">📅 14 Aug | 🕐 20小時前 | 👍 15</div>
-                            <div class="post-text">【NAKAYO食堂感謝祭】快閃優惠 8月17-19日 (四色丼/鹽燒三文魚定食)</div>
-                            <span class="o2o-tag no">🔴 KA推廣 (餐飲)</span>
-                            <div class="post-link direct">
-                                <a href="https://www.facebook.com/aeon.hk/posts/pfbid02wXfqte1KxBWX9i5vaAgQSGNtS4bBXXzBsFBrHvrYrMBhoxAYRxcmKBq4uywmW6kSl" target="_blank">📎 Direct Link</a>
-                            </div>
-                        </div>
-
-                        <!-- 一田 FB -->
-                        <div class="store-card other">
-                            <div class="store-header">
-                                <span class="store-name">一田 YATA</span>
-                                <span class="level-badge other">📌 Other</span>
-                            </div>
-                            <div class="platform-tags">
-                                <span class="plat-tag fb">FB</span>
-                                <span class="plat-tag ig">IG</span>
-                            </div>
-                            <div class="store-handle">@yatahk</div>
-                            <div class="post-meta">📅 13 Aug | 🕐 23小時前 | 👍 4</div>
-                            <div class="post-text">【#活動回顧】一田試食試玩專員體驗 — 龍點心工作坊</div>
-                            <span class="o2o-tag no">🔴 KA推廣 (活動)</span>
-                        </div>
-
-                    </div>
-                </div>
-
-                <!-- 便利店 Column -->
-                <div class="channel-column">
-                    <div class="channel-header">🏪 便利店 (2 KAs)</div>
-                    <div class="channel-stores">
-                        
-                        <!-- 7-Eleven FB -->
-                        <div class="store-card sku">
-                            <div class="store-header">
-                                <span class="store-name">7-Eleven</span>
-                                <span class="level-badge sku">📦 SKU</span>
-                            </div>
-                            <div class="platform-tags">
-                                <span class="plat-tag fb">FB</span>
-                                <span class="plat-tag ig">IG</span>
-                                <span class="plat-tag threads">Threads</span>
-                            </div>
-                            <div class="store-handle">@7elevenhk</div>
-                            <div class="post-meta">📅 14 Aug | 🕐 57分鐘前 | 👍 2</div>
-                            <div class="post-text">【#7仔新嘢】日本人氣補給果凍系列</div>
-                            <span class="o2o-tag no">🔴 KA推廣 (零食)</span>
-                            <div class="post-link direct">
-                                <a href="https://www.facebook.com/7ElevenHongKong/posts/pfbid0eAkjLVtXezYxx6nJ9auLjvd7Rpqz9i2oSVntGjMdd9YsCsiddas8TFgbTpVHacdBl" target="_blank">📎 Direct Link</a>
-                            </div>
-                        </div>
-
-                        <!-- Circle K FB -->
-                        <div class="store-card sku">
-                            <div class="store-header">
-                                <span class="store-name">Circle K</span>
-                                <span class="level-badge sku">📦 SKU</span>
-                            </div>
-                            <div class="platform-tags">
-                                <span class="plat-tag fb">FB</span>
-                                <span class="plat-tag threads">Threads</span>
-                            </div>
-                            <div class="store-handle">@circlek_hk</div>
-                            <div class="post-meta">📅 14 Aug | 🕐 5分鐘前 🆕 | 👍 0</div>
-                            <div class="post-text">【#新品登場】Calbee 芥末海苔味蝦條限時登場！</div>
-                            <span class="o2o-tag yes">🟢 O2O有 (零食)</span>
-                            <div class="post-link direct">
-                                <a href="https://www.facebook.com/circlekhongkong/posts/pfbid048td6FApU1Mt8AfppDCTNiajiD15Ugq1anfJsbpjqXtHvy2CJEdCq2bNDedgJ8t7l" target="_blank">📎 Direct Link</a>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-
-                <!-- 個人護理 Column -->
-                <div class="channel-column">
-                    <div class="channel-header">💊 個人護理店 (2 KAs)</div>
+                    <div class="channel-header">📘 Facebook</div>
                     <div class="channel-stores">
                         
                         <!-- 屈臣氏 FB -->
@@ -390,19 +254,211 @@
                             </div>
                             <div class="platform-tags">
                                 <span class="plat-tag fb">FB</span>
-                                <span class="plat-tag ig">IG</span>
-                                <span class="plat-tag threads">Threads</span>
                             </div>
-                            <div class="store-handle">@hkwatsons</div>
-                            <div class="post-meta">📅 14 Aug | 🕐 56分鐘前 | 👍 5</div>
-                            <div class="post-text">【屈臣氏VIP Day 逢星期一尊享92折】星⋯⋯ 鑽石VIP專享 滿$600 全單92折</div>
-                            <span class="o2o-tag no">🔴 KA推廣 (保健/美容)</span>
+                            <div class="store-handle">@watsonshongkong</div>
+                            <div class="post-meta">17 Aug 2026 | 2小時前</div>
+                            <div class="sku-tags-container">
+                                <div class="sku-tags-label">SKU Tags:</div>
+                                <div class="sku-tags">
+                                    <span class="sku-tag o2o">🟢 O2O有</span>
+                                </div>
+                            </div>
+                            <span class="offer-tag promo">VIP Day</span>
+                            <div class="post-desc">【易賞錢會員日92折優惠】只限今日</div>
                             <div class="post-link direct">
-                                <a href="https://www.facebook.com/watsonshongkong/posts/pfbid0BJmEFEqhY4KvGxYrHKYpYduV96D8rbvCFNnT91pLFmPpArkqkseDNABpZitMQ6wrl" target="_blank">📎 Direct Link</a>
+                                <a href="https://www.facebook.com/watsonshongkong/posts/pfbid0BJmEFEqhY4KvGxYrHKYpYduV96D8rbvCFNnT91pLFmPpArkqkseDNABpZitMQ6wrl" target="_blank">🔗 Direct Post Link</a>
                             </div>
                         </div>
-
-                        <!-- 萬寧 FB -->
+                        
+                        <!-- 惠康 FB -->
+                        <div class="store-card order">
+                            <div class="store-header">
+                                <span class="store-name">惠康 Wellcome</span>
+                                <span class="level-badge order">⚔️ Order</span>
+                            </div>
+                            <div class="platform-tags">
+                                <span class="plat-tag fb">FB</span>
+                            </div>
+                            <div class="store-handle">@wellcome.supermarket</div>
+                            <div class="post-meta">17 Aug 2026 | 2分鐘前 🆕</div>
+                            <div class="sku-tags-container">
+                                <div class="sku-tags-label">SKU Tags:</div>
+                                <div class="sku-tags">
+                                    <span class="sku-tag o2o">🟢 O2O有</span>
+                                </div>
+                            </div>
+                            <span class="offer-tag new">🆕 New</span>
+                            <div class="post-desc">【必搶星期二！】$1換購乳酸菌飲品 (18/8-24/8)</div>
+                            <div class="post-link direct">
+                                <a href="https://www.facebook.com/wellcome.supermarket/posts/pfbid03NLGuZEmh3GmZb3tepYik5Xfcr773HP1Jkk1TJKPxTSe61XqaTFpZeqHaQASPtNBl" target="_blank">🔗 Direct Post Link</a>
+                            </div>
+                        </div>
+                        
+                        <!-- 7-Eleven FB -->
+                        <div class="store-card sku">
+                            <div class="store-header">
+                                <span class="store-name">7-Eleven</span>
+                                <span class="level-badge sku">📦 SKU</span>
+                            </div>
+                            <div class="platform-tags">
+                                <span class="plat-tag fb">FB</span>
+                            </div>
+                            <div class="store-handle">@7ElevenHongKong</div>
+                            <div class="post-meta">17 Aug 2026 | 1分鐘前 🆕</div>
+                            <div class="sku-tags-container">
+                                <div class="sku-tags-label">SKU Tags:</div>
+                                <div class="sku-tags">
+                                    <span class="sku-tag o2o">🟢 O2O有</span>
+                                </div>
+                            </div>
+                            <span class="offer-tag new">🆕 New</span>
+                            <div class="post-desc">【#7仔新嘢】源自生活豆乳飲品登場啦</div>
+                            <div class="post-link direct">
+                                <a href="https://www.facebook.com/7ElevenHongKong/posts/pfbid0eAkjLVtXezYxx6nJ9auLjvd7Rpqz9i2oSVntGjMdd9YsCsiddas8TFgbTpVHacdBl" target="_blank">🔗 Direct Post Link</a>
+                            </div>
+                        </div>
+                        
+                        <!-- 759 FB -->
+                        <div class="store-card order">
+                            <div class="store-header">
+                                <span class="store-name">759 阿信屋</span>
+                                <span class="level-badge order">⚔️ Order</span>
+                            </div>
+                            <div class="platform-tags">
+                                <span class="plat-tag fb">FB</span>
+                            </div>
+                            <div class="store-handle">@759StoreHK</div>
+                            <div class="post-meta">17 Aug 2026 | 2小時前 🆕</div>
+                            <div class="sku-tags-container">
+                                <div class="sku-tags-label">SKU Tags:</div>
+                                <div class="sku-tags">
+                                    <span class="sku-tag o2o">🟢 O2O有</span>
+                                </div>
+                            </div>
+                            <span class="offer-tag new">🆕 New</span>
+                            <div class="post-desc">【勁「抵」價只限兩天: 18/8~19/8】全單再9折</div>
+                            <div class="post-link direct">
+                                <a href="https://www.facebook.com/759StoreHK/posts/pfbid02ESGZZcfsDUk7A1rZHn2ofkkjwA9mqqZByEzsDDnQvaprnjDG5YQYLKo8BKj69BTCl" target="_blank">🔗 Direct Post Link</a>
+                            </div>
+                        </div>
+                        
+                        <!-- DONKI FB -->
+                        <div class="store-card sku">
+                            <div class="store-header">
+                                <span class="store-name">DON DON DONKI</span>
+                                <span class="level-badge sku">📦 SKU</span>
+                            </div>
+                            <div class="platform-tags">
+                                <span class="plat-tag fb">FB</span>
+                            </div>
+                            <div class="store-handle">@DONDONDONKIHK</div>
+                            <div class="post-meta">17 Aug 2026 | 19小時前</div>
+                            <div class="sku-tags-container">
+                                <div class="sku-tags-label">SKU Tags:</div>
+                                <div class="sku-tags">
+                                    <span class="sku-tag ka">🔴 KA推廣</span>
+                                </div>
+                            </div>
+                            <div class="post-desc">【日本UHA味覚糖 Toy Story 限定盲盒】</div>
+                            <div class="post-link direct">
+                                <a href="https://www.facebook.com/DONDONDONKIHK/posts/pfbid0sn8Cp9US5Eo31D74yj43e2NjJzWqerSej3F2YAmppyKJChdPdUGGj8GYeS5vUZDnl" target="_blank">🔗 Direct Post Link</a>
+                            </div>
+                        </div>
+                        
+                        <!-- AEON FB -->
+                        <div class="store-card order">
+                            <div class="store-header">
+                                <span class="store-name">AEON</span>
+                                <span class="level-badge order">⚔️ Order</span>
+                            </div>
+                            <div class="platform-tags">
+                                <span class="plat-tag fb">FB</span>
+                            </div>
+                            <div class="store-handle">@aeon.hk</div>
+                            <div class="post-meta">17 Aug 2026 | 13小時前</div>
+                            <div class="sku-tags-container">
+                                <div class="sku-tags-label">SKU Tags:</div>
+                                <div class="sku-tags">
+                                    <span class="sku-tag o2o">🟢 O2O有</span>
+                                </div>
+                            </div>
+                            <div class="post-desc">【APP周三新鮮日(早鳥)】周二早上開始預購</div>
+                            <div class="post-link direct">
+                                <a href="https://www.facebook.com/aeon.hk/posts/pfbid02wXfqte1KxBWX9i5vaAgQSGNtS4bBXXzBsFBrHvrYrMBhoxAYRxcmKBq4uywmW6kSl" target="_blank">🔗 Direct Post Link</a>
+                            </div>
+                        </div>
+                        
+                        <!-- 百佳 FB -->
+                        <div class="store-card sku">
+                            <div class="store-header">
+                                <span class="store-name">百佳 PARKnSHOP</span>
+                                <span class="level-badge sku">📦 SKU</span>
+                            </div>
+                            <div class="platform-tags">
+                                <span class="plat-tag fb">FB</span>
+                            </div>
+                            <div class="store-handle">@parknshophk</div>
+                            <div class="post-meta">17 Aug 2026 | 15小時前</div>
+                            <div class="sku-tags-container">
+                                <div class="sku-tags-label">SKU Tags:</div>
+                                <div class="sku-tags">
+                                    <span class="sku-tag o2o">🟢 O2O有</span>
+                                </div>
+                            </div>
+                            <div class="post-desc">【家居清潔好幫手】洗衣產品、紙巾優惠</div>
+                            <div class="post-link direct">
+                                <a href="https://www.facebook.com/parknshophk/posts/pfbid0UyGELU1UZzyz1VgEz2eDdPNxghCwAEaBHWkS5KvR5p4LTTjD8DnWedVWN1WqL5wXl" target="_blank">🔗 Direct Post Link</a>
+                            </div>
+                        </div>
+                        
+                        <!-- 一田 FB -->
+                        <div class="store-card order">
+                            <div class="store-header">
+                                <span class="store-name">一田 YATA</span>
+                                <span class="level-badge order">⚔️ Order</span>
+                            </div>
+                            <div class="platform-tags">
+                                <span class="plat-tag fb">FB</span>
+                            </div>
+                            <div class="store-handle">@yatahk</div>
+                            <div class="post-meta">17 Aug 2026 | 16小時前</div>
+                            <div class="sku-tags-container">
+                                <div class="sku-tags-label">SKU Tags:</div>
+                                <div class="sku-tags">
+                                    <span class="sku-tag ka">🔴 KA推廣</span>
+                                </div>
+                            </div>
+                            <div class="post-desc">【一田夏日購物賞】免費送貨優惠</div>
+                            <div class="post-link direct">
+                                <a href="https://www.facebook.com/yatahk/posts/pfbid02ESGZZcfsDUk7A1rZHn2ofkkjwA9mqqZByEzsDDnQvaprnjDG5YQYLKo8BKj69BTCl" target="_blank">🔗 Direct Post Link</a>
+                            </div>
+                        </div>
+                        
+                        <!-- Circle K FB - 昨日 -->
+                        <div class="store-card sku">
+                            <div class="store-header">
+                                <span class="store-name">Circle K</span>
+                                <span class="level-badge sku">📦 SKU</span>
+                            </div>
+                            <div class="platform-tags">
+                                <span class="plat-tag fb">FB</span>
+                            </div>
+                            <div class="store-handle">@circlekhongkong</div>
+                            <div class="post-meta">16 Aug 2026 | 19小時前 ⚠️ 昨日</div>
+                            <div class="sku-tags-container">
+                                <div class="sku-tags-label">SKU Tags:</div>
+                                <div class="sku-tags">
+                                    <span class="sku-tag o2o">🟢 O2O有</span>
+                                </div>
+                            </div>
+                            <span class="offer-tag normal">優惠中</span>
+                            <div class="post-desc">【雀巢笨NANA 啫喱雪條低至 $8/件！】</div>
+                            <div class="post-link direct">
+                                <a href="https://www.facebook.com/circlekhongkong/posts/pfbid048td6FApU1Mt8AfppDCTNiajiD15Ugq1anfJsbpjqXtHvy2CJEdCq2bNDedgJ8t7l" target="_blank">🔗 Direct Post Link</a>
+                            </div>
+                        </div>
+                        
+                        <!-- 萬寧 FB - 昨日 -->
                         <div class="store-card other">
                             <div class="store-header">
                                 <span class="store-name">萬寧 Mannings</span>
@@ -410,208 +466,355 @@
                             </div>
                             <div class="platform-tags">
                                 <span class="plat-tag fb">FB</span>
+                            </div>
+                            <div class="store-handle">@manningshongkong</div>
+                            <div class="post-meta">16 Aug 2026 | 18小時前 ⚠️ 昨日</div>
+                            <div class="sku-tags-container">
+                                <div class="sku-tags-label">SKU Tags:</div>
+                                <div class="sku-tags">
+                                    <span class="sku-tag ka">🔴 KA推廣</span>
+                                </div>
+                            </div>
+                            <div class="post-desc">【#瑞一寶】酣睡護眼高鈣營養粉 (保健品)</div>
+                            <div class="post-link direct">
+                                <a href="https://www.facebook.com/manningshongkong/posts/pfbid02Q3EwJTTZjs3HmmmNrnWAUF4c3FfQqGJC7CXSHjgZoaAPJ5Dgb2wwVvqmWpg2ABcpl" target="_blank">🔗 Direct Post Link</a>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+                
+                <!-- Instagram Column -->
+                <div class="channel-column">
+                    <div class="channel-header">📸 Instagram</div>
+                    <div class="channel-stores">
+                        
+                        <div class="store-card sku">
+                            <div class="store-header">
+                                <span class="store-name">屈臣氏 Watsons</span>
+                                <span class="level-badge sku">📦 SKU</span>
+                            </div>
+                            <div class="platform-tags">
                                 <span class="plat-tag ig">IG</span>
                             </div>
-                            <div class="store-handle">@mannings_hk</div>
-                            <div class="post-meta">📅 13 Aug | 🕐 22小時前 | 👍 54</div>
-                            <div class="post-text">【萬寧新品雷達Vol.4 夏日Men's Picks】型男養生派保養攻略</div>
-                            <span class="o2o-tag no">🔴 KA推廣 (保健/男性護理)</span>
+                            <div class="store-handle">@hkwatsons</div>
+                            <div class="post-meta">11 Aug 2026</div>
+                            <div class="sku-tags-container">
+                                <div class="sku-tags-label">SKU Tags:</div>
+                                <div class="sku-tags">
+                                    <span class="sku-tag o2o">🟢 O2O有</span>
+                                </div>
+                            </div>
+                            <div class="post-desc">I'MINT 咖啡薄荷糖</div>
+                            <div class="post-link">
+                                <span class="placeholder">🔗 <a href="https://www.instagram.com/p/Db7r1rxHP6D/" target="_blank">Page Link</a></span>
+                            </div>
                         </div>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- IG Posts Section -->
-        <div class="channel-section">
-            <div class="section-label">📸 Instagram 最近更新 | Instagram Recent (7日內)</div>
-            <div class="channel-grid">
-                <div class="channel-column">
-                    <div class="channel-header">📸 IG - 百貨/超市</div>
-                    <div class="channel-stores">
+                        
                         <div class="store-card sku">
                             <div class="store-header">
-                                <span class="store-name">百佳 IG</span>
+                                <span class="store-name">百佳 PARKnSHOP</span>
+                                <span class="level-badge sku">📦 SKU</span>
+                            </div>
+                            <div class="platform-tags">
+                                <span class="plat-tag ig">IG</span>
                             </div>
                             <div class="store-handle">@hkparknshop</div>
-                            <div class="post-meta">📅 12 Aug</div>
-                            <div class="post-text">全城傳愛齊捐食2026 (Pinned)</div>
-                            <span class="o2o-tag yes">🟢 O2O有</span>
-                            <div class="post-link direct">
-                                <a href="https://www.instagram.com/p/Db2Ui9EiMz0/" target="_blank">📎 Direct Link</a>
+                            <div class="post-meta">12 Aug 2026 (Pinned)</div>
+                            <div class="sku-tags-container">
+                                <div class="sku-tags-label">SKU Tags:</div>
+                                <div class="sku-tags">
+                                    <span class="sku-tag o2o">🟢 O2O有</span>
+                                </div>
+                            </div>
+                            <div class="post-desc">全城傳愛齊捐食2026</div>
+                            <div class="post-link">
+                                <span class="placeholder">🔗 <a href="https://www.instagram.com/p/Db2Ui9EiMz0/" target="_blank">Page Link</a></span>
                             </div>
                         </div>
-                        <div class="store-card sku">
+                        
+                        <div class="store-card order">
                             <div class="store-header">
-                                <span class="store-name">惠康 IG</span>
+                                <span class="store-name">惠康 Wellcome</span>
+                                <span class="level-badge order">⚔️ Order</span>
+                            </div>
+                            <div class="platform-tags">
+                                <span class="plat-tag ig">IG</span>
                             </div>
                             <div class="store-handle">@hkwellcome</div>
-                            <div class="post-meta">📅 10 Aug</div>
-                            <div class="post-text">日清聯名系列</div>
-                            <span class="o2o-tag yes">🟢 O2O有 (急凍/杯麵)</span>
+                            <div class="post-meta">10 Aug 2026</div>
+                            <div class="sku-tags-container">
+                                <div class="sku-tags-label">SKU Tags:</div>
+                                <div class="sku-tags">
+                                    <span class="sku-tag o2o">🟢 O2O有</span>
+                                </div>
+                            </div>
+                            <div class="post-desc">日清聯名冷泡杯麵</div>
                         </div>
+                        
                         <div class="store-card sku">
                             <div class="store-header">
-                                <span class="store-name">759 IG</span>
+                                <span class="store-name">7-Eleven</span>
+                                <span class="level-badge sku">📦 SKU</span>
                             </div>
-                            <div class="store-handle">@759store</div>
-                            <div class="post-meta">📅 11 Aug</div>
-                            <div class="post-text">冷泡杯麵系列</div>
-                            <span class="o2o-tag yes">🟢 O2O有 (急凍/杯麵)</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="channel-column">
-                    <div class="channel-header">📸 IG - 便利店/個人護理</div>
-                    <div class="channel-stores">
-                        <div class="store-card sku">
-                            <div class="store-header">
-                                <span class="store-name">屈臣氏 IG</span>
-                            </div>
-                            <div class="store-handle">@hkwatsons</div>
-                            <div class="post-meta">📅 11 Aug</div>
-                            <div class="post-text">I'MINT 咖啡薄荷糖</div>
-                            <span class="o2o-tag yes">🟢 O2O有 (零食/薄荷糖)</span>
-                            <div class="post-link direct">
-                                <a href="https://www.instagram.com/p/Db7r1rxHP6D/" target="_blank">📎 Direct Link</a>
-                            </div>
-                        </div>
-                        <div class="store-card sku">
-                            <div class="store-header">
-                                <span class="store-name">7-Eleven IG</span>
+                            <div class="platform-tags">
+                                <span class="plat-tag ig">IG</span>
                             </div>
                             <div class="store-handle">@7elevenhk</div>
-                            <div class="post-meta">📅 10 Aug</div>
-                            <div class="post-text">MÖVENPICK 雪糕優惠</div>
-                            <span class="o2o-tag yes">🟢 O2O有 (雪糕)</span>
+                            <div class="post-meta">12 Aug 2026</div>
+                            <div class="sku-tags-container">
+                                <div class="sku-tags-label">SKU Tags:</div>
+                                <div class="sku-tags">
+                                    <span class="sku-tag o2o">🟢 O2O有</span>
+                                </div>
+                            </div>
+                            <div class="post-desc">雪糕優惠75折</div>
                         </div>
-                    </div>
-                </div>
-                <div class="channel-column">
-                    <div class="channel-header">📸 IG - 其他</div>
-                    <div class="channel-stores">
+                        
                         <div class="store-card sku">
                             <div class="store-header">
-                                <span class="store-name">DONKI IG</span>
+                                <span class="store-name">759 阿信屋</span>
+                                <span class="level-badge sku">📦 SKU</span>
+                            </div>
+                            <div class="platform-tags">
+                                <span class="plat-tag ig">IG</span>
+                            </div>
+                            <div class="store-handle">@759store</div>
+                            <div class="post-meta">10 Aug 2026</div>
+                            <div class="sku-tags-container">
+                                <div class="sku-tags-label">SKU Tags:</div>
+                                <div class="sku-tags">
+                                    <span class="sku-tag o2o">🟢 O2O有</span>
+                                </div>
+                            </div>
+                            <div class="post-desc">日本凍水杯麵</div>
+                        </div>
+                        
+                        <div class="store-card sku">
+                            <div class="store-header">
+                                <span class="store-name">DON DON DONKI</span>
+                                <span class="level-badge sku">📦 SKU</span>
+                            </div>
+                            <div class="platform-tags">
+                                <span class="plat-tag ig">IG</span>
                             </div>
                             <div class="store-handle">@dondondonkihk</div>
-                            <div class="post-meta">📅 9 Aug</div>
-                            <div class="post-text">7週年大創業祭</div>
-                            <span class="o2o-tag yes">🟢 O2O有</span>
+                            <div class="post-meta">8 Aug 2026</div>
+                            <div class="sku-tags-container">
+                                <div class="sku-tags-label">SKU Tags:</div>
+                                <div class="sku-tags">
+                                    <span class="sku-tag o2o">🟢 O2O有</span>
+                                </div>
+                            </div>
+                            <div class="post-desc">爆旋陀螺X 優惠</div>
                         </div>
-                        <div class="store-card other">
+                        
+                        <div class="store-card sku">
                             <div class="store-header">
-                                <span class="store-name">一田 IG</span>
+                                <span class="store-name">一田 YATA</span>
+                                <span class="level-badge sku">📦 SKU</span>
+                            </div>
+                            <div class="platform-tags">
+                                <span class="plat-tag ig">IG</span>
                             </div>
                             <div class="store-handle">@yatahk</div>
-                            <div class="post-meta">📅 8 Aug</div>
-                            <div class="post-text">韓國節推廣</div>
-                            <span class="o2o-tag no">🔴 KA推廣</span>
+                            <div class="post-meta">8 Aug 2026</div>
+                            <div class="sku-tags-container">
+                                <div class="sku-tags-label">SKU Tags:</div>
+                                <div class="sku-tags">
+                                    <span class="sku-tag ka">🔴 KA推廣</span>
+                                </div>
+                            </div>
+                            <div class="post-desc">韓國節推廣</div>
                         </div>
+                        
                         <div class="store-card sku">
                             <div class="store-header">
-                                <span class="store-name">Circle K IG</span>
+                                <span class="store-name">Circle K</span>
+                                <span class="level-badge sku">📦 SKU</span>
+                            </div>
+                            <div class="platform-tags">
+                                <span class="plat-tag ig">IG</span>
                             </div>
                             <div class="store-handle">@circlek_hk</div>
-                            <div class="post-meta">📅 7 Aug</div>
-                            <div class="post-text">原豆乳新口味</div>
-                            <span class="o2o-tag yes">🟢 O2O有 (豆奶)</span>
+                            <div class="post-meta">10 Aug 2026</div>
+                            <div class="sku-tags-container">
+                                <div class="sku-tags-label">SKU Tags:</div>
+                                <div class="sku-tags">
+                                    <span class="sku-tag o2o">🟢 O2O有</span>
+                                </div>
+                            </div>
+                            <div class="post-desc">原豆乳新口味</div>
                         </div>
+                        
                     </div>
                 </div>
-            </div>
-        </div>
-
-        <!-- Threads Section -->
-        <div class="channel-section">
-            <div class="section-label">🧵 Threads 最近更新 | Threads Recent (7日內)</div>
-            <div class="channel-grid">
+                
+                <!-- Threads Column -->
                 <div class="channel-column">
-                    <div class="channel-header">🧵 Threads - 熱門</div>
+                    <div class="channel-header">💬 Threads</div>
                     <div class="channel-stores">
+                        
                         <div class="store-card sku">
                             <div class="store-header">
-                                <span class="store-name">惠康 Threads</span>
+                                <span class="store-name">屈臣氏 Watsons</span>
+                                <span class="level-badge sku">📦 SKU</span>
                             </div>
-                            <div class="store-handle">@hkwellcome</div>
-                            <div class="post-meta">📅 11 Aug | ❤️ 5.1K</div>
-                            <div class="post-text">冷泡杯麵藏頭詩宣傳</div>
-                            <span class="o2o-tag yes">🟢 O2O有 (急凍/杯麵)</span>
-                        </div>
-                        <div class="store-card sku">
-                            <div class="store-header">
-                                <span class="store-name">759 Threads</span>
-                            </div>
-                            <div class="store-handle">@759store</div>
-                            <div class="post-meta">📅 12 Aug | ❤️ 445</div>
-                            <div class="post-text">冷泡杯麵系列</div>
-                            <span class="o2o-tag yes">🟢 O2O有 (急凍/杯麵)</span>
-                        </div>
-                        <div class="store-card sku">
-                            <div class="store-header">
-                                <span class="store-name">屈臣氏 Threads</span>
+                            <div class="platform-tags">
+                                <span class="plat-tag threads">Threads</span>
                             </div>
                             <div class="store-handle">@hkwatsons</div>
-                            <div class="post-meta">📅 11 Aug | ❤️ 136</div>
-                            <div class="post-text">I'MINT 薄荷糖宣傳</div>
-                            <span class="o2o-tag yes">🟢 O2O有 (零食)</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="channel-column">
-                    <div class="channel-header">🧵 Threads - 其他</div>
-                    <div class="channel-stores">
-                        <div class="store-card sku">
-                            <div class="store-header">
-                                <span class="store-name">DONKI Threads</span>
+                            <div class="post-meta">I'MINT 136 likes</div>
+                            <div class="sku-tags-container">
+                                <div class="sku-tags-label">SKU Tags:</div>
+                                <div class="sku-tags">
+                                    <span class="sku-tag o2o">🟢 O2O有</span>
+                                </div>
                             </div>
-                            <div class="store-handle">@dondondonkihk</div>
-                            <div class="post-meta">📅 10 Aug | ❤️ 187</div>
-                            <div class="post-text">冷泡杯麵優惠</div>
-                            <span class="o2o-tag yes">🟢 O2O有 (急凍/杯麵)</span>
+                            <div class="post-desc">咖啡薄荷糖推廣</div>
+                            <div class="post-link">
+                                <span class="placeholder">🔗 <a href="https://www.threads.net/@hkwatsons" target="_blank">Page Link</a></span>
+                            </div>
                         </div>
+                        
+                        <div class="store-card order">
+                            <div class="store-header">
+                                <span class="store-name">惠康 Wellcome</span>
+                                <span class="level-badge order">⚔️ Order</span>
+                            </div>
+                            <div class="platform-tags">
+                                <span class="plat-tag threads">Threads</span>
+                            </div>
+                            <div class="store-handle">@hkwellcome</div>
+                            <div class="post-meta">冷泡杯麵藏頭詩 5.1K likes 🔥</div>
+                            <div class="sku-tags-container">
+                                <div class="sku-tags-label">SKU Tags:</div>
+                                <div class="sku-tags">
+                                    <span class="sku-tag o2o">🟢 O2O有</span>
+                                </div>
+                            </div>
+                            <div class="post-desc">日清冷泡杯麵系列</div>
+                            <div class="post-link">
+                                <span class="placeholder">🔗 <a href="https://www.threads.net/@hkwellcome" target="_blank">Page Link</a></span>
+                            </div>
+                        </div>
+                        
                         <div class="store-card sku">
                             <div class="store-header">
-                                <span class="store-name">7-Eleven Threads</span>
+                                <span class="store-name">759 阿信屋</span>
+                                <span class="level-badge sku">📦 SKU</span>
+                            </div>
+                            <div class="platform-tags">
+                                <span class="plat-tag threads">Threads</span>
+                            </div>
+                            <div class="store-handle">@759store</div>
+                            <div class="post-meta">冷泡杯麵 445 likes</div>
+                            <div class="sku-tags-container">
+                                <div class="sku-tags-label">SKU Tags:</div>
+                                <div class="sku-tags">
+                                    <span class="sku-tag o2o">🟢 O2O有</span>
+                                </div>
+                            </div>
+                            <div class="post-desc">日本凍水杯麵</div>
+                            <div class="post-link">
+                                <span class="placeholder">🔗 <a href="https://www.threads.net/@759store" target="_blank">Page Link</a></span>
+                            </div>
+                        </div>
+                        
+                        <div class="store-card sku">
+                            <div class="store-header">
+                                <span class="store-name">7-Eleven</span>
+                                <span class="level-badge sku">📦 SKU</span>
+                            </div>
+                            <div class="platform-tags">
+                                <span class="plat-tag threads">Threads</span>
                             </div>
                             <div class="store-handle">@7elevenhk</div>
-                            <div class="post-meta">📅 9 Aug</div>
-                            <div class="post-text">MÖVENPICK 雪糕推廣</div>
-                            <span class="o2o-tag yes">🟢 O2O有 (雪糕)</span>
+                            <div class="post-meta">多個posts</div>
+                            <div class="sku-tags-container">
+                                <div class="sku-tags-label">SKU Tags:</div>
+                                <div class="sku-tags">
+                                    <span class="sku-tag o2o">🟢 O2O有</span>
+                                </div>
+                            </div>
+                            <div class="post-desc">7-SELECT 產品推廣</div>
+                            <div class="post-link">
+                                <span class="placeholder">🔗 <a href="https://www.threads.net/@7elevenhk" target="_blank">Page Link</a></span>
+                            </div>
                         </div>
+                        
                         <div class="store-card sku">
                             <div class="store-header">
-                                <span class="store-name">Circle K Threads</span>
+                                <span class="store-name">DON DON DONKI</span>
+                                <span class="level-badge sku">📦 SKU</span>
                             </div>
-                            <div class="store-handle">@circlek_hk</div>
-                            <div class="post-meta">📅 8 Aug</div>
-                            <div class="post-text">原豆乳新口味</div>
-                            <span class="o2o-tag yes">🟢 O2O有 (豆奶)</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="channel-column">
-                    <div class="channel-header">🧵 HKTVmall</div>
-                    <div class="channel-stores">
-                        <div class="store-card sku">
-                            <div class="store-header">
-                                <span class="store-name">HKTVmall Threads</span>
+                            <div class="platform-tags">
+                                <span class="plat-tag threads">Threads</span>
                             </div>
-                            <div class="store-handle">@hktvmall</div>
-                            <div class="post-meta">📅 12 Aug | ❤️ 187</div>
-                            <div class="post-text">冷泡杯麵推廣</div>
-                            <span class="o2o-tag yes">🟢 O2O有 (急凍/杯麵)</span>
+                            <div class="store-handle">@dondondonkihk</div>
+                            <div class="post-meta">產品推廣posts</div>
+                            <div class="sku-tags-container">
+                                <div class="sku-tags-label">SKU Tags:</div>
+                                <div class="sku-tags">
+                                    <span class="sku-tag o2o">🟢 O2O有</span>
+                                </div>
+                            </div>
+                            <div class="post-desc">日本產品推廣</div>
+                            <div class="post-link">
+                                <span class="placeholder">🔗 <a href="https://www.threads.net/@dondondonkihk" target="_blank">Page Link</a></span>
+                            </div>
                         </div>
+                        
                     </div>
                 </div>
             </div>
         </div>
 
-        <div style="text-align: center; padding: 20px; color: #666; font-size: 11px;">
-            Report Generated: 14 Aug 2026, 13:00 HKT | Data Source: Facebook, Instagram, Threads (Official Pages Only)<br>
-            ⚠️ Posts older than 7 days excluded | O2O SKU matching based on inventory data
+        <!-- Handles Grid -->
+        <div class="handles-grid">
+            <div class="handles-card fb">
+                <h3>📘 Facebook Handles</h3>
+                <div class="handle-item"><span class="handle-name">一田</span><span class="handle-id">@yatahk</span></div>
+                <div class="handle-item"><span class="handle-name">Circle K</span><span class="handle-id">@circlekhongkong</span></div>
+                <div class="handle-item"><span class="handle-name">AEON</span><span class="handle-id">@aeon.hk</span></div>
+                <div class="handle-item"><span class="handle-name">DON DON DONKI</span><span class="handle-id">@DONDONDONKIHK</span></div>
+                <div class="handle-item"><span class="handle-name">惠康</span><span class="handle-id">@wellcome.supermarket</span></div>
+                <div class="handle-item"><span class="handle-name">7-Eleven</span><span class="handle-id">@7ElevenHongKong</span></div>
+                <div class="handle-item"><span class="handle-name">759阿信屋</span><span class="handle-id">@759StoreHK</span></div>
+                <div class="handle-item"><span class="handle-name">屈臣氏</span><span class="handle-id">@watsonshongkong</span></div>
+                <div class="handle-item"><span class="handle-name">萬寧</span><span class="handle-id">@manningshongkong</span></div>
+                <div class="handle-item"><span class="handle-name">百佳</span><span class="handle-id">@parknshophk</span></div>
+            </div>
+            <div class="handles-card ig">
+                <h3>📸 Instagram Handles</h3>
+                <div class="handle-item"><span class="handle-name">惠康</span><span class="handle-id">@hkwellcome</span></div>
+                <div class="handle-item"><span class="handle-name">AEON</span><span class="handle-id">@aeonstores.hk</span></div>
+                <div class="handle-item"><span class="handle-name">百佳</span><span class="handle-id">@hkparknshop</span></div>
+                <div class="handle-item"><span class="handle-name">萬寧</span><span class="handle-id">@mannings_hk</span></div>
+                <div class="handle-item"><span class="handle-name">759阿信屋</span><span class="handle-id">@759store</span></div>
+                <div class="handle-item"><span class="handle-name">屈臣氏</span><span class="handle-id">@hkwatsons</span></div>
+                <div class="handle-item"><span class="handle-name">一田</span><span class="handle-id">@yatahk</span></div>
+                <div class="handle-item"><span class="handle-name">DON DON DONKI</span><span class="handle-id">@dondondonkihk</span></div>
+                <div class="handle-item"><span class="handle-name">Circle K</span><span class="handle-id">@circlek_hk</span></div>
+                <div class="handle-item"><span class="handle-name">7-Eleven</span><span class="handle-id">@7elevenhk</span></div>
+            </div>
+            <div class="handles-card threads">
+                <h3>💬 Threads Handles</h3>
+                <div class="handle-item"><span class="handle-name">屈臣氏</span><span class="handle-id">@hkwatsons</span></div>
+                <div class="handle-item"><span class="handle-name">惠康</span><span class="handle-id">@hkwellcome</span></div>
+                <div class="handle-item"><span class="handle-name">759阿信屋</span><span class="handle-id">@759store</span></div>
+                <div class="handle-item"><span class="handle-name">HKTVmall</span><span class="handle-id">@hktvmall</span></div>
+                <div class="handle-item"><span class="handle-name">7-Eleven</span><span class="handle-id">@7elevenhk</span></div>
+                <div class="handle-item"><span class="handle-name">Circle K</span><span class="handle-id">@circlek_hk</span></div>
+                <div class="handle-item"><span class="handle-name">DON DON DONKI</span><span class="handle-id">@dondondonkihk</span></div>
+            </div>
         </div>
     </div>
+
+    <footer>
+        <p>📅 Report Date: 17 Aug 2026 | Hermes-Scout Agent</p>
+        <p>⚔️ Order Level = 消費滿$xxx/全場折扣/整單折扣 | 📦 SKU Level = 特定SKU/產品優惠 | 📌 Other = O2O無此類別/非產品推廣</p>
+        <p><a href="https://hfng0523.github.io/scout-reports/" target="_blank">GitHub Pages</a></p>
+    </footer>
 </body>
 </html>
